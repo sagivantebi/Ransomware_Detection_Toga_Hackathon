@@ -1,0 +1,3634 @@
+ is 
+>> 	<Midguard> (need to check spelling).  Comments?
+
+I've missed something here;  what was wrong with "conquest"?
+
+---------------
+Charlie Lambert
+#! rnews 819
+Path: alberta!mnetor!uunet!mcvax!weijers
+From: weijers@cwi.nl (Eric Weijers)
+Newsgroups: comp.lang.c++
+Subject: another error in vector.h 1.3
+Message-ID: <143@piring.cwi.nl>
+Date: 10 Dec 87 13:27:06 GMT
+Organization: CWI, Amsterdam
+Lines: 22
+
+In "vector.h 1.3" the following definition of the X(X&) constructor
+is given:
+
+vector(type).vector(type)(vector(type)& a)
+{
+	register i = a.sz;
+	sz = a.sz; 			/* ADD THIS LINE */
+	v = new type[i];
+	register type* vv = &v[i];
+	register type* av = &a.v[i];
+	while (i--) *--vv = *--av;
+}
+
+You should add the indicated line in order to set the size of
+the new vector. If that is not done you get "vector index out of
+range" errors.
+
+I found two other errors in this header file, I posted
+earlier. If you are interested in them just send a reply (r).
+
+Eric Weijers.
+weijers@cwi.nl
+#! rnews 830
+Path: alberta!mnetor!uunet!mcvax!botter!klipper!biep
+From: biep@cs.vu.nl (J. A. "Biep" Durieux)
+Newsgroups: soc.culture.jewish
+Subject: Anything positive about Jewish genes? (Was: Jewish genetic diseases)
+Message-ID: <959@klipper.cs.vu.nl>
+Date: 10 Dec 87 09:50:15 GMT
+References: <4362@ig.ig.com> <4374@ig.ig.com>
+Reply-To: biep@cs.vu.nl (J. A. "Biep" Durieux)
+Organization: VU Informatica, Amsterdam
+Lines: 12
+
+I suppose the exclusive intermarriage among Jews must also have
+spared them for many genetic diseases found among "the rest of us".
+Does anyone have any data on that?
+
+~~~
+I understand nobody is interested in discussing the Dead Sea scrolls?
+
+And nobody knows what the "Jewish region" in the far SE of Siberia is?
+~~~
+-- 
+						Biep.  (biep@cs.vu.nl via mcvax)
+	To be the question or not to be the question, that is.
+#! rnews 960
+Path: alberta!mnetor!uunet!mcvax!unido!ecrcvax!johng
+From: johng@ecrcvax.UUCP (John Gregor)
+Newsgroups: rec.arts.sf-lovers
+Subject: Re: Old SF Shows
+Summary: Yet another show I can't remember the name of...
+Message-ID: <463@ecrcvax.UUCP>
+Date: 9 Dec 87 13:57:35 GMT
+References: <04.Dec.87.11:29:45.GMT.ZZASSGL@UK.AC.UMRCC.CMS> <18784@linus.UUCP> <1046@bc-cis.UUCP> <19026@linus.UUCP>
+Reply-To: johng@ecrcvax.UUCP (John Gregor)
+Organization: ECRC, Munich 81, West Germany
+Lines: 10
+
+There was a show on sometime between the late 70's and early 80's (1 season).
+And I can't remember the name.  It was actually two (or more) shows in one
+with each sub-show taking a fraction of the time slot.  One part was a 
+modern day dracula.  Another dealt with a society living underground.  They
+couldn't come up to the surface without special filters due to dust/pollution
+or some such.  Ring any bells?  It was NBC, I think.
+
+				John
+
+		johng%ecrcvax.UUCP@germany.CSNET
+#! rnews 756
+Path: alberta!mnetor!uunet!mcvax!botter!ark!maart
+From: maart@cs.vu.nl (Maarten Litmaath)
+Newsgroups: comp.bugs.4bsd
+Subject: Re: 4.3BSD: using control-m in .exrc file
+Summary: More ^V's are needed (won't the editor get enough of it ? :-)
+Keywords: 4.3bsd  .exrc  control-m ^V
+Message-ID: <1161@ark.cs.vu.nl>
+Date: 10 Dec 87 18:44:07 GMT
+References: <133@telesoft.UUCP>
+Reply-To: maart@cs.vu.nl (Maarten Litmaath)
+Organization: VU Informatica, Amsterdam
+Lines: 8
+
+Try preceding each ^M by *another* ^V (which in turn is escaped by ^V) !
+Type:
+	map , ^V^V^V^M^V^V^V^M^V^V^V^M
+
+BTW, death to emacs !
+-- 
+Time flies like an arrow, fruit flies |Maarten Litmaath @ Free U Amsterdam:
+like an orange.      (seen elsewhere) |maart@cs.vu.nl, mcvax!botter!ark!maart
+#! rnews 1079
+Path: alberta!mnetor!uunet!mcvax!inria!shapiro
+From: shapiro@inria.UUCP (Marc Shapiro)
+Newsgroups: comp.lang.c++
+Subject: Re: Is there a "real" C++ compiler available?
+Summary: There is a native C++, with debugger support
+Message-ID: <589@inria.UUCP>
+Date: 10 Dec 87 17:55:27 GMT
+References: <2097@ucbcad.berkeley.edu>
+Organization: INRIA, Rocquencourt. France
+Lines: 14
+
+In article <2097@ucbcad.berkeley.edu>, faustus@ic.Berkeley.EDU (Wayne A. Christopher) writes:
+> [...].  Is there a C++
+> compiler available now that will compile directly into asm
+> code, instead of into C?  Alternatively, is there a good way
+> to use dbx with C++ programs (i.e, using the c++ source instead
+> of the c files)?  
+
+The answer to both questions is yes.  The Free Software Foundation (you
+know, the GNU Emacs people) will distribute (soon?) a modified version of
+their C compiler which does C++.  Their debugger GDB (a dbx-lookalike) knows
+how to handle it.
+
+I haven't used either of these so I have no opinions to whether they are
+in any way adequate.  Just passing useful information along.
+#! rnews 1269
+Path: alberta!mnetor!uunet!mcvax!enea!ttds!draken!zap
+From: zap@draken.nada.kth.se (Svante Lindahl)
+Newsgroups: comp.os.misc,comp.unix.wizards
+Subject: Re: Command interfaces
+Message-ID: <239@draken.nada.kth.se>
+Date: 10 Dec 87 04:54:11 GMT
+References: <1257@boulder.Colorado.EDU> <6840002@hpcllmv.HP.COM> <9555@mimsy.UUCP> <798@rocky.STANFORD.EDU> <432@cresswell.quintus.UUCP> <3161@psuvax1.psu.edu> <5565@oberon.USC.EDU>
+Reply-To: zap@nada.kth.se (Svante Lindahl)
+Organization: The Royal Inst. of Techn., Stockholm
+Lines: 21
+Xref: alberta comp.os.misc:340 comp.unix.wizards:5748
+
+In article <5565@oberon.USC.EDU> blarson@skat.usc.edu (Bob Larson) writes:
+#For example, how would you do the equivelent of this in unix:
+#
+#cmpf *>old>@@.(c,h) == -report ==.+cmpf -file
+
+I can do it using either /bin/sh or csh, but it does require more
+typing than in Primos. The test for existence of the file is not
+necessary so these examples could be simplified at the expense of
+risking a few error messages to the terminal.
+
+C-shell:
+% foreach i (`cd old; ls *.[ch]`)
+> if (-r $i) diff -c old $i > $i.cmpf
+> end
+
+Bourne-shell:
+$ for i in `cd old; ls *.[ch]` ; do
+> if [ -r $i ] ; then diff -c old $i > $i.cmpf ; fi
+> done
+
+Svante Lindahl	    zap@nada.kth.se	uunet!nada.kth.se!zap
+#! rnews 2030
+Path: alberta!mnetor!uunet!mcvax!enea!ttds!draken!sics!lhe
+From: lhe@sics.se (Lars-Henrik Eriksson)
+Newsgroups: rec.arts.sf-lovers
+Subject: Re: ST:TNG posters, GET OUT!
+Keywords: Why
+Message-ID: <1640@sics.se>
+Date: 10 Dec 87 11:50:40 GMT
+References: <5226@zen.berkeley.edu> <2011@charon.unm.edu>
+Reply-To: lhe@sics.se (Lars-Henrik Eriksson)
+Organization: Swedish Institute of Computer Science, Kista
+Lines: 32
+
+In article <2011@charon.unm.edu> cs3631cg@hydra.UUCP (Mark Giaquinto) writes:
+>Two points here, interesting is a *very* relative term, what is
+>interesting to you may not be to me and  visa versa.  Secondly I
+>agree, that if you have a ST posting put it in the header, for people
+>who don't want to read this stuff.
+>
+>>If there was no group for star trek fans to converse in without pestering
+>>the rest of the sf world, I would just have to sit here and suffer, but
+>>that's not the case.  Rec.arts.startrek is alive and well.  There is no
+>>reason beyond sheer orneryness to post to sf-lovers as well.  Arguments that
+>>star trek is sci-fi as well are pointless.  The simple fact is that there is
+>>newsgroup for all of you to communicate in, and if the rest of us wanted to
+>>listen, then we would.
+>
+>Well startrek is sf and I don't see how that arguement is pointless.
+
+I have only the faintest interest in the ST stuff and I would prefer it
+to be posted elsewhere, although I am not particularly bothered either.
+
+I think the interesting question is: WHY DO WE HAVE DIFFERENT NEWSGROUPS??
+
+I always thought it was to organize postings by subject and because different
+people are interested in different things.
+
+If you argue that ST postings could as well be made to rec.arts.sf-lovers
+rather than to the special ST newsgroup, you could just as well argue
+that we only need one newsgroup on the entire net: general.general.general.
+
+Lars-Henrik Eriksson				Internet: lhe@sics.se
+Swedish Institute of Computer Science		Phone (intn'l): +46 8 750 79 70
+Box 1263					Telefon (nat'l): 08 - 750 79 70
+S-164 28  KISTA
+#! rnews 1007
+Path: alberta!mnetor!uunet!mcvax!enea!tut!mk59200
+From: mk59200@tut.fi (Kolkka Markku Olavi)
+Newsgroups: comp.sources.bugs
+Subject: Re: PC Nethack 2.2 bugs + help wanted linking
+Summary: Inventory display problems
+Message-ID: <522@fuksi.tut.fi>
+Date: 10 Dec 87 13:32:40 GMT
+References: <492@silver.bacs.indiana.edu> <5253@zen.berkeley.edu>
+Reply-To: mk59200@fuksi.UUCP (Kolkka Markku Olavi)
+Organization: Tampere University of Technology, Finland
+Lines: 13
+
+I have successfully compiled and linked Nethack using MSC 4.0
+and it looks great, exept in a few points.  The inventory
+display is spread all over the screen if there aren't enough
+items to force a full-screen display.  It seems that after 
+printing each line the cursor is moved one step down, but
+it doesn't move left to the right place.
+
+Also, when I teleport away from an unlit room, some quote characters
+are left behind around the place I was in.
+
+Markku Kolkka at Tampere University of Technology, Finland
+mk59200@tut.fi
+...mcvax!tut!mk59200
+#! rnews 811
+Path: alberta!mnetor!uunet!mcvax!enea!tut!tolsun!jto
+From: jto@tolsun.oulu.fi (Jarkko Oikarinen)
+Newsgroups: comp.sys.amiga,rec.games.misc
+Subject: 'Real' controllers for Flight Simulator II
+Keywords: Controllers, Flight Simulator
+Message-ID: <247@tolsun.oulu.fi>
+Date: 10 Dec 87 16:47:22 GMT
+Organization: University of Oulu, Finland
+Lines: 15
+Xref: alberta comp.sys.amiga:11680 rec.games.misc:1151
+
+
+  I am interested in finding any information about 'real' controllers
+for Amiga's Flight Simulator II program. ie. similar controllers
+that are used in real airplanes. 
+
+Please mail your responses because I don't read this group regularly.
+
+-- 
+========================================
+Jarkko Oikarinen   mcvax!tut!oulu!jarkko
+                   jarkko@tolsun.oulu.fi
+========================================
+#! rnews 913
+Path: alberta!mnetor!uunet!mcvax!inria!imag!pierre
+From: pierre@imag.UUCP (Pierre LAFORGUE)
+Newsgroups: comp.protocols.appletalk
+Subject: NCSA TELNET bug with foreign MacSE or MacII keyboards
+Message-ID: <2331@imag.UUCP>
+Date: 10 Dec 87 08:08:19 GMT
+Reply-To: pierre@imag.UUCP (Pierre LAFORGUE)
+Organization: IMAG, University of Grenoble, France
+Lines: 11
+
+NCSA Telnet is really a must, but ...
+on a Mac SE and a Mac II, NCSA Telnet 2.0 forces an american keyboard, in a
+permanent manner (it remains after exiting telnet, until the next Macintosh
+reboot). It is very painful when you use, for instance, a french keyboard:
+not only you have to remember to type Q for A, and so on, but you cannot
+type for example a Control-Z under telnet.
+[On a Macintosh +, one do not loss its keyboard]
+
+Is this bug fixed in the last version ?
+-- 
+Pierre Laforgue       pierre@imag.imag.fr      {uunet.uu.net|mcvax}!imag!pierre 
+#! rnews 490
+Path: alberta!mnetor!uunet!mcvax!diku!sergej
+From: sergej@diku.UUCP (S|ren O. Jensen)
+Newsgroups: sci.math.stat
+Subject: The SAS package
+Message-ID: <3570@diku.UUCP>
+Date: 10 Dec 87 14:03:31 GMT
+Organization: DIKU, U of Copenhagen, DK
+Lines: 7
+
+
+Is the SAS package available for UNIX-systems? We are currently using the
+package on a old IBM machine but would like to change this machine to
+something newer - preferably a UNIX-machine.
+-- 
+----
+S|ren Oskar Jensen ({sergej,postmaster}@diku)
+#! rnews 2766
+Path: alberta!mnetor!uunet!mcvax!diku!iesd!jacob
+From: jacob@iesd.uucp (Jacob stergaard B{kke)
+Newsgroups: comp.arch
+Subject: job search, Comp. eng.
+Summary: I'm looking for a job
+Keywords: Job, Computer. eng., Computer. sci., M.S.
+Message-ID: <172@iesd.uucp>
+Date: 10 Dec 87 12:00:17 GMT
+Reply-To: jaaob@iesd.UUCP (Jacob \stergaard B{kke)
+Organization: Dept. of Comp. Sci., Aalborg University, Denmark (student)
+Lines: 68
+
+I'm looking for a job in Computer Engineering to begin around July
+1988. I'm getting my Master of Science in Computer Engineering June
+1988 and at present holding a degree equal to BS in Electronic
+Engineering. My BS studies have included:
+	
+	Computer hardware (hands-on knowledge with mc68k),
+	Analog electronic 
+	Control engineering (analog and digital control)
+
+My MS studies have included:
+
+	Software development (man-machine interface, what people want
+			      from programs) 
+	Compiler construction (an expertsystem shell) 
+	Program environment (for CCS programming) 
+	Distributed operating systems (in UNIX)
+ 	Compiler mapping object-oriented language on parallel computers
+
+Furthermore I do have experience in conventional programming (PASCAL,
+C, postscript, UNIX (awk, shell-scripts(C-shell) and yacc/lex) (and Basic)),
+functional programming (LISP and ML) and logical programming (Prolog)
+and knowledge about object-oriented programming. And I have also attended 
+courses in VLSI design, databases, etc. I have been working with CDC under 
+NOS/Telex, VAX 11/750 under Ultrix, SUN 3 under Sun OS 4.3 (UNIX), MacIntosh 
+(LISA) under Finder and IBM S36 under IBM property operating system.  
+
+My spoken English is excellent and my written English is satisfactory,
+good knowledge of the Scandinavian languages (Danish (of course),
+Swedish and Norwegian), some speaking and reading knowledge of German
+and limited knowledge of French and Spanish (and Latin). 
+
+I have 5 years experience in group project work in engineering and
+computer scinence areas, broad social interest, good health.
+
+My interest include computer hardware and software, operating system
+design, expertsystems, distributed, concurrency and teaching.
+
+I'm open on location (outside Denmark) but I have relatives or other
+reasons to be especially intereted in:
+
+	Canada (British Colombia or Toronto)
+	USA (New England or Pacific Coast)
+	Pacific (New Zealand or Oceania)
+	Thailand
+	Scotland (Highlands)
+
+I'll look forward to any reponds.
+
+		Yours sincerely
+			
+			Jacob Baekke, Denmark
+
+For further information:
+
+Reply to:     	jacob@iesd.uucp, {...}!mcvax!diku!iesd!jacob  or
+		 
+at Univ:	Jacob Baekke 
+		S9D (in spring S10)
+		Strandvejen 19
+		AUC
+		DK--9000 Aalborg
+		Denmark
+
+private:	Jacob Baekke
+		Davids Alle 48
+		DK--9000 Aalborg
+		Denmark
+		Tel. 45-(0)8102673
+#! rnews 867
+Path: alberta!mnetor!uunet!mcvax!diku!dde!jk
+From: jk@dde.uucp (Jens Kjerte)
+Newsgroups: comp.sources.wanted
+Subject: Re: Wanted: Microemacs part 8
+Message-ID: <281@Aragorn.dde.uucp>
+Date: 10 Dec 87 09:27:24 GMT
+References: <166@iesd.uucp>
+Reply-To: jk@dde.uucp (Jens Kjerte)
+Organization: Dansk Data Elektronik A/S, Herlev, Denmark
+Lines: 15
+
+In article <166@iesd.uucp> torbennr@neumann.UUCP (Torben N. Rasmussen) writes:
+>
+>Could someone please send me part 8 of the sources for Microemacs.
+>
+
+Me too!
+
+It seems as if part8 never reached Denmark.
+
+-- 
+
++---------------------------------------------------------------------------+
+|   Jens Kjerte  @ Dansk Data Elektronik A/S, Systems Software Department   |
+|   E-mail:      ..!uunet!mcvax!diku!dde!jk  or  jk@dde.uucp                |
++---------------------------------------------------------------------------+
+#! rnews 512
+Path: alberta!mnetor!uunet!mcvax!cernvax!ethz!solaris!wyle
+From: wyle@solaris.ifi.ethz.ch@relay.cs.net (Mitchell Wyle)
+Newsgroups: comp.lang.modula2
+Subject: modula-2 pretty-printer
+Keywords: pretty-printer
+Message-ID: <195@solaris.ifi.ethz.ch@relay.cs.net>
+Date: 9 Dec 87 21:56:57 GMT
+Organization: SOT sun cluster, ETH Zuerich
+Lines: 7
+
+Did anyone ever get the m2pp program to work on Sun Modula-2?
+
+Does anyone have a different Modula-2 pretty-printer (perhaps better)?
+
+Thanks,
+
+Mitch Wyle  (wyle@ethz.uucp)
+#! rnews 1762
+Path: alberta!mnetor!uunet!mcvax!cernvax!ethz!zu
+From: zu@ethz.UUCP (Urs Zurbuchen)
+Newsgroups: comp.emacs
+Subject: Re: Has uemacs 3.9 solved the file save bug?
+Message-ID: <265@bernina.UUCP>
+Date: 10 Dec 87 07:21:02 GMT
+References: <3056@pegasus.UUCP>
+Reply-To: zu@bernina.UUCP (Urs Zurbuchen)
+Organization: ETH Zuerich, CS Department, Switzerland
+Lines: 30
+
+In article <3056@pegasus.UUCP> avi@pegasus.UUCP (XMPE40000-Avi E. Gross;LZ 3C-314;6241) writes:
+>
+>I haven't compiled the new micro emacs since I have a MSC compiler, which is
+>not fully supported.
+
+This is simply NOT TRUE. I am also working with MSC (version 4.0) and had only
+one minor problem when I compiled MicroEmacs 3.9e (the latest version which
+was posted on Usenet). This problem relates to the Subshell spawning. But if
+you know just a little bit of C, there is no problem to fix it (add a routine
+specific to MSC). Some time ago, there was even a posting in comp.sources.bugs
+describing all the necessary steps to do that.
+
+>I have been having a very annoying problem with the
+>older version, and am wondering if it has been fixed, or if someone has a
+>work around. I am used to saving my files regularly with ^X^S, and then
+>sometimes quiting with ^X^C. Unfortunately, uemacs will quit before
+>completing the writing of the file, leaving me with only a small piece of
+>the file. 
+
+I am sure you enable breaking with ^C (either in config.sys or in autoexec.bat)
+Turn this off, and all your problems have gone :-)
+I know this is not the solution to this problem we all want to have. Perhaps
+you can do it with signal(). If not you have to included a function of your own
+which intercepts the break vector of MS-DOS.
+
+
+		Have a nice day,
+		      ...urs
+
+UUCP: ...seismo!mcvax!cernvax!ethz!zu
+#! rnews 2164
+Path: alberta!mnetor!uunet!mcvax!cernvax!ethz!ceb
+From: ceb@ethz.UUCP (Charles Buckley)
+Newsgroups: comp.lang.lisp
+Subject: Re: lisp environments summary -- program storage methods
+Message-ID: <266@bernina.UUCP>
+Date: 10 Dec 87 23:08:38 GMT
+References: <613@umbc3.UMD.EDU> <325@siemens.UUCP> <323@spar.SPAR.SLB.COM> <329@siemens.UUCP> <13253@think.UUCP>
+Organization: ETH Zuerich, Switzerland
+Lines: 30
+In-reply-to: barmar@think.COM's message of 9 Dec 87 03:18:01 GMT
+
+Posting-Front-End: GNU Emacs 18.41.2 of Mon Sep 14 1987 on bernina (berkeley-unix)
+
+
+In article <329@siemens.UUCP> steve@siemens.UUCP (Steve Clark) writes:
+>  I maintain that the non-Interlisp systems are wrong, however.  It
+>is clearly more advanced to treat a file as a database of definitions of
+>functions, data, structures, etc. than to treat it as a string of characters
+>that might have been typed at the keyboard.  However, since the rest of the
+>world hasn't caught up yet, there are bound to be incompatibilities.
+
+(Character) file storage is simply more flexible.  The form in which
+information is stored must be the most flexible possible, or you lose
+information.  The D-crate's pitching of conditionals is simply the
+manifestation of this.
+
+Proponents of restrictive protocols for information storage really ask
+"the world" to change to fit the protocol model.  In science, models
+change to fit the data, not the other way round (unless you cheat).
+To me, browbeating eventual non-conformists into "catching up" by
+labeling the a model as "advanced" is just a form of negative
+motivation.  All the lousy places I have ever worked ran on negative
+motivation, none of the good ones.  If your model *is* really worth
+using, and you can communicate its value, you will not need such
+tactics. 
+
+Interactively defined functions?  Haven't typed one in *years* -
+that's what scratch buffers are for (in case I want to change a
+*character* or two, or later save it.).
+
+Any mouse-based gadgets you can point to in Interlisp can be recreated
+for a text editor working on correctly parsed Lisp code.  May  take
+execution time, but if this is prohibitive, your function is probably
+too large. 
+#! rnews 2319
+Path: alberta!mnetor!uunet!mcvax!ukc!its63b!jha
+From: jha@its63b.ed.ac.uk (J Andrews)
+Newsgroups: rec.games.frp
+Subject: Fantasy Philosophy
+Keywords: wackafoo
+Message-ID: <824@its63b.ed.ac.uk>
+Date: 10 Dec 87 14:30:15 GMT
+Reply-To: jha@lfcs.ed.ac.uk (J Andrews)
+Organization: Univ. of Edinburgh Dept. of Computer Science
+Lines: 38
+God: Kate Bush
+
+Least-favourite-subject: domain theory
+
+
+
+     Those interested in the issues surrounding the mechanics and
+philosophy of fantasy worlds should read Tolkien's (non-fiction)
+essay "On Fairy-Stories".  It appears in the collections _Tree and
+Leaf_ and _The Tolkien Reader_.
+
+     One of the main ideas behind it is that the fantasy author or
+story-teller is a "sub-creator", who tries to create a "secondary
+belief" (rather than exactly a "willing suspension of disbelief")
+in the reader.  In the fantasy that works, the reader should be
+able to enter the world every time she picks up the book, and not
+be aware of the world as being constructed by the author.  This
+involves not only internal consistency, but a lack of gimmickry.
+
+     For instance, in _Lord of the Rings_ I was never aware of
+anything being in the world gratuitously.  (Others may differ! :-))
+In _The Sword of Sha-Na-Na_ (sic)(sick?), on the other hand, I was
+very aware of the Elfstones as being just a gimmick to get the
+characters out of tight spots.  Sure it was internally consistent
+(the Elfstones only had any effect in times of direst need for
+their holders), but the hand of the author was clearly visible.
+
+     Similarly, applying it to FRPG's, the magic system in AD&D is
+certainly internally consistent (to the extent that it is described),
+but just doesn't "work" for me.  Having MU's able to remember several
+copies of a spell, but forgetting it when the last copy is cast, is
+obviously a gimmick to limit the number of spells an MU can use.
+
+     So I guess the moral of all this for FRPG or module designers
+is that it's best to start out with a few basic assumptions and build
+up your world from them by fairly believable steps, and if you can't
+avoid ending up with something really hairy, then change one of your
+assumptions rather than put in quick kludges.  (Gee, sounds like
+software engineering! :=))
+
+--Jamie.
+  jha@uk.ac.ed.lfcs
+"Switch off the mind and let the heart decide"
+#! rnews 1818
+Path: alberta!mnetor!uunet!mcvax!ukc!its63b!db
+From: db@its63b.ed.ac.uk (D Berry)
+Newsgroups: comp.windows.x
+Subject: Questions about implementing the X toolkit.
+Message-ID: <825@its63b.ed.ac.uk>
+Date: 10 Dec 87 17:28:06 GMT
+Reply-To: db@lfcs.ed.ac.uk (Dave Berry)
+Organization: LFCS, University of Edinburgh
+Lines: 25
+
+1)  Does anyone, preferably in the UK or Europe, have a copy of the new
+X toolkit interface definition I can get by ftp?
+
+2)  I'm considering implementing the X toolkit in Standard ML.  Are there any
+constraints on what I should include or exclude?  The documentation mentions
+implementation in different languages, but doesn't say much about what this
+means.  Is the idea to provide the same functions, with the same names and
+functionality, in each language?  What about languages that have automatic
+storage management or automatic creation of objects, etc?  How far can I
+deviate from the documentation & still use the name "X Toolkit"?
+
+3)  Is the toolkit definition limited to the intrinsics, or are toolkits
+expected to provide a standard class hierarchy?
+
+4)  Is there any relation between the InterViews toolkit, the Xr, Sx &
+DEC toolkits provided with X version 10R4, and the current X toolkit?
+
+5)  If I go ahead, my first implementation will be a prototype, on top of X
+version 10R4.  This is because someone else is working on porting X version 11
+to Standard ML, and I want a simple windowing system I can use fairly quickly.
+I hope the prototype will make implementing a full version reasonably
+straightforward.  I will probably ignore the resource manager, since I'll get
+that for free when the full Xlib is implemented.  I'll also ignore colour for
+the time being, and only implement devices (widgets) I'm immediately interested
+in.  Is there anything else I can obviously ignore?
+#! rnews 1113
+Path: alberta!mnetor!uunet!mcvax!ukc!eagle!csw
+From: csw@eagle.ukc.ac.uk (C.S.Welch)
+Newsgroups: rec.arts.sf-lovers
+Subject: Re: Word processors are: [was Re: Pournelle's Problems]
+Message-ID: <4065@eagle.ukc.ac.uk>
+Date: 10 Dec 87 18:42:09 GMT
+References: <1915@haddock.ISC.COM>
+Reply-To: csw@ukc.ac.uk (C.S.Welch)
+Organization: Computing Lab, University of Kent at Canterbury, UK.
+Lines: 20
+Summary:
+
+Expires:
+
+Sender:
+
+Followup-To:
+
+
+
+Some (possibly) timely information from a course entitled "The Art of
+Communication for Engineers" that I'm on this week.
+
+From one of the handouts :-
+
+"Word processors: research has shown that when writers use pen and paper
+ alone, their thoughts and information tend to have better planning and
+ organisation. When using word processors alone, writers tend to plan
+ on a more surface level, focussing on such aspects as word choice, sentence
+ structure, and spelling"
+
+It goes on to recommend starting with pen and paper and graduating to WP's
+after the first draft has been written.
+
+I trust that this may have been of some interest.
+
+Chris Welch
+Cranfield Institute
+U.K.
+#! rnews 1286
+Path: alberta!mnetor!uunet!mcvax!ukc!eagle!icdoc!qmc-cs!pd
+From: pd@cs.qmc.ac.uk (Paul Davison)
+Newsgroups: rec.music.misc
+Subject: Re: Another Day : by Peter Gabriel and Kate Bush
+Message-ID: <352@sequent.cs.qmc.ac.uk>
+Date: 10 Dec 87 12:58:25 GMT
+References: <1987Dec8.154517.11828@gpu.utcs.toronto.edu>
+Reply-To: pd@qmc.ac.uk (Paul Davison)
+Organization: Computer Science Dept, Queen Mary College, University of London, UK.
+Lines: 22
+
+
+I've heard of this as well, but I have never found it. It's a pity
+because I would really like to hear it, so if anyone has got it please
+let me know as well!!
+
+As an aside, Roy has a new album out early next year, probably January.
+
+Paul.
+
+PS Your internal newsgroup "tor.general" shouldn't have been on the
+newsgroups line really, because nobody else has heard of it!
+-- 
+--
+Paul Davison
+
+UUCP:      pd@qmc-cs.uucp   or       ...seismo!mcvax!ukc!qmc-cs!pd
+Internet:  pd@cs.qmc.ac.uk              Post:   Dept of Computer Science
+JANET:     pd@uk.ac.qmc.cs                      Queen Mary College
+Easylink:  19019285                             University of London
+Telex:     893750 QMCUOL G                      Mile End Road
+Fax:       +44 1 981 7517                       London E1 4NS
+Voice:     +44 1 980 4811  x3950                England
+#! rnews 786
+Path: alberta!mnetor!uunet!mcvax!ukc!dcl-cs!craig
+From: craig@comp.lancs.ac.uk (Craig)
+Newsgroups: comp.sys.mac
+Subject: MAC II Debuggers
+Keywords: Development, MacII Debuggers
+Message-ID: <457@dcl-csvax.comp.lancs.ac.uk>
+Date: 9 Dec 87 13:36:01 GMT
+References: <687@howtek.UUCP> <3456@husc6.harvard.edu>
+Reply-To: craig@comp.lancs.ac.uk (Craig)
+Organization: Department of Computing at Lancaster University, UK.
+Lines: 11
+
+Having found out that Macsbug 5.5  works well with the MAC II, 
+how do I get a copy ?
+
+
+Craig.
+
+-- 
+UUCP:	 ...!seismo!mcvax!ukc!dcl-cs!craig| Post: University of Lancaster,
+DARPA:	 craig%lancs.comp@ucl-cs          |	  Department of Computing,
+JANET:	 craig@uk.ac.lancs.comp           |	  Bailrigg, Lancaster, UK.
+Phone:	 +44 524 65201 Ext. 4476   	  |	  LA1 4YR
+#! rnews 1070
+Path: alberta!mnetor!uunet!mcvax!ukc!dcl-cs!strath-cs!jml
+From: jml@cs.strath.ac.uk (Joseph McLean)
+Newsgroups: sci.math
+Subject: concatenation making primes
+Message-ID: <756@stracs.cs.strath.ac.uk>
+Date: 9 Dec 87 12:47:19 GMT
+Reply-To: jml@cs.strath.ac.uk (Joseph McLean)
+Organization: Comp. Sci. Dept., Strathclyde Univ., Scotland.
+Lines: 14
+
+
+tege@nada.kth.se replied by e-mail to my original posting which asked
+if it is always possible to append digits to a positive number in order
+to make a prime. Unfortunately, his address is one of those I can't
+reach, and so I thought I'd kill two birds with one stone and post
+another article.
+  His argument is very simple, using the Prime Number Theorem to give
+an approximation to the number of primes between x.10^n and
+x.10^n+10^n-1 (which is the same problem I asked but translated to
+mathematics) which shows that as n -> inf, this number of primes also
+goes to infinity. A very simple argument that proves you can always
+append digits to make any number into a prime. Great stuff.
+
+      jml, the mad mathematician.
+#! rnews 1275
+Path: alberta!mnetor!uunet!mcvax!ukc!stc!root44!miduet!misoft!tait
+From: tait@gec-mi-at.co.uk (Philip Tait)
+Newsgroups: comp.sys.ibm.pc,comp.sources.wanted
+Subject: Re: Wanted: PC Checkbook Software
+Summary: Continental Software's Home Accountant Plus
+Keywords: Checkbook
+Message-ID: <800@gec-mi-at.co.uk>
+Date: 9 Dec 87 17:34:03 GMT
+References: <985@mhuxh.UUCP>
+Sender: news@gec-mi-at.co.uk
+Reply-To: tait@gec-mi-at.co.uk (Philip Tait)
+Organization: Marconi Instruments Ltd., St. Albans, UK
+Lines: 15
+Xref: alberta comp.sys.ibm.pc:9577 comp.sources.wanted:2719
+
+In article <985@mhuxh.UUCP> vxb@mhuxh.UUCP (Vern Bradner) writes:
+>
+>Can anyone suggest a PC checkbook program?
+
+I use Home Accountant Plus by Continental Software. The (legit.) version I use
+was originally bundled with the Columbia MPC, so it had to be 'unprotected'
+and altered to remove some hardware dependencies. (Incidentally, this made
+it possible to compile it with QuickBasic - essential if you're impatient
+like me!)
+
+I've found it reasonably secure and well-featured.
+
+| Philip J. Tait, Marconi Instruments Ltd. | St. Albans, Herts. AL4 0JN, U.K. |
+| UUCP: ...mcvax!ukc!hrc63!miduet!tait	   | NRS : tait@gec-mi-at.co.uk	      |
+| Voice: +44 727 36421 x4549 Telex: 297221 | Fax: +44 727 39447		      |
+#! rnews 1059
+Path: alberta!mnetor!uunet!mcvax!ukc!stc!idec!kbsc!yorick
+From: yorick@kbsc.UUCP (Yorick Phoenix)
+Newsgroups: comp.os.cpm,comp.sources.wanted
+Subject: Kermit for MP/M
+Message-ID: <888@kbsc.UUCP>
+Date: 7 Dec 87 17:23:21 GMT
+Organization: The Knowledge-Based Systems Centre, London, UK
+Lines: 16
+Xref: alberta comp.os.cpm:1030 comp.sources.wanted:2720
+
+I have a friend who is trying to transfer some files off of an Micromation
+MP/M system.
+
+He has so far moved the standard "Generic" CP/M Kermit (slowly) to the MP/M
+machine but it doesn't seem to work correctly.
+
+Has anybody ever managed to get Kermit to work under M/PM?  Is there a simple
+set of differences between C/PM kermit and M/PM Kermit.  We have the full
+source code for C/PM Kermit.
+
+	Yorick Phoenix
+-- 
++------------------------------------------+ The Knowledge-Based Systems Center
+|  yorick@kbsc.UUCP                        | 58 Northside, Clapham Common
+|  ..mcvax!ukc!{idec,hrc63}!kbsc!yorick    | LONDON   SW4 9RZ   England
++------------------------------------------+ Voice: +44 1 350 1622
+#! rnews 1946
+Path: alberta!mnetor!uunet!mcvax!ukc!stc!root44!gwc
+From: gwc@root.co.uk (Geoff Clare)
+Newsgroups: comp.unix.questions
+Subject: Re: rmail under HP-UX   (was Re: Using RMAIL under HPUX)
+Summary: RISC architecture
+Keywords: RISC, HP-UX
+Message-ID: <495@root44.co.uk>
+Date: 10 Dec 87 13:58:20 GMT
+References: <8711251805.AA02481@mitre-bedford.ARPA> <3720010@hpsemc.UUCP> <3631@xanth.cs.odu.edu>
+Reply-To: gwc@root44.UUCP (Geoff Clare)
+Organization: Root Computers Ltd, London, England
+Lines: 31
+
+>In article <3720010@hpsemc.UUCP>, bd@hpsemc.UUCP (bob desinger) writes:
+>> Here's how it is on our HP-UX system, a model 840:
+
+>> drwxrwxr-x   2 bin      mail        1024 Nov 25 18:45 /usr/mail
+>> -rwxr-sr-x   2 root     mail      137216 Oct  2 00:00 /bin/rmail
+
+>Wow!  Why is rmail so BIG?  What does HP-UX rmail do that SMAIL 2.5
+>doesn't?  Contrast the size of this rmail with various executables
+>found on our 4.3 BSD system.
+
+>-rwxr-xr-x  2 root     staff       35840 Nov  3 07:02 /bin/rmail (SMAIL 2.5)
+>-rwxr-xr-x  1 root     staff      104448 Jun  5  1986 /lib/ccom (C compiler)
+>-rwxr-xr-x  1 root     staff       97280 Dec  5 05:17 /usr/local/carmen (Lisp)
+>-rwsr-xr-x  1 root     staff      100352 Apr  5  1987 /usr/lib/sendmail
+
+The HP840 is a RISC architecture machine.  Reduced instruction set implies
+more instructions required to do the same job than on a 'complex'
+instruction set machine, hence the proportionately larger executable files.
+Presumably your 4.3BSD machine is a VAX-alike (i.e. complex instruction set).
+
+The only other file from your list which exists on our HP840 system is
+the C compiler, and look at the size of that beast!!
+
+-rwxrwxr-x  1 bin      bin       1097728 Mar  5  1987 /lib/ccom
+
+(No, that's not a typo - it really is more than 1 Megabyte!)
+
+Geoff Clare              gwc@root.co.uk            seismo!mcvax!ukc!root44!gwc
+-- 
+
+Geoff Clare              gwc@root.co.uk            seismo!mcvax!ukc!root44!gwc
+#! rnews 1904
+Path: alberta!mnetor!uunet!mcvax!ukc!stc!datlog!slxsys!jpp
+From: jpp@slxsys.specialix.co.uk (John Pettitt)
+Newsgroups: comp.unix.xenix
+Subject: Re: 16-bit versus 32-bit memory performance
+Summary: 32 bit cpu on 16 bit ram is a waste of money
+Message-ID: <109@slxsys.specialix.co.uk>
+Date: 10 Dec 87 14:17:13 GMT
+References: <388@ddsw1.UUCP> <620@omen.UUCP> <435@spdcc.COM>
+Reply-To: jpp@slxsys.UUCP (John Pettitt)
+Organization: Specialix International, London, UK.
+Lines: 29
+
+This should perhaps belong in comp.arch
+
+It would appear that most 8088,8086,186 and 286 systems are
+limited by the number of cycles taken to execute instructions
+(I.E the clock speed).  However the 80386 (at 16 and esp at 20 Mhz)
+is limited by its memory bus bandwidth.  That is the memory subsystem
+on most 286 boxes is fast enough have little or no real effect on
+performance compared to a change in clock speed.   An 80386
+however is largly limited by the rate that it can be 'fed' data
+and instructions.   
+
+16 Bit memory subsystems have a devestating effect on the 80386 
+for 2 reasons.  Firstly 2 memory accesses are required rather than
+one thus doubling the access time.  Secondly most 16 bit memory cards
+are designed for 8 or 10 Mhz operation not 16 Mhz so a significant
+number of wait states are needed when used with a 386.   It would
+appear that a 'cache miss' on the Intel Inboard(tm) generates beteween
+10 and 12 wait states thus making access to 16 bit ram slower than
+from the original 286.
+
+In conclustion - if you want a 32 bit CPU use 32 bit ram.  If you
+just want the instruction set use the P9 (80388) - if it ever appears.
+
+(This posting written on a Dell 386 with 6 MB of 0 wait static 32 bit ram)
+
+-- 
+John Pettitt - 144.5 MHz: G6KCQ, CIX: jpettitt,  Voice: +44 1 398 9422
+UUCP:  ...uunet!mcvax!ukc!pyrltd!slxsys!jpp  (jpp@slxsys.specialix.co.uk)
+Disclaimer: I don't even own a cat to share my views !
+#! rnews 1704
+Path: alberta!mnetor!uunet!mcvax!unido!iaoobelix!woerz
+From: woerz@iaoobelix
+Newsgroups: comp.unix.wizards
+Subject: Re: Request for human interface design a - (nf)
+Message-ID: <8300012@iaoobelix.UUCP>
+Date: 3 Dec 87 01:35:00 GMT
+References: <10559@brl-adm.UUCP>
+Lines: 32
+Nf-ID: #R:brl-adm:10559:iaoobelix:8300012:000:1331
+Nf-From: iaoobelix!woerz    Dec  3 02:35:00 1987
+
+> /***** iaoobelix:comp.unix.wiz / oberon!blarson /  5:40 pm  Nov 28, 1987*/
+> In article <7995@steinmetz.steinmetz.UUCP> dawn!stpeters@steinmetz.UUCP (Dick St.Peters) writes:
+> >(The VMS interface is not always so friendly to novices: name the file
+> >"junk" instead of "junk.txt", and a novice may never figure out how to
+> >read it.  As for expert interfaces, rename the expert's .emacs file to
+> >sav.emacs and watch him/her try to recover.)
+>
+> I'm no VMS expert and I know a way to recover.  Use a gun to put a few
+> bullets in the aproprate disk drive.  (When it is replaced and the
+> backups restored, my .emacs reappears. :-)
+
+And if you're out of luck, a backup has been done between the time
+you changed your .emacs file and the shooting of the disk and you
+will get your changed file. :-(
+
+> --
+> Bob Larson              Arpa: Blarson@Ecla.Usc.Edu
+> Uucp: {sdcrdcf,cit-vax}!oberon!skat!blarson             blarson@skat.usc.edu
+> Prime mailing list (requests):  info-prime-request%fns1@ecla.usc.edu
+> /* ---------- */
+
+------------------------------------------------------------------------------
+
+Dieter Woerz
+Fraunhofer Institut fuer Arbeitswirtschaft und Organisation
+Abt. 453
+Holzgartenstrasse 17
+D-7000 Stuttgart 1
+W-Germany
+
+BITNET: iaoobel.uucp!woerz@unido.bitnet
+UUCP:   ...{uunet!unido, pyramid}!iaoobel!woerz
+#! rnews 1992
+Path: alberta!mnetor!uunet!mcvax!unido!tub!actisb!federico
+From: federico@actisb.UUCP (Federico Heinz)
+Newsgroups: comp.sys.atari.st
+Subject: Re: Hard disk boot???
+Keywords: Hard disk, GEMBOOT
+Message-ID: <122@actisb.UUCP>
+Date: 8 Dec 87 19:34:12 GMT
+References: <624@aucs.UUCP>
+Reply-To: federico@actisb.UUCP (Federico Heinz)
+Organization: Actis in Berlin GmbH, W. Germany
+Lines: 39
+
+[The line eater was sleeping again ...]
+
+In article <624@aucs.UUCP> 870646c@aucs.UUCP (barry comer) writes:
+>I have a few questions for anyone using a SH204 with a Mega ST. I have a Meag2
+>with a SH204, I have being auto booting from the hard disk using HDB_V2.3, I
+>used to be able to auto boot from the floppy when the CTRL,SHIFT, and ALT.
+>keys were held down, well since I started using the Mega, the machine always
+>boots from the hard disk with the keys down or up??????????????
+
+I didn't know of the CTRL-SHIFT-ALT trick, but I had a problem similar
+to yours: there was no way my Mega would boot from floppy, and that
+turned out to be quite a problem when a desk accessory I had downloded
+from somewhere was turned unusable because of line noise.  My "solution"
+was not to boot from hard disk at all, which I now find better since it
+allows me to choose different configurations (desk accesories and such)
+depending on the job I'm going to do.
+
+>I am also using GEMBOOT to overcome the 40 folder limit in TOS(has it been
+>fixed with the new ROMS?).
+
+I'm also interested on this question, and it has been already asked a couple
+of times with no visible answer.  I've never used the old ROMs, so I don't
+know what the infamous "40 folder limit" means. I've had more than 40 folders
+on my hard disk and nothing happened.  Does this mean that the problem is
+fixed? Or is it 40 folders DEEP?
+
+
+                                        
+					
+					///////
+				      //____ //
+		Federico             //     //
+				    // __  //
+				   // / / //
+				   ///////
+
+
+UUCP: ...!mcvax!unido!tub!actisb
+BIX:  fheinz
+#! rnews 888
+Path: alberta!mnetor!uunet!mcvax!varol
+From: varol@cwi.nl (Varol Akman)
+Newsgroups: sci.physics
+Subject: Texts a la Feynman
+Summary: I would like to read them
+Message-ID: <144@piring.cwi.nl>
+Date: 11 Dec 87 10:59:47 GMT
+Organization: CWI, Amsterdam
+Lines: 12
+
+I've been re-reading recently Feynman's excellent volumes and enjoying
+myself.  The question is:  Are there physics books of similar style?
+One thing that I like about Feynman is that he tries to ``demystify''
+stuff instead of giving cookbook formulas.  Since I do this as a
+leisurely activity, the absence of too many formulas and long
+mathematical analyses (at least in Vol. I) are also appreciated.
+I'm especially interested in classical mechanics.  Philosophical
+implications of physics laws such as causality, etc. are also interesting.
+
+Send me individual replies and I'll post a summary to the net. Thanks!
+
+-Varol Akman
+#! rnews 1649
+Path: alberta!mnetor!uunet!mcvax!ukc!dcl-cs!bath63!pes
+From: pes@ux63.bath.ac.uk (Smee)
+Newsgroups: rec.games.misc
+Subject: Re: The Pawn help
+Keywords: ** EXPLICIT SPOILERS **
+Message-ID: <2011@bath63.ux63.bath.ac.uk>
+Date: 9 Dec 87 11:24:10 GMT
+References: <2884@cbmvax.UUCP> <2299@killer.UUCP> <2910@cbmvax.UUCP>
+Reply-To: pes@ux63.bath.ac.uk (Smee)
+Organization: AUCC c/o University of Bath
+Lines: 22
+
+In article <2910@cbmvax.UUCP> daveb@cbmvax.UUCP (Dave Berezowski) writes:
+>
+>I've been told that there is a bug in the game such that you must get to
+>the pedestal asap else the blue key won't be there (this is what has happended
+>to me)...
+
+The story I've heard is that this is not a bug.  Rather (as warned in the
+manual) the other characters you meet are also poking around, and can have
+effects even while they are not in the same location as you.
+
+In particular, as I've heard it, if the adventurer gets to the pedestal before
+you do then he will take the key.  (And allegedly you then can recover it when
+you kill him.)  I haven't tried this line of play yet, so can't vouch for it,
+but it sounds plausible.
+
+There's a cute bug in the ST version, though, to do with the pedestal.  If
+you move the pedestal and then type 'take all' you end up carrying the pedestal,
+a duplicate of which remains in place.  (If you just try to 'take pedestal',
+you are told that it is too heavy to lift.)  I'm told that this results from
+a bug in the relevant object definition table entry, so it might have propagated
+to other versions.  (I'd doubt that the driving data undergoes as much analysis
+as the executable code during porting to other machines.)
+#! rnews 1317
+Path: alberta!mnetor!uunet!mcvax!ukc!dcl-cs!nott-cs!pyr1.cs.ucl.ac.uk!awylie
+From: awylie@pyr1.cs.ucl.ac.uk
+Newsgroups: comp.sys.ibm.pc
+Subject: Zorland/Datalight C INT86 problem
+Message-ID: <39500003@pyr1.cs.ucl.ac.uk>
+Date: 8 Dec 87 13:23:00 GMT
+Lines: 24
+Nf-ID: #N:pyr1.cs.ucl.ac.uk:39500003:000:954
+Nf-From: pyr1.cs.ucl.ac.uk!awylie    Dec  8 13:23:00 1987
+
+
+Hi,
+   I have a problem with the Zorland C compiler, aka Datalight-C or
+NorthWest-C which I wondered if any netlander had previously encountered
+and solved.
+   I have a program which works fine in small model but recently I had
+to go to the data model (small code, large data) whereupon it hung my
+XT clone. Tracing execution seems to indicate that the DOS software
+interrupt routine INT86 may be the source of the trouble.
+   Has anyone seen problems with INT86 in D or L model programs? The
+prospect of DEBUGging the interface between C and assembler does not
+appeal to me.
+   BTW I have deliberately not given details of the program. I do not
+       want to debug it on the net. Please e-mail me only if you have
+       solid evidence of problems in the INT86 area.
+
+      thanks for any help you can give,
+           Andrew
+
+Andrew Wylie
+University of London Computer Centre, London, England
+
+uucp:    awylie@uk.ac.ucl.cs
+JANET:   andrew@ulcc.ncdlab
+#! rnews 644
+Path: alberta!mnetor!uunet!mcvax!ukc!dcl-cs!nott-cs!pyr1.cs.ucl.ac.uk!awylie
+From: awylie@pyr1.cs.ucl.ac.uk
+Newsgroups: comp.sys.ibm.pc
+Subject: Re: Virus program warning
+Message-ID: <39500004@pyr1.cs.ucl.ac.uk>
+Date: 8 Dec 87 17:12:00 GMT
+References: <6146@jade.BERKELEY.EDU>
+Lines: 8
+Nf-ID: #R:jade.BERKELEY.EDU:-614600:pyr1.cs.ucl.ac.uk:39500004:000:227
+Nf-From: pyr1.cs.ucl.ac.uk!awylie    Dec  8 17:12:00 1987
+
+
+Presumably it would be relatively easy to modify the virus program to
+make it into an 'antibody' which would automatically overwrite the
+virus on any infected floppy which was used on the PC.
+
+Andrew Wylie
+
+awylie@uk.ac.ucl.cs
+#! rnews 541
+Path: alberta!mnetor!uunet!mcvax!ukc!dcl-cs!nott-cs!pyr1.cs.ucl.ac.uk!awylie
+From: awylie@pyr1.cs.ucl.ac.uk
+Newsgroups: rec.games.hack
+Subject: NetHack 2.2 part 18
+Message-ID: <42700005@pyr1.cs.ucl.ac.uk>
+Date: 10 Dec 87 09:51:00 GMT
+Lines: 8
+Nf-ID: #N:pyr1.cs.ucl.ac.uk:42700005:000:193
+Nf-From: pyr1.cs.ucl.ac.uk!awylie    Dec 10 09:51:00 1987
+
+
+People in the UK and Europe who need NetHack 2.2 part18 can get it by
+sending me e-mail, preferably to my Janet address.
+
+Andrew Wylie
+
+Janet:   andrew@ulcc.ncdlab
+uucp:    awylie@uk.ac.ucl.cs
+#! rnews 892
+Path: alberta!mnetor!uunet!mcvax!ukc!dcl-cs!nott-cs!smb!dave
+From: dave@smb.co.uk (Dave Settle)
+Newsgroups: comp.sources.wanted
+Subject: B-tree routines required.
+Keywords: b-tree index rmcobol
+Message-ID: <18@oscar.smb.co.uk>
+Date: 8 Dec 87 11:17:39 GMT
+Organization: SMB Business Software, Mansfield, UK
+Lines: 21
+
+I'm looking for a set of routines which can handle B-trees, as part of
+a program which I'm writing to recover RM-COBOL indexed files.
+
+If anyone knows of any routines which might be helpful (or any hints about
+how to go about it), I'd be very grateful to hear about them.
+
+Please reply to me directly by mail, as I don't (yet) get this newsgroup
+directly.
+
+Thanks in advance,
+		Dave Settle.
+---
+
+Dave Settle, 
+	SMB Business Software, Thorn EMI Datasolve, High St, Mansfield, UK
+
+UUCP:	dave@smb.co.uk
+	...!mcvax!ukc!nott-cs!smb!dave	
+
+		<--- This way to point of view --->
+		
+#! rnews 3785
+Path: alberta!mnetor!uunet!mcvax!ukc!eagle!sph
+From: sph@eagle.ukc.ac.uk (S.P.Holmes)
+Newsgroups: rec.games.misc,rec.games.frp,rec.games.board
+Subject: Re: WARGAMING!
+Message-ID: <4067@eagle.ukc.ac.uk>
+Date: 11 Dec 87 10:24:28 GMT
+References: <796@lln-cs.UUCP>
+Reply-To: sph@ukc.ac.uk (S.P.Holmes)
+Organization: Computing Lab, University of Kent at Canterbury, UK.
+Lines: 76
+Xref: alberta rec.games.misc:1153 rec.games.frp:1655 rec.games.board:544
+Summary:
+
+Expires:
+
+Sender:
+
+Followup-To:
+
+
+In article <796@lln-cs.UUCP> gf@lln-cs.UUCP (Frank Grognet) writes:
+>
+>	I want to start wargaming but I don't know how!
+>
+>I won't be playing wargames on a board, but with 15mm or 25mm
+>figurines.
+>I would like to find addresses in Europe (especially Belgium)
+>of good figurine manufacturers and also references to rule
+>books for the Napoleonic period.
+
+The best set which I've found are the Wargames Research Group 1685 - 1850
+rules. Although the time period sounds a bit long these rules have the
+following advantages (My opinions only).
+
+- Wide ranges of troops covered (You can fight outside Europe)
+- Wide range of weapons covered (Pikes for those Moscow Militiamen etc)
+- Simple solution for combat - This is what I really like, There@s
+      No nonsense evaluating every 20th of a casualty, or evaluating
+      grenadier companies firing separate from the rest of their battallion.
+- All weapons are handled simply. Just a different entry in one table.
+- Movement is alternate, not simultaneous, things move much quicker.
+- Hand to hand combat is decided very quickly, (Just like reality).
+- Morale tests are also quite fast to do, and give specific tests for
+  different situations. (This avoids an old problem where eg Horsemen test
+      morale before charging, Test fails horribly, Horsemen rout off the 
+      field.) To make you go away, the opponent actually has to do
+      something.
+- European regulars have "National characteristics".
+    ie British are disciplined infantry and rash cavalry.
+       Russians are stoical Infantry (Won@t retreat easily)
+       Spanish are easily panicked
+       Highlanders charge aggressively
+       French columns are impetuous and frighten the enemy.
+       Austrian and Prussian cavalry are Bold
+       Austrian, Spanish and Dutch Generals are Cautious.
+
+Together with these rules I would recommend the army lists published by
+Table Top Games.
+
+These cover the European armies for most of the big campaigns of
+1805-1815 and ensure a balanced army is selected (Although the 
+1000 point armies don@t always work too well.
+eg My russians need 12 Gun Artillery Batteries (6 pieces on the table)
+   This leaves me few points for infantry or cavalry
+   (In practice a Russian 1000 point army has two of Inf, Cav & Art)
+
+The lists also help to enhance the National Flavour of an army
+ie British get few Cavalry, but some veteran Infantry.
+   French after 1812 have Raw Infantry or Guards.
+   Austrians Have Very Large numbers Of infantry.
+
+I can summarise some of the +/- points of each of the armies I've seen
+if you mail me.
+
+I'd recommend 15mm scale troops (Much cheaper and more transportable)
+    They'll fit on your table too.
+
+I actually use the 6mm scale which is cheaper, lighter and requires
+about 60cm x 100 cm for a medium game.
+However the Job of painting, mounting and moving the little guys is
+much harder.
+
+
+>I am also interested in rules contained on the net or in files at
+>other sites, if they exist!
+
+Copyright makes this difficult.
+
+>I anybody can help me, please reply to ..!mcvax!prlb2!lln-cs!gf
+
+
+-- 
+        Steve Holmes         | Noel Coward : "Would you object if I smoked"
+        Room 109a            |
+E-mail  sph                  | Sarah Bernhardt : "I wouldn't care if you burned"
+Phone   ext 7681 or 3682     |
+#! rnews 1737
+Path: alberta!mnetor!uunet!mcvax!ukc!pyrltd!lucifer!rob
+From: rob@lucifer.UUCP ( 237)
+Newsgroups: rec.arts.sf-lovers
+Subject: Re: Origin of Hithchiker's Guide
+Message-ID: <6@lucifer.UUCP>
+Date: 11 Dec 87 10:03:57 GMT
+References: <909WDMCU@CUNYVM> <1240001@otter.HP.COM>
+Reply-To: rob@lucifer.UUCP (Rob Clive - 237)
+Organization: Lucas Micos, Phoenix Way, Cirencester, Glos, UK  (0285 67981)
+Lines: 24
+
+In article <1240001@otter.HP.COM> kers@otter.HP.COM (Christopher Dollin) writes:
+>> I have recently been told be someone that The Hitchhiker's Guide to the
+>> Galaxy originated as a radio program rather than as a book.
+>
+>The radio series "The Hitch-hikers Guide to the Galaxy" was broadcast in 
+>Britain for the first time between 1976..1979 (sorry for the range but all I
+
+It was 1978.  Episode 1 of the first series was a pilot production for the
+whole thing and as such is slightly different in flavour to the others.  The 
+first series (6 episodes) covered the ground of the TV version and books 1
+and 2.  Then came the Christmas (1978) show to make a link to the second
+series which was broadcast in 1979 and consisted of 5 episodes.
+
+> For my money, the show (and scripts) are MUCH funnier than the books.
+
+True.  The radio shows left much more to the imagination with the assistance
+of some very good sound effects.  I thought the TV series spoiled it.  For 
+instance at the end of the first radio series you hear the song 'What a
+Wonderful World' amid the sound of burning trees on prehistoric Earth; can't
+you just imagine it?
+
+-----------------------------------------------------------------------------
+Rob Clive.				     UUCP:  ...!mcvax!ukc!lucifer!rob
+Lucas Micos Ltd., Cirencester, GL7 1QG, UK.		      Now read on....
+#! rnews 1160
+Path: alberta!mnetor!uunet!mcvax!botter!tjalk!rblieva
+From: rblieva@cs.vu.nl (Roemer Lievaart)
+Newsgroups: rec.music.classical
+Subject: Re: The range of the male voice.
+Message-ID: <918@tjalk.cs.vu.nl>
+Date: 11 Dec 87 13:06:10 GMT
+References: <1280@phoenix.Princeton.EDU> <1597@faline.bellcore.com> <3999@pucc.Princeton.EDU>
+Reply-To: rblieva@cs.vu.nl (Roemer B. Lievaart)
+Organization: VU Informatica, Amsterdam
+Lines: 15
+
+Q2816@pucc.Princeton.EDU (Roger Lustig) typed:
++---------------------------------------
+| Choral music is generally written for a fairly restricted range (note
+| the two qualifications in that sentence) in order to allow choirs, not
+| individuals, to sing it.  There are choral high Bb's (in Singet dem
+| Herrn, for instance) and even C's for the sopranos (end of Kodaly's
+| Laudes Organi), and the incredible stuff Beethoven asked for in the
+| Missa Solemnis and Ninth.  But they are the exception, and are generally
+| intended to sound like an exception.
++---------------------------------------
+
+We're playing Mahler's 2nd, and so I noticed last wednesday that
+the Basses have to sing as deep as (at least ?) the low B.
+
+	-- Roemer.
+#! rnews 871
+Path: alberta!mnetor!uunet!mcvax!botter!ast
+From: ast@cs.vu.nl (Andy Tanenbaum)
+Newsgroups: comp.os.minix
+Subject: Re: scanf()
+Message-ID: <1782@botter.cs.vu.nl>
+Date: 11 Dec 87 14:40:54 GMT
+References: <782@louie.udel.EDU>
+Reply-To: ast@cs.vu.nl (Andy Tanenbaum)
+Organization: VU Informatica, Amsterdam
+Lines: 10
+
+In article <782@louie.udel.EDU> KIMMEL%ecs.umass.edu@relay.cs.net (Matt Kimmel) writes:
+>I just got Minix v1.2, and I like it a lot.  However, when I try to
+>compile a C program that calls scanf(), I get a message to the effect
+>of " _scanf not resolved".  Am I missing something?  Or is there no scanf()
+
+There is a scanf in libsrc.a, but it is not included in libc.a.  You have to
+compile it yourself with cc -LIB -c scanf.c and put in in the library.
+It was omitted from libc.a because there was no room on that diskette!
+
+Andy Tanenbaum (ast@cs.vu.nl)
+#! rnews 1614
+Path: alberta!mnetor!uunet!mcvax!guido
+From: guido@cwi.nl (Guido van Rossum)
+Newsgroups: comp.windows.x
+Subject: X and different IPC protocols
+Summary: Surely feasible; but how useful?
+Message-ID: <145@piring.cwi.nl>
+Date: 11 Dec 87 22:15:13 GMT
+Reply-To: guido@cwi.nl (Guido van Rossum)
+Organization: "The Amoeba Project", CWI, Amsterdam
+Lines: 22
+
+Although X as distributed uses TCP/IP to connect clients and server, it
+is possible use other network protocols by relatively small changes to
+the lowest levels of library and server.  We have almost gotten the
+server half of such a set-up running using Amoeba (a distributed
+operating system with its own, capability-based RPC mechanism).
+The library half should be working as soon as we solve problems with the
+C compiler.
+
+The question is, how much does this buy us?  Since Amoeba is not Unix, X
+clients requiring advanced Unix features won't run under vanilla Amoeba.
+What percentage of the available client applications will be convertable
+to a different operating system, where, e.g., one will have <stdio.h>
+available, but not select(2)?  I would assume that there will be VMS
+support for X, so that one might expect clients to be OS-independent,
+but then again, you can never know what hacks a performance-driven
+application programmer may use... (including VAX assembly :-)
+
+Can anybody comment on this?  It would also be interesting to know if
+third-party software for X would come binary or source.
+--
+Guido van Rossum, Centre for Mathematics and Computer Science (CWI), Amsterdam
+guido@cwi.nl or mcvax!guido or (from ARPAnet) guido%cwi.nl@uunet.uu.net
+#! rnews 1102
+Path: alberta!mnetor!uunet!mcvax!prlb2!kulcs!wim
+From: wim@kulcs.UUCP (Wim De Bisschop)
+Newsgroups: comp.lang.ada
+Subject: Ada-interface to Termcap(3)
+Keywords: termcap
+Message-ID: <1075@kulcs.UUCP>
+Date: 11 Dec 87 10:56:28 GMT
+Organization: Kath.Univ.Leuven, Comp. Sc., Belgium
+Lines: 15
+
+Has anyone an Ada interface to the C routines from the termcap
+library? We would have a package for terminal independent 
+screen oriented output in Ada. The most natural way to do this,
+is to make use of the C-routines of termcap. 
+We were wondering whether someone else has already defined an
+interface package, preferably for a Verdix 5.41 compiler to
+run under 4.3BSD.
+
+
++----------------------------------------------------------------------+
+| Name:   Wim De Bisschop           | Katholieke Universiteit Leuven   |
+| E-mail: wim@kulcs.UUCP  or        | Department of Computer Science   |
+|         ...!mcvax!prlb2!kulcs!wim | Celestijnenlaan 200 A            |
+| Phone:  +(32) 16-200656 x3596     | B-3030 Leuven (Heverlee), Belgium|
++----------------------------------------------------------------------+
+#! rnews 835
+Path: alberta!mnetor!uunet!mcvax!enea!erix!erialfa!afr
+From: afr@erialfa.UUCP (Anders Fredrikson ZX/DRG)
+Newsgroups: rec.music.misc
+Subject: Re: Ace-Screamingest Guitar Solos on Record
+Message-ID: <172@erialfa.UUCP>
+Date: 10 Dec 87 12:31:18 GMT
+References: <1725@s.cc.purdue.edu> <2455@sfsup.UUCP>
+Reply-To: afr@erialfa.UUCP (Anders Fredrikson ZX/DRG)
+Organization: Ericsson Information Systems AB, Kista, Stockholm, SWEDEN
+Lines: 17
+
+In article <2455@sfsup.UUCP> mingus@sfsup.UUCP (Damballah Wedo) writes:
+>> rsk@s.cc.purdue.edu.UUCP (in <1725@s.cc.purdue.edu>):
+>> [ lists some excellent guitar solos ]
+>
+>Sure, I'll play that game:
+>
+>......
+>---cut
+>She'a a Woman (Jeff Beck, BLOW BY BLOW)
+This tune is even better on the "Jeff Beck & Jan Hammer group LIVE"
+>---Cut
+>.....
+You might also add
+Europa (Santana, MOONFLOWER)
+
+
+/Anders
+#! rnews 1046
+Path: alberta!mnetor!uunet!mcvax!enea!pvab!robert
+From: robert@pvab.UUCP (Robert Claeson)
+Newsgroups: comp.lang.c
+Subject: Re: Making re-#includes harmless--a simple solution?
+Message-ID: <339@pvab.UUCP>
+Date: 11 Dec 87 10:23:09 GMT
+References: <13395@think.UUCP>
+Reply-To: robert@pvab.UUCP (Robert Claeson)
+Organization: Statskonsult Programvaruhuset AB, Sweden
+Lines: 16
+
+In article <13395@think.UUCP> rlk@THINK.COM writes:
+
+>1)  The same file may have multiple names (symlinks and/or hard
+>links).  How do you KNOW whether a file has been included?  The only
+>way is by defining an attribute that only that file will have.  The
+>easiest way to do this (aside from checking device/inumbers, which is
+>not portable and may not work in some bizarre cases, or other system
+>dependent hacks) is to #define a unique name.
+
+How can you be sure that the name you choose is unique, especially if
+you use links or symlinks?
+
+-- 
+Robert Claeson, System Administrator, PVAB, Box 4040, S-171 04 Solna, Sweden
+eunet: robert@pvab
+uucp:  sun!enea!pvab!robert
+#! rnews 1812
+Path: alberta!mnetor!uunet!mcvax!enea!ttds!draken!sics!lhe
+From: lhe@sics.se (Lars-Henrik Eriksson)
+Newsgroups: rec.arts.sf-lovers
+Subject: Re: Houston SF Opera
+Message-ID: <1642@sics.se>
+Date: 11 Dec 87 10:31:40 GMT
+References: <8168@ism780c.UUCP>
+Reply-To: lhe@sics.se (Lars-Henrik Eriksson)
+Organization: Swedish Institute of Computer Science, Kista
+Lines: 32
+
+In article <8168@ism780c.UUCP> jimh@ism780c.UUCP (Jim Hori) writes:
+>The Lessing is probably Doris who has
+>written several futurist/SF novels ...
+
+>Her SF novels are serialized, and from what
+>I recall from scanning them in bookstores,
+>reminiscent of Marge Piercy's enjoyable,
+>though somewhat stiff, feminist SF.
+>
+>The series is called "Canopus and Argos: Archives",
+Should be              Canopus IN Argos: Archives
+
+The five books are quite different in character. The second one
+("The marriages between zones 3, 4 and 5") could possibly be called
+"feminist SF" - it is very different from the other four in most ways.
+The third ("The Sirian Experiments") is at times rather funny, and the
+fifth ("The sentimental agents in the Volyen empire") is among the funniest
+books I've read.
+
+On the other hand, number 4 ("The making of the representative of planet 8")
+was rather depressing. While reading it I thought that "it can't get any
+worse than this". It could, of course. (I don't refer to the quality of the
+book, but to the events in the story).
+
+I should mention the title of the first one also: "Shikasta" This is
+the most "important" of the five, in some sense. It is also the one that
+could perhaps be called "stiff". All the books are well worth reading.
+
+Lars-Henrik Eriksson				Internet: lhe@sics.se
+Swedish Institute of Computer Science		Phone (Intn'l): +46 8 750 79 70
+Box 1263					Telefon (nat'l): 08 - 750 79 70
+S-164 28  KISTA
+#! rnews 768
+Path: alberta!mnetor!uunet!mcvax!enea!tut!santra!kolvi!jku
+From: jku@kolvi.UUCP (Juha Kuusama)
+Newsgroups: comp.sys.ibm.pc
+Subject: Re: EVALuation of Shareware Word Processors - Version 1
+Message-ID: <32@kolvi.UUCP>
+Date: 11 Dec 87 07:40:17 GMT
+References: <3610@dhw68k.UUCP>
+Reply-To: jku@kolvi.UUCP (Juha Kuusama)
+Organization: Helsinki University of Technology, Finland
+Lines: 9
+
+I'm not at all questioning the value of the comparision, but (as a VERY
+satisfied and registered) user of PC-Write, I'd like to point out that:
+
+- PC-Write does support the ega in 43-line mode
+
+- PC-Write can remind you to do backups at specified time intervals or
+  when you have entered a specified number of characters.
+---
+Juha Kuusama, jku@kolvi.UUCP  ( ...!mcvax!tut!kolvi!jku )
+#! rnews 904
+Path: alberta!mnetor!uunet!mcvax!diku!daimi!jnp
+From: jnp@daimi.UUCP (J|rgen N|rgaard)
+Newsgroups: comp.sys.mac
+Subject: Re: Conjecture:  why several tech notes failed
+Message-ID: <1248@daimi.UUCP>
+Date: 10 Dec 87 08:43:14 GMT
+References: <9827@ut-sally.UUCP>
+Reply-To: jnp@titan.UUCP (J|rgen N|rgaard)
+Organization: DAIMI: Computer Science Department, Aarhus University, Denmark
+Lines: 16
+
+
+Earlier this year there has been trouble with tech-notes, that would 
+not binhex correctly (the Mac program).
+Then the problem could be solved with a similiar program on unix-machines.
+The problem seemed to show up when the file-names where extremely long
+(28 might be the number).
+
+It seemed not to be so sensitive about file-names.
+
+Unfortunately I have lost the sources.
+
+
+-- 
+			Regards J|rgen N|rgaard
+				e-mail: jnp@daimi.dk
+-------------------------------------------------------------------------------
+#! rnews 785
+Path: alberta!mnetor!uunet!mcvax!diku!iesd!jacob
+From: jacob@iesd.uucp (Jacob stergaard B{kke)
+Newsgroups: sci.misc
+Subject: A request on the Ozone layer
+Keywords: More information wanted about the Ozone layer.
+Message-ID: <174@iesd.uucp>
+Date: 11 Dec 87 13:38:23 GMT
+Reply-To: jacob@iesd.UUCP (Jacob \stergaard B{kke)
+Organization: Dept. of Comp. Sci., Aalborg University, Denmark
+Lines: 12
+
+Today I read an posting from rhorn@infinet.UUCP about the problems
+with the Ozone layer. So I got interested and now wanted more
+information about it and the problems with the Ozone layer in
+Switzerland present. I would like any information and I'll look
+forward to any reponds. 
+
+		Yours sincerely
+			
+			Jacob Baekke, Denmark
+
+
+Reply to:     	jacob@iesd.uucp, {...}!mcvax!diku!iesd!jacob  
+#! rnews 1246
+Path: alberta!mnetor!uunet!mcvax!inria!imag!jarwa
+From: jarwa@imag.UUCP (Jarwa Sahar)
+Newsgroups: comp.software-eng
+Subject: LOOKING FOR DOCUMENTS ON SOFTWARE DOCUMENTATION
+Message-ID: <2336@imag.UUCP>
+Date: 11 Dec 87 09:15:21 GMT
+Reply-To: jarwa@imag.UUCP (Jarwa Sahar)
+Organization: IMAG, University of Grenoble, France
+Lines: 26
+
+
+     I am very interested in all publications concerning Documents 
+     Related to Software Documentation and to Maitenance Environment.
+     
+     What I am interested in are papers on different types 
+     of these documents, their formalism and their structure.
+     
+     If this area also interest you, I'd be very pleased if you could 
+     contact me, or send me your papers and/or what you have found 
+     interesting pertaining to this area. This will help me making a 
+     preliminary study on it.
+     
+     Looking forward to your answer, and thank you for your help.
+					Sahar JARWA
+
+	My adress is
+	Sahar JARWAH
+	Equipe "Systemes Intelligents de Recherche d'Informations"
+        Laboratoire de Genie Informatique - IMAG
+        BP 68
+        38462 St Martin d'Heres Cedex
+        FRANCE
+
+	my phone is 76-51-46-00 extension 5182
+
+	my electronic adress is jarwa@imag.imag.fr
+	on UUCP: jarwa@imag
+#! rnews 1217
+Path: alberta!mnetor!uunet!mcvax!inria!imag!jarwa
+From: jarwa@imag.UUCP (Jarwa Sahar)
+Newsgroups: comp.databases
+Subject: LOOKING FOR DOCUMENTS
+Message-ID: <2337@imag.UUCP>
+Date: 11 Dec 87 09:18:16 GMT
+Reply-To: jarwa@imag.UUCP (Jarwa Sahar)
+Organization: IMAG, University of Grenoble, France
+Lines: 26
+
+
+     I am very interested in all publications concerning Documents 
+     Related to Software Documentation and to Maitenance Environment.
+     
+     What I am interested in are papers on different types 
+     of these documents, their formalism and their structure.
+     
+     If this area also interest you, I'd be very pleased if you could 
+     contact me, or send me your papers and/or what you have found 
+     interesting pertaining to this area. This will help me making a 
+     preliminary study on it.
+     
+     Looking forward to your answer, and thank you for your help.
+					Sahar JARWA
+
+	My adress is
+	Sahar JARWAH
+	Equipe "Systemes Intelligents de Recherche d'Informations"
+        Laboratoire de Genie Informatique - IMAG
+        BP 68
+        38462 St Martin d'Heres Cedex
+        FRANCE
+
+	my phone is 76-51-46-00 extension 5182
+
+	my electronic adress is jarwa@imag.imag.fr
+	on UUCP: jarwa@imag
+#! rnews 2496
+Path: alberta!mnetor!uunet!mcvax!unido!laura!hmm
+From: hmm@laura.UUCP (Hans-Martin Mosner)
+Newsgroups: comp.lang.smalltalk
+Subject: User Survey
+Keywords: survey smalltalk curiosity
+Message-ID: <165@laura.UUCP>
+Date: 10 Dec 87 21:31:51 GMT
+Organization: University of Dortmund, W-Germany
+Lines: 59
+
+To stir up some unrest, we have decided to post a smalltalk user survey.
+Where are you, all you happy smalltalk hackers ?  There must be life
+in other parts of the world, too... :-)
+Anyway, we would like you to fill in this questionnaire and give us some
+feedback.  Of course we would also like if you would post your experiences
+and questions to this group.  After all, that's it's purpose...
+
+	Hans-Martin Mosner & Andreas Toenne
+	Smalltalk hackers at the University of Dortmund
+
++-------------------------------
+|1.	What kind of hardware/software do you use:
+|1.1.	Hardware
+|1.1.1.	Processor type:		_____
+|1.1.2.	Physical memory size:	_____
+|1.1.3.	Display size:		_____
+|1.2.	Software
+|1.2.1.	Operating system:	_____
+|1.2.2.	Virtual machine:	_____
+|1.2.3.	Virtual image version:	_____
+|1.3	Overall performance:	_____ % Dorado (if you know that)
+|2.	For what purposes do you use smalltalk ?
+|	(FillInThisBlank)
+|3.	Do you think that the system meets your requirements ?
+|	If not, why ?
+|4.	If you are a programmer:
+|4.1.	What kind of applications have you written ?
+|4.2.	If those applications were not written for your employer,
+|	why didn't you share them with the Usenet community ? :-)
+|5.	How do you like smalltalk ?
+|5.1.	How long have you been using smalltalk ?
+|5.2.	How familiar are you with smalltalk ?
++-------------------------------
+Thank you for being so cooperative.
+Now that you have answered all those questions, please
+send the whole thing back to:
+
+	hmm@unido.uucp
+or	hmm@unido.bitnet
+or	...!uunet!unido!hmm
+or	hmm%unido.uucp@uunet.uu.net
+
+If everything fails, just post it to this group...
+
+If even that does not work, then send it via snail mail to:
+	Hans-Martin Mosner
+	Informatik-Rechner-Betriebsgruppe
+	Universitaet Dortmund
+	Postfac` 500500
+D-4600  Dortmund
+	West Germany
+
+Disclaimer: these opinions are not opinions but just random bits & bytes
+and therefore I don't need to disclaim anything...
+-- 
+Hans-Martin Mosner		| Don't tell Borland about Smalltalk - |
+hmm@unido.{uucp,bitnet}		| they might invent TurboSmalltalk !   |
+------------------------------------------------------------------------
+Disclaimer: TurboSmalltalk may already be a trademark of Borland...
+D
+#! rnews 14600
+Path: alberta!mnetor!uunet!mcvax!unido!laura!atoenne
+From: atoenne@laura.UUCP (Andreas Toenne)
+Newsgroups: comp.lang.smalltalk
+Subject: A small IconEditor for Smalltalk 80, VI2.2
+Keywords: smalltalk icons goodie
+Message-ID: <166@laura.UUCP>
+Date: 10 Dec 87 21:48:21 GMT
+Organization: University of Dortmund, W-Germany
+Lines: 525
+
+Here is a little IconEditor I wrote.
+This goodie works on Smalltalk 80 VI2.2 VM1.1
+It comes in two parts.
+The first part 'Icon menu.st' adds knowledge about icons to the 
+StandardSystemController's blueButtonMenu.
+You should file in this one first.
+The second part 'Icon Editor.st' is the editor himself.
+
+Some notes about icons:
+The icon's textRectangle is clipped with the icon's boundingBox.
+To cancel a given textRectangle simply move it outside the outlined box.
+The method storeOn: in class OpaqueForm is buggy.
+You should add enclosing round brackets to the output. Otherwise
+you won't be able to read the saved icon definitions back.
+
+	Have fun
+
+	Andreas Toenne
+	atoenne@unido.uucp
+	atoenne@unido.bitnet
+	...!uunet!unido!atoenne
+	atoenne%unido.uucp@uunet.uu.net
+
+~~~~~~~~~~~~~~~~~~ cut here for best results ~~~~~~~~~~~~~~~~~~~~~~~~~~
+#! /bin/sh
+# This is a shell archive, meaning:
+# 1. Remove everything above the #! /bin/sh line.
+# 2. Save the resulting text in a file.
+# 3. Execute the file with /bin/sh (not csh) to create:
+#	Icon Editor.st
+#	Icon Menu.st
+# This archive created: Thu Dec 10 22:36:04 1987
+export PATH; PATH=/bin:/usr/bin:$PATH
+if test -f 'Icon Editor.st'
+then
+	echo shar: "will not over-write existing file 'Icon Editor.st'"
+else
+cat << \SHAR_EOF > 'Icon Editor.st'
+MouseMenuController subclass: #IconDisplayController
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Icon Editor'!
+
+
+!IconDisplayController methodsFor: 'controller default'!
+
+isControlActive
+	^ super isControlActive and: [sensor blueButtonPressed not]! !
+
+!IconDisplayController methodsFor: 'menu messages'!
+
+yellowButtonActivity
+	| index menu |
+	menu _ view yellowButtonMenu.
+	menu == nil
+		ifTrue:
+			[view flash.
+			super controlActivity]
+		ifFalse: 
+			[index _ menu startUpYellowButton.
+			index ~= 0 
+				ifTrue:
+					[self controlTerminate.
+					view perform: (menu selectorAt: index).
+					self controlInitialize]]! !
+
+View subclass: #IconDisplayView
+	instanceVariableNames: 'icon aspect iconMsg iconMenu '
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Icon Editor'!
+IconDisplayView comment:
+'I am a stupid view used to display the edited icon'!
+
+
+!IconDisplayView methodsFor: 'displaying'!
+
+displayView
+	"display icon centered in my insetBox"
+
+	| r iconRect rec |
+	Display white: self insetDisplayBox.
+	(icon isKindOf: Icon)
+		ifTrue: 
+			[r _ self insetDisplayBox.
+			icon form displayOn: Display at: r topLeft + r bottomRight - icon form extent // 2.
+			iconRect _ icon form computeBoundingBox.
+			iconRect _ iconRect translateBy: r topLeft + r bottomRight - iconRect extent // 2.
+			(iconRect areasOutside: (iconRect insetBy: 1 @ 1))
+				do: [:edge | Display fill: edge mask: Form gray].
+			rec _ icon textRect.
+			rec = nil
+				ifFalse: 
+					[rec _ rec translateBy: r topLeft + r bottomRight - icon form computeBoundingBox extent // 2.
+					(rec areasOutside: (rec insetBy: 1 @ 1))
+						do: [:edge | Display fill: edge mask: Form gray]]]! !
+
+!IconDisplayView methodsFor: 'updating'!
+
+update: anAspect 
+	"update the view"
+
+	anAspect == aspect
+		ifTrue: 
+			[icon _ model perform: iconMsg.
+			self displayView]! !
+
+!IconDisplayView methodsFor: 'menu messages'!
+
+allBlack
+	"make the selected icon all black"
+	| figure shape |
+	figure _ icon form figure.
+	shape _ icon form shape.
+	figure fill: figure computeBoundingBox rule: Form over mask: Form black.
+	shape fill: figure computeBoundingBox rule: Form over mask: Form black.
+	model changed: #iconView!
+
+allGray
+	"make the selected icon all transparent"
+	| figure shape |
+	figure _ icon form figure.
+	shape _ icon form shape.
+	figure fill: figure computeBoundingBox rule: Form over mask: Form white.
+	shape fill: figure computeBoundingBox rule: Form over mask: Form white.
+	model changed: #iconView!
+
+allWhite
+	"make the selected icon all white"
+	| figure shape |
+	figure _ icon form figure.
+	shape _ icon form shape.
+	figure fill: figure computeBoundingBox rule: Form over mask: Form white.
+	shape fill: figure computeBoundingBox rule: Form over mask: Form black.
+	model changed: #iconView!
+
+editIcon
+	"edit the selected icon"
+
+	| figure shape opaqueForm iconExtent bitView viewPoint savedForm |
+	(icon = nil and: [model iconSymbol ~= #default])
+		ifTrue: 
+			[iconExtent _ Rectangle fromUser extent.
+			figure _ Form extent: iconExtent.
+			shape _ Form extent: iconExtent.
+			opaqueForm _ OpaqueForm figure: figure shape: shape.
+			model icon: (Icon form: opaqueForm textRect: nil)].
+	icon = nil
+		ifFalse: 
+			[viewPoint _ (BitEditor locateMagnifiedView: icon form scale: 4 @ 4) topLeft.
+			bitView _ BitEditor
+						bitEdit: icon form
+						at: viewPoint
+						scale: 4 @ 4
+						remoteView: nil.
+			savedForm _ Form fromDisplay: (bitView displayBox merge: bitView labelDisplayBox).
+			bitView controller startUp.
+			savedForm displayOn: Display at: bitView labelDisplayBox topLeft.
+			bitView release.
+			model changed: #iconView]!
+
+textRect
+	"let the user specify a rectangle that will hold the icon's text"
+
+	| rec r|
+	rec _ Rectangle fromUser.
+	r _ self insetDisplayBox.
+	rec _ rec translateBy: 0@0 - (r topLeft + r bottomRight - icon form computeBoundingBox extent //2).
+	icon form: icon form textRect: rec.
+	model changed: #iconView! !
+
+!IconDisplayView methodsFor: 'controller access'!
+
+defaultControllerClass
+	^IconDisplayController! !
+
+!IconDisplayView methodsFor: 'private'!
+
+on: anIcon aspect: m1 icon: m2 menu: m3
+	self model: anIcon.
+	aspect _ m1.
+	iconMsg _ m2.
+	iconMenu _ m3! !
+
+!IconDisplayView methodsFor: 'adaptor'!
+
+yellowButtonMenu
+	^ self model perform: iconMenu! !
+"-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- "!
+
+IconDisplayView class
+	instanceVariableNames: ''!
+
+
+!IconDisplayView class methodsFor: 'instance creation'!
+
+on: anIcon aspect: m1 icon: m2 menu: m3
+	"create a new view for anIcon with aspect m1"
+
+	^self new
+		on: anIcon
+		aspect: m1
+		icon: m2
+		menu: m3! !
+
+Model subclass: #IconEditor
+	instanceVariableNames: 'icon iconSymbol iconBuffer '
+	classVariableNames: 'IconMenu ListMenu '
+	poolDictionaries: ''
+	category: 'Icon Editor'!
+IconEditor comment:
+'I am a bit editor for system icons.
+
+Instance Variables :
+	icon 				"The selected icon"
+	iconSymbol			"The symbol for the selected icon"
+
+Class Variables:
+	ListMenu 			"The action menu for the SelectionInListView over all icons"'!
+
+
+!IconEditor methodsFor: 'accessing'!
+
+icon
+	"return the selected icon"
+
+	^icon!
+
+icon: anIcon 
+	"change the selected Icon to anIcon"
+
+	icon _ anIcon.
+	Icon constantNamed: iconSymbol put: anIcon.
+	self changed: #iconView 	" aspect for the IconDisplayView"!
+
+icon: anIcon named: aSymbol 
+	" store anIcon at position aSymbol"
+
+	Icon constantNamed: aSymbol put: anIcon.
+	icon _ anIcon.
+	iconSymbol _ aSymbol.
+	self changed: #iconSymbol.			"aspect for SelectionInListView"
+	self changed: #iconView			"aspect for iconDisplayView "!
+
+iconSymbol
+	"return the symbol for the selected icon"
+
+	^iconSymbol!
+
+iconSymbol: aSymbol 
+	"change the symbol for the selected icon to aSymbol"
+
+	iconSymbol _ aSymbol.
+	icon _ Icon constantNamed: aSymbol.
+	self changed: #iconView	"aspect for the IconDisplayView"! !
+
+!IconEditor methodsFor: 'removing'!
+
+removeIcon
+	" remove the currently selected icon "
+
+	Icon constantDictionary removeKey: iconSymbol ifAbsent: [^nil].
+	iconSymbol _ icon _ nil.
+	self changed: #iconSymbol.
+	self changed: #iconView! !
+
+!IconEditor methodsFor: 'list display'!
+
+iconList
+	"return the list of icon symbols"
+
+	| list |
+	list _ OrderedCollection new.
+	Icon constantDictionary keysDo: [:i | list add: i].
+	^list!
+
+initialSymbol
+	"get the initial symbol selection"
+	"this method is used every time the SelectionInListView receives an update mesage "
+
+	^iconSymbol!
+
+listMenu
+	"return the menu for the icon list"
+
+	^ListMenu! !
+
+!IconEditor methodsFor: 'icon display'!
+
+iconMenu
+	"return the menu for the iconDisplayController"
+
+	^IconMenu! !
+
+!IconEditor methodsFor: 'menu messages'!
+
+copy
+	" save a (deep) copy of the currently selected icon"
+
+	icon = nil ifFalse: [iconBuffer _ icon deepCopy]!
+
+cut
+	" remove the currently selected icon from the icon dictionary and   
+	save it in iconBuffer"
+
+	(icon ~= nil or: [iconSymbol ~= #default])
+		ifTrue: 
+			[iconBuffer _ icon.
+			self removeIcon]!
+
+loadIcon
+	"override the current icon with a definition from a file"
+
+	| aFileName anIcon aStream |
+	(icon ~= nil or: [iconSymbol ~= #default])
+		ifTrue: 
+			[aFileName _ FileDirectory
+						requestFileName: 'file : '
+						default: iconSymbol asString , '.icn'
+						version: #old
+						ifFail: [^''].
+			aFileName ~= ''
+				ifTrue: 
+					[aStream _ FileStream oldFileNamed: aFileName.
+					anIcon _ Object readFrom: aStream.
+					aStream close.
+					self icon: anIcon]]!
+
+newIcon
+	" create a new clean icon"
+
+	| iconName |
+	iconName _ FillInTheBlank request: 'Icon Name ?'.
+	iconName = '' ifFalse: [self icon: nil named: iconName asSymbol]!
+
+paste
+	" change the currently selected icon to the icon held in iconBuffer"
+	" invoke newIcon if none is selected"
+
+	iconSymbol = nil
+		ifTrue: 
+			["add a new icon"
+			self newIcon.
+			iconSymbol = nil ifFalse: [self icon: iconBuffer]]
+		ifFalse: ["override old icon"
+			self icon: iconBuffer]!
+
+renameIcon
+	" change the name of an icon"
+
+	| key value newName |
+	(icon ~= nil or: [iconSymbol ~= #default])
+		ifTrue: 
+			[key _ iconSymbol.
+			value _ icon.
+			newName _ FillInTheBlank request: 'Change icon name' initialAnswer: key.
+			newName ~= ''
+				ifTrue: 
+					[self removeIcon.
+					self icon: value named: newName asSymbol]]!
+
+saveIcon
+	"store the selected icon to a file"
+
+	| aFileName aStream |
+	icon = nil
+		ifFalse: 
+			[aFileName _ FileDirectory
+						requestFileName: 'file : '
+						default: iconSymbol asString , '.icn'
+						version: #any
+						ifFail: [^''].
+			aFileName ~= ''
+				ifTrue: 
+					[aStream _ FileStream newFileNamed: aFileName.
+					icon storeOn: aStream.
+					aStream close]]! !
+
+!IconEditor methodsFor: 'view creation'!
+
+open
+	"open the views"
+
+	| topView |
+	topView _ StandardSystemView
+				model: self
+				label: 'Icon Editor'
+				minimumSize: 256 @ 300.
+	topView
+		addSubView: (SelectionInListView
+				on: self
+				aspect: #iconSymbol
+				change: #iconSymbol:
+				list: #iconList
+				menu: #listMenu
+				initialSelection: #initialSymbol)
+		in: (0 @ 0 corner: 1.0 @ 0.3)
+		borderWidth: 1.
+	topView
+		addSubView: (IconDisplayView
+				on: self
+				aspect: #iconView
+				icon: #icon
+				menu: #iconMenu)
+		in: (0.0 @ 0.3 corner: 1.0 @ 1.0)
+		borderWidth: 1.
+	topView controller open! !
+"-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- "!
+
+IconEditor class
+	instanceVariableNames: ''!
+
+
+!IconEditor class methodsFor: 'class initialization'!
+
+initialize
+	"Initialize the class IconEditor"
+	"IconEditor initialize"
+
+	ListMenu _ ActionMenu labelList: #((copy cut paste ) (newIcon renameIcon ) (saveIcon loadIcon ) ) selectors: #(copy cut paste newIcon renameIcon saveIcon loadIcon ).
+	IconMenu _ ActionMenu labelList: #((editIcon textRect ) (allWhite allBlack allGray) ) selectors: #(editIcon textRect allWhite allBlack allGray)! !
+
+!IconEditor class methodsFor: 'instance creation'!
+
+open
+	"create on schedule a new Icon Editor"
+
+	self new open! !
+
+IconEditor initialize!
+SHAR_EOF
+fi
+if test -f 'Icon Menu.st'
+then
+	echo shar: "will not over-write existing file 'Icon Menu.st'"
+else
+cat << \SHAR_EOF > 'Icon Menu.st'
+!MouseMenuController methodsFor: 'menu messages'!
+
+blueButtonActivity
+	"Determine which item in the blue button pop-up menu is selected. 
+	If one is selected, then send the corresponding message to the object 
+	designated as the menu message receiver."
+	"Enhanced to use HierarchicalMenus by atoenne@unido.uucp"
+
+	| index |
+	blueButtonMenu ~~ nil
+		ifTrue: 
+			[index _ blueButtonMenu startUpBlueButton.
+			index ~= 0 ifTrue: [blueButtonMenu class = HierarchicalMenu
+					ifTrue: [self menuMessageReceiver perform: (blueButtonMenu selectorAt: index)]
+					ifFalse: [self menuMessageReceiver perform: (blueButtonMessages at: index)]]]
+		ifFalse: [super controlActivity]! !
+
+!StandardSystemController class methodsFor: 'class initialization'!
+
+initialize
+	"Initialize the class variables."
+	"StandardSystemController initialize. 
+	StandardSystemController allInstances do: [:sc | sc 
+	initializeBlueButtonMenu] "
+
+	ScheduledBlueButtonMenu _ (MenuBuilder parseFrom: (ReadStream on: 'newLabel[newLabel]
+(under[under] move[move] frame[frame]) (collapse[collapse]
+icon: ((selectIcon[selectIcon] editIcon[editIcon]) (loadIcons[loadIcons] saveIcons[saveIcons])))
+(close[close])')) menu.
+	MenuWhenCollapsed _ ActionMenu
+				labels: 'new label\under\move\expand\close' withCRs
+				lines: #(1 4 )
+				selectors: #(newLabel under move expand close )! !
+
+!StandardSystemController methodsFor: 'menu messages'!
+
+editIcon
+	" call an icon editor "
+
+	IconEditor open!
+
+loadIcons
+	"load new constant definitions for icons"
+
+	| aFileName |
+	aFileName _ FileDirectory
+				requestFileName: 'file:'
+				default: '*.icn'
+				version: #old
+				ifFail: [^''].
+	aFileName ~= '' ifTrue: [Icon constantsFromFile: aFileName]!
+
+saveIcons
+	"write current icon constants to a file"
+
+	| aFileName |
+	aFileName _ FileDirectory
+				requestFileName: 'file:'
+				default: '*.icn'
+				version: #any
+				ifFail: [^''].
+	aFileName ~= '' ifTrue: [Icon constantsToFile: aFileName]!
+
+selectIcon
+	"let the user choose from the current icons"
+
+	| nameList iconList selection selectedIcon |
+	nameList _ OrderedCollection new.
+	Icon constantDictionary keysDo: [:key | nameList add: key].
+	iconList _ Array with: nameList asArray.
+	selection _ (PopUpMenu labelList: iconList) startUp.
+	selection ~= 0
+		ifTrue: 
+			[selectedIcon _ (Icon constantNamed: (nameList at: selection) asSymbol) copy.
+			self view icon: selectedIcon.				"change the icon"
+			self view iconView lock.					"essential. see below"
+			self view iconView text: self view label.	"set new icon text"
+			self view iconView newIcon]				"compute new icon"
+"lock is needed to perform the newIcon computation. Otherwise insetDisplayBox would be garbled. Text setting is merely needed at the first change. (The standard label has no iconText) "! !
+
+!StandardSystemController initialize. 
+StandardSystemController allInstances do: [:sc | sc 
+initializeBlueButtonMenu]!
+SHAR_EOF
+fi
+exit 0
+#	End of shell archive
+D
+#! rnews 813
+Path: alberta!mnetor!uunet!mcvax!unido!laura!atoenne
+From: atoenne@laura.UUCP (Andreas Toenne)
+Newsgroups: rec.games.hack
+Subject: Re: Nethack 2.2:  You stop to avoid hitting.
+Keywords: I have this bug too.
+Message-ID: <167@laura.UUCP>
+Date: 10 Dec 87 21:53:23 GMT
+References: <7515@alice.UUCP>
+Reply-To: atoenne@unido.UUCP (Andreas Toenne)
+Organization: University of Dortmund, W-Germany
+Lines: 9
+
+In article <7515@alice.UUCP> wilber@alice.UUCP writes:
+>I have nethack running on my 3B1.  So far the only bug I've encountered
+>is the message "You stop to avoid hitting."  (Which sometimes comes out as
+>"You stop to avoid hitting <random garbage>.")  I haven't hit the plethora
+
+You have defined DOGNAME but you are missing the dog's name :-)
+Simply add 'dogname:...' to your nethack options.
+
+	Andreas Toenne
+D
+#! rnews 1201
+Path: alberta!mnetor!uunet!mcvax!unido!rmi!dg2kk!dg2kk
+From: dg2kk@dg2kk.UUCP (Walter)
+Newsgroups: rec.ham-radio.packet
+Subject: Problems with WA8DED 2.1 and TNC-2 clones (+possible solution)
+Summary: PTT line is released too early
+Message-ID: <174@dg2kk.UUCP>
+Date: 10 Dec 87 23:09:52 GMT
+Reply-To: dg2kk@dg2kk.UUCP
+Organization: dg2kk, W Germany, (JO30FT)
+Lines: 20
+
+Some TNC-2's have problems with the WA8DED software (version 2.1).
+Most of the outgoing frames cannot be docoded by other stations because
+the software turns off the transmitter before all bits have been transmitted.
+
+There are two solutions to this problem:
+
+Hardware: connect a small (~2.2uf) capacitor from the base of the PTT keying
+          transistor to ground. (Note: you may have to increase TXDELAY)
+
+Software: the code that turns off the transmitter starts at location $037B
+          (3E 05...). It's possible to insert a short delay loop, so that the
+          transmitter remains keyed for a few milliseconds longer.
+          (I haven't tried this yet.)
+
+
+73s, Walter  dg2kk@dg2kk.UUCP
+
+
+PS: Does anyone know if WA8DED is on USENET/Bitnet/ARPANET/anynet???
+    What is his email address? Please let me know.  Thanks.
+#! rnews 1319
+Path: alberta!mnetor!uunet!mcvax!4gl!honzo
+From: honzo@4gl.UUCP (Honzo Svasek)
+Newsgroups: comp.unix.xenix,comp.os.misc,comp.unix.questions,comp.unix.wizards
+Subject: Re: Venix Users?
+Message-ID: <253@4gl.UUCP>
+Date: 11 Dec 87 18:23:50 GMT
+References: <2439@sputnik.COM>
+Organization: 4GL Consultants b.v., the Netherlands
+Lines: 27
+Xref: alberta comp.unix.xenix:1172 comp.os.misc:341 comp.unix.questions:4773 comp.unix.wizards:5750
+
+in article <2439@sputnik.COM>, dbb@tc.fluke.COM (Dave Bartley) says:
+> 
+> The Great OS Search continues ...
+> 
+> What about Venix?
+
+I am using Venix for several years now and have the folowing comments.
+
+1. it IS System V UNIX.
+
+2. It has a faster 'feel' for the interactive user than Xenix or Microport
+
+3. It seems to be bug free. This system is running news and I am doing most
+   of the development on it. I have had no problems for at least a year now,
+   and the system is on the air 24 hours a day.
+
+   A few times I had to remove the -O options when compiling, but same
+   counts for 3B2 UNIX.
+
+4. Venturecom claims it to be REAL TIME. I have no experience with
+   REAL real-time on this system, and don't know if the venix system calls
+   are interruptable.
+
+Honzo Svasek, <mcvax!4gl!honzo>
+
+PS. Anyone out there has a way to install 2.2 on a Seagate ST4096 disk?
+	(on an AT)
+#! rnews 1252
+Path: alberta!mnetor!uunet!mcvax!cernvax!ethz!forty2!vogel
+From: vogel@forty2.UUCP (Stefan Vogel)
+Newsgroups: comp.sources.bugs
+Subject: bug in sush
+Message-ID: <123@forty2.UUCP>
+Date: 11 Dec 87 17:02:58 GMT
+Reply-To: vogel@forty2.UUCP (Stefan Vogel)
+Organization: Exp. Physics University Zuerich
+Lines: 33
+
+We found the following bug in sushperm.c of the sush distribution:
+
+In routine addgroup the pointer gpmem was incremented before it was used.
+So, the first member of the group was never found, and the reference to
+the last member lead to an illegal memory reference (NULL pointer!).
+
+original code:
+
+	 gpmem = gpt->gr_mem;
+	 while(*gpmem++) {  <------------------gpmem is incremented
+		 if(!strcmp(user,*gpmem))  <---gpmem is used
+			 ok++;
+	 }
+
+	 /* auth failed - return */
+
+corrected code:
+
+	 gpmem = gpt->gr_mem;
+	 while(*gpmem) {
+		 if(!strcmp(user,*gpmem++))
+			 ok++;
+	 }
+
+	 /* auth failed - return */
+
+                              Stefan Vogel, Simon Poole
+                              Inst. for Theoretical Physics
+                              University of Zuerich
+                              Switzerland
+
+                              UUCP:   ....mcvac!cernvax!forty2!vogel
+                              BITNET: k524911@czhrzu1a
+#! rnews 626
+Path: alberta!mnetor!uunet!mcvax!prlb2!vub!leo
+From: leo@vub.UUCP (Leo Smekens)
+Newsgroups: comp.sys.mac
+Subject: 4th Dimension vs. dBase Mac
+Keywords: 4th Dimension,dBase Mac,Macintosh
+Message-ID: <506@vub.UUCP>
+Date: 11 Dec 87 13:40:05 GMT
+Organization: Vrije Universiteit Brussel, Brussels
+Lines: 14
+
+What can 4th Dimension do what dBase Mac can't?
+What can dBase Mac do what 4th Dimension can't?
+
+Who should invest in which program?
+If you don`t like answering on the net,
+please mail direct to:
+leo@vub.vub.uucp
+
+Leo Smekens
+Metabolism & Endocrinology
+Free University of Brussels
+Laarbeeklaan 103
+B-1090 BRUSSELS
+BELGIUM
+#! rnews 783
+Path: alberta!mnetor!uunet!mcvax!prlb2!vub!leo
+From: leo@vub.UUCP (Leo Smekens)
+Newsgroups: comp.sys.mac
+Subject: Latest SE's shipped
+Keywords: Mac,Mac SE,Macintosh,Macintosh SE,hardware
+Message-ID: <507@vub.UUCP>
+Date: 11 Dec 87 13:50:46 GMT
+Organization: Vrije Universiteit Brussel, Brussels
+Lines: 15
+
+We noticed that the last Macintosh SE's we received at our
+university are equipped with a new type of mouse,and,
+apparently,with another internal disk drive (at least,it
+sounds differently and beeps upon activation).
+What has been changed on the new Mac SE compared to the first version?
+If you don't like to answer via the net,please mail direct to:
+
+leo@vub.vub.uucp
+
+Leo Smekens
+Metabolism & Endocrinology
+Free University of Brussels
+Laarbeeklaan 103
+B-1090 BRUSSELS
+BELGIUM
+#! rnews 1432
+Path: alberta!mnetor!uunet!mcvax!ukc!its63b!csnjr
+From: csnjr@its63b.ed.ac.uk (Nick Rothwell)
+Newsgroups: rec.music.misc
+Subject: Re: Ace-Screamingest Guitar Solos on Record
+Keywords: guitar, flames (regrettably)
+Message-ID: <826@its63b.ed.ac.uk>
+Date: 11 Dec 87 13:06:12 GMT
+References: <1725@s.cc.purdue.edu> <1349@saturn.ucsc.edu> <6480@ihlpa.ATT.COM>
+Reply-To: nick@lfcs.ed.ac.uk (Nick Rothwell)
+Organization: LFCS, University of Edinburgh
+Lines: 21
+
+In article <6480@ihlpa.ATT.COM> rjp1@ihlpa.ATT.COM writes:
+>>C'mon people, you can't omit:
+>...
+>Edgar Froese	-  Underwater Twilight, Riding The Ray, Le Parc and
+>		   Heartbreakers tunes, etc, etc.
+
+Froese's best guitar solo, by most accounts, is on Cloudburst Flight
+on the Force Majeure album, back in '79. He starts with slow chords
+and fingering on a 12 string acoustic, then some "power chords" (!) on
+the 12 string, and then onto the electric (Fender Strat I think).
+Some of the recent live work's been good, as well - Franke holding down
+a rhythm, with Froese and Haslinger both firing off screaming guitar riffs.
+
+>Bob Pietkivitch   ( e - x - p - o - s - u - r - e )   UUCP: ihnp4!ihlpa!rjp1
+
+-- 
+Nick Rothwell,	Laboratory for Foundations of Computer Science, Edinburgh.
+		nick%lfcs.ed.ac.uk@nss.cs.ucl.ac.uk
+		<Atlantic Ocean>!mcvax!ukc!lfcs!nick
+~~ ~~ ~~ ~~ ~~ ~~ ~~ ~~ ~~ ~~ ~~ ~~ ~~ ~~ ~~ ~~ ~~ ~~ ~~ ~~
+"Nothing's forgotten. Nothing is ever forgotten."   - Herne
+#! rnews 818
+Path: alberta!mnetor!uunet!mcvax!ukc!its63b!gvw
+From: gvw@its63b.ed.ac.uk (G Wilson)
+Newsgroups: comp.sys.transputer
+Subject: Meiko email contact
+Message-ID: <827@its63b.ed.ac.uk>
+Date: 11 Dec 87 13:23:42 GMT
+Reply-To: gvw@its63b.ed.ac.uk (G Wilson)
+Organization: I.T. School, Univ. of Edinburgh, U.K.
+Lines: 18
+
+In response to several queries --- Meiko Ltd. is not
+connected to any electronic mail network at present.
+However, both myself and Dr. Duncan Roweth, who are
+Meiko employees working on the Edinburgh Concurrent
+Supercomputer Project, are connected to various networks.
+I can be reached at:
+
+	gvw@itspna.ed.ac.uk (usual)
+	gvw@its63b.ed.ac.uk (alternative)
+
+while Duncan is:
+
+	egnp36@meiko.ed.ac.uk
+
+If you want more information on Meiko, please include
+a telephone number and a physical mail address.
+
+Greg
+#! rnews 733
+Path: alberta!mnetor!uunet!mcvax!ukc!dcl-cs!nott-cs!pyr1.cs.ucl.ac.uk!awylie
+From: awylie@pyr1.cs.ucl.ac.uk
+Newsgroups: rec.games.misc
+Subject: Re: Does anyone remember Zork1? (*S
+Message-ID: <42800002@pyr1.cs.ucl.ac.uk>
+Date: 11 Dec 87 09:42:00 GMT
+References: <22039@ucbvax.BERKELEY.EDU>
+Lines: 8
+Nf-ID: #R:ucbvax.BERKELEY.EDU:-2203900:pyr1.cs.ucl.ac.uk:42800002:000:300
+Nf-From: pyr1.cs.ucl.ac.uk!awylie    Dec 11 09:42:00 1987
+
+
+Its a looooong time since I played Zork, but I believe that you can get
+to the INSIDE of the grate in the woods by which time you should have
+obtained a key which will open it. This gives you an alternative entrance/
+exit to the dungeon, but is not actually much help.
+   Andrew
+
+awylie@uk.ac.ucl.cs
+#! rnews 1324
+Path: alberta!mnetor!uunet!mcvax!ukc!eagle!icdoc!ivax!mst
+From: mst@ivax.doc.ic.ac.uk (Martin Taylor)
+Newsgroups: rec.games.trivia
+Subject: Re: words to a song (old lady who swallowed a fly)
+Message-ID: <148@gould.doc.ic.ac.uk>
+Date: 11 Dec 87 10:55:47 GMT
+References: <2170@homxc.UUCP> <12270004@hpldola.HP.COM> <1053@mtuxo.UUCP>
+Sender: news@doc.ic.ac.uk
+Reply-To: mst@doc.ic.ac.uk (Martin Taylor)
+Organization: Dept. of Computing, Imperial College, London, UK.
+Lines: 26
+
+In article <1053@mtuxo.UUCP> gertler@mtuxo.UUCP (xm960-D.GERTLER) writes:
+
+>As I recall, the sequence is as follows (more or less):
+>
+>	1)  Fly		Perhaps she'll die.
+>	2)  Spider	That wriggled and jiggled and tickled inside her.
+>	3)  Bird	How absurd to swallow a bird!
+>	4)  Cat		Imagine that, to swallow a cat!
+>	5)  Dog		What a hog, to swallow a dog!
+>	6)  Horse	She's dead, of course!
+>
+>I seem to remember a goat at about 5.5, but I don't
+>recall it's associated comment.  Sorry.
+>
+
+It's "She just opened her throat, and swallowed a goat"
+
+Also heard at an informal church social group, this alternative ending:
+
+	6)  Horse	Not easy, of course, but she swallowed a horse
+	7)  Minister	That finished her!
+
+
+Martin S Taylor			        Department of Computing
+JANET/ARPANET : mst@doc.ic.ac.uk	Imperial College
++44 589 5111 X4996			LONDON    SW7 2BZ
+#! rnews 1060
+Path: alberta!mnetor!uunet!mcvax!ukc!its63b!aiva!ken
+From: ken@aiva.ed.ac.uk (Ken Johnson)
+Newsgroups: comp.edu,comp.lang.misc
+Subject: Free audio tape about Logo
+Message-ID: <209@aiva.ed.ac.uk>
+Date: 11 Dec 87 11:33:10 GMT
+Reply-To: ken@aiva.ed.ac.uk (Ken Johnson)
+Followup-To: comp.lang.misc
+Organization: Dept. of AI, Univ. of Edinburgh, UK
+Lines: 26
+Xref: alberta comp.edu:745 comp.lang.misc:887
+
+
+Logotron Limited have prepared an audio tape called "Logo comes of age". 
+
+Although it is basically a plug for the Logotron product, (it contains a
+reference to the mythical "LCSI standard", for example) there is a lot
+of interesting chat about how Logo is actually used. 
+
+Playing time 45 minutes. 
+
+Free from:
+ Logotron Limited,
+ Dales Brewery,
+ Gwydir Street,
+ CAMBRIDGE,
+ England CB1 2LJ
+
+	Phone (0223) 323656
+-- 
+
+From Ken Johnson			| Phone 031-225 4464 Ext 212
+     AI Applications Institute		| Email k.johnson@ed.ac.uk
+     80 South Bridge			|
+     The University			|
+     EDINBURGH, Scotland EH1 1HN	|
+
+"Things will get worse before they get worse."
+#! rnews 2806
+Path: alberta!mnetor!uunet!mcvax!ukc!its63b!hwcs!tom
+From: tom@cs.hw.ac.uk (Tom Kane)
+Newsgroups: comp.ai
+Subject: Probability Bounds from Bayes Theory: (A Problem).
+Keywords: Bayes Theorem, Probability, Expert Systems, Uncertainty
+Message-ID: <1578@brahma.cs.hw.ac.uk>
+Date: 11 Dec 87 14:10:21 GMT
+Organization: Computer Science, Heriot-Watt U., Scotland
+Lines: 65
+
+
+I am sending this letter out to the network to ask for solutions to a
+particular problem of Bayesian Inference. Below is the text of the
+problem, and at the end is the mathematical statement of the information
+given. Simply, I am asking the questions:
+
+1) Can you find bounds on the final result. If so, how?
+2) If not, why is it not possible to do so? 
+   What is missing in the specification of the problem?
+3) If you get nowhere with this problem, would you be able to solve it
+   if you were given the information: p(pv|t or l)=0.9?
+
+I am interested in the problem of providing probability bounds for events
+specified in a Bayesian setting when not all the necessary conditional 
+probabilities are provided in setting up the problem. 
+
+PROBLEM
+~~~~~~~
+(A problem relevant to the handling of Uncertainty in Expert Systems.)
+We want to know the probability of a patient having both lung cancer and
+tuberculosis based on the fact that this person has had a positive reading
+in a chest X-ray. We are given the following pieces of information:
+
+1. The probability that a person with lung cancer will have a positive
+   chest X-ray is 0.9.
+
+2. The probability that a person with tuberculosis will have a positive
+   chest X-ray is 0.95.
+
+3. The probability that a person with neither lung cancer nor tuberculosis
+   will have a positive chest X-ray is 0.07.
+
+4. In the town of interest, 4 percent of the population have lung cancer,
+   and three percent have tuberculosis.
+
+EVENTS
+~~~~~~
+l = lung cancer;       t = tuberculosis;           pv = positive chest X-ray
+
+SETUP
+~~~~~
+In the statement of the problem below:-
+
+~l means 'not l'.
+~l, ~t means 'not l and not t'.
+t or l means 't or l'
+where 'not', 'and' , and 'or' are logical operators.
+so that: p(~l, ~t) means probability( not l and not t).
+Also,
+p(pv|l) means the conditional probability of event pv, given event l.
+PRIORS
+~~~~~~
+p(l) = 0.04;           p(t) = 0.03;                p(~l, ~t) = 0.95
+CONDITIONALS
+~~~~~~~~~~~~
+p(pv|l) = 0.9;         p(pv|t) = 0.95;             p(pv| ~t,~l) = 0.07
+
+(You are not given p(pv| t or l) )
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Please mail all solutions or comments to me, and I will let interested parties 
+know what the results are. 
+(I will specially treasure attempts which don't use independence assumptions.)
+Thanks in advance to anyone who will spend time on this problem...
+Regards,
+Tom Kane.
+#! rnews 3109
+Path: alberta!mnetor!uunet!mcvax!ukc!its63b!hwcs!adrian
+From: adrian@cs.hw.ac.uk (Adrian Hurt)
+Newsgroups: sci.space
+Subject: Re: SPACE Digest V8 #68
+Summary: First submarines
+Message-ID: <1580@brahma.cs.hw.ac.uk>
+Date: 11 Dec 87 15:43:08 GMT
+References: <OTA@ANGBAND.S1.GOV> <8712091350.AA00806@angband.s1.gov>
+Organization: Computer Science, Heriot-Watt U., Scotland
+Lines: 52
+
+In article <8712091350.AA00806@angband.s1.gov>, ESC1361@DDAESA10.BITNET (Rupert Williams) writes:
+> 
+>						In fact the British must have
+> been the most war-like nation in the world, fighting with more countries than
+> anyone I can think off. Is this the reason why the English language is so
+> popular ( hello America!! )???!!!! 
+
+I assume you refer to the British Empire - prior to that, Britain (and before
+the rest joined/were conquered by it, England) fought mostly against either
+France, Spain or both at once. The wide domain of the English language is
+directly due to the Empire, just as the wide use of Spanish throughout South
+and Central America is due to the Spanish Empire.
+
+>    I think also that ALL countries train their armies in ice and snow??!!
+
+Including the Arabs? :-)
+
+>    As for the Submarine....well I dont know about that, I thought that was an
+> English invention too, like the Tank and the Jet-plane??! Maybe I'm wrong??!
+
+There are a number of ancient submarine designs, including one which was a
+rowing boat with a watertight cover! The first practical submarine was (I
+believe) designed by a Mr. Holland, resident of Ireland, for use against the
+Royal Navy. The Royal Navy took over the design, but regarded such concealed
+warfare as ungentlemanly, and didn't make much use of them until Germany
+showed the way.
+
+The jet plane was invented practically at the same time by Britain, Germany
+and the U.S.A. Germany had the first flying jet aircraft, followed closely by
+Britain. Britain would have had a jet fighter not long after the Battle of
+Britain except for government intervention. Fortunately, Hitler was equally
+stupid. The Nazis believed they would win the war in a couple of months, and
+gave little interest to projects which would bear no short term military
+results. When they did get the world's first jet fighter (the Me262) it was
+pretty devastating, albeit rare, until Hitler decided that it would make a
+great fighter-bomber. Two bombs were fitted under the nose, at the expense
+of two cannon and much speed and agility. Fortunately, Nazi policy was "if
+it doesn't work, stomp on whoever says so." The first American jet was too
+late for WW2, and the first Russian jet had a captured German engine.
+
+>    As for the NASA/Space shuttle saga, the sooner they pull their fingers out
+> the better. Arianne is having a field day over this one.
+
+Now, for those who say "Why is this in sci.space?", read the above and apply
+the lessons of history to the shuttle, Hermes, HOTOL, or whatever craft your
+country should be sponsoring.
+
+-- 
+ "Keyboard? Tis quaint!" - M. Scott
+
+ Adrian Hurt			     |	JANET:  adrian@uk.ac.hw.cs
+ UUCP: ..!ukc!cs.hw.ac.uk!adrian     |  ARPA:   adrian@cs.hw.ac.uk
+#! rnews 1128
+Path: alberta!mnetor!uunet!mcvax!ukc!its63b!hwcs!jack
+From: jack@cs.hw.ac.uk (Jack Campin)
+Newsgroups: sci.space
+Subject: Re: Remote Sensing Fascism
+Message-ID: <1583@brahma.cs.hw.ac.uk>
+Date: 11 Dec 87 17:36:36 GMT
+References: <566084060.amon@H.GP.CS.CMU.EDU>
+Reply-To: jack@cs.glasgow.ac.uk (Jack Campin)
+Organization: PISA Project, Glesga Yoonie
+Lines: 18
+Summary:
+
+Expires:
+
+Sender:
+
+Followup-To:
+
+
+
+[ignore the above email address and use my signature]
+
+>'Our' (I use the term VERY loosely since I'm not really sure which side
+>they are on) people have obviously learned how to lie about the
+>existance of things which are common knowledge
+>PS: Is it now appropriate to address members of the DOD and the various spook
+>    agencies as Comrade?
+
+How about Right Honourable? (or have the Zircon and Spycatcher affairs not
+made the news over there?)
+
+
+-- 
+ARPA: jack%cs.glasgow.ac.uk@nss.cs.ucl.ac.uk
+JANET:jack@uk.ac.glasgow.cs       USENET: ...mcvax!ukc!cs.glasgow.ac.uk!jack
+Mail: Jack Campin, Computing Science Department, University of Glasgow,
+      17 Lilybank Gardens, Glasgow G12 8QQ, Scotland (041 339 8855 x 6045)
+#! rnews 1825
+Path: alberta!mnetor!uunet!mcvax!ukc!its63b!hwcs!jack
+From: jack@cs.hw.ac.uk (Jack Campin)
+Newsgroups: rec.arts.sf-lovers
+Subject: Re: Houston SF Opera
+Message-ID: <1584@brahma.cs.hw.ac.uk>
+Date: 11 Dec 87 19:10:14 GMT
+References: <8168@ism780c.UUCP>
+Reply-To: jack@cs.glasgow.ac.uk (Jack Campin)
+Organization: PISA Project, Glesga Yoonie
+Lines: 32
+Summary:
+
+Expires:
+
+Sender:
+
+Followup-To:
+
+
+
+[ignore the above email address and use my signature]
+
+In article <8168@ism780c.UUCP> jimh@ism780c.UUCP (Jim Hori) writes:
+>
+>I expected somebody to respond by now to the
+>question about a SF opera being co-written
+>by Philip Glass and somebody named Lessing,
+>
+>Any other news on this opera?
+
+It's "the Making Of The Representative From Planet 8", if I remember right.
+This is from the announcements to a Radio 3 broadcast of Glass's new orchestral
+piece "The Light" - a tone poem about the Michelson-Morley experiments.
+
+Incidentally, it's not the first SF opera. I heard a broadcast in New Zealand
+of a Swedish opera called "Aniara", based on an epic poem about a colonizer
+spaceship on its way to oblivion. I can remember neither the poet's nor the
+composer's name.
+
+I've only read the first of Lessing's series and didn't like it much. I felt I
+was being preached at (Lessing is a Sufi - I don't know whether her having
+been born in Iran has anything to with that - and it shows in her more recent
+writing). OK, the content of the sermon may not have been as obnoxious as
+Heinlein, Tolkien or Pournelle, but it was still gratuitous in literary terms.
+
+
+-- 
+ARPA: jack%cs.glasgow.ac.uk@nss.cs.ucl.ac.uk
+JANET:jack@uk.ac.glasgow.cs       USENET: ...mcvax!ukc!cs.glasgow.ac.uk!jack
+Mail: Jack Campin, Computing Science Department, University of Glasgow,
+      17 Lilybank Gardens, Glasgow G12 8QQ, Scotland (041 339 8855 x 6045)
+#! rnews 1184
+Path: alberta!mnetor!uunet!mcvax!ukc!stl!stc!root44!cdwf
+From: cdwf@root.co.uk (Clive D.W. Feather)
+Newsgroups: rec.arts.sf-lovers
+Subject: Asimov, UFO, and others
+Summary: Where you can find them
+Message-ID: <497@root44.co.uk>
+Date: 11 Dec 87 08:48:49 GMT
+Reply-To: cdwf@root44.UUCP (Clive D.W. Feather)
+Organization: Root Computers Ltd, London, England
+Lines: 17
+
+Readers in the UK, and those elsewhere with UK contacts, may like to know...
+
+(1) W.H.Smiths are stocking Asimov's "Fantastic Voyage II" in hardback,
+UKL10.95.
+
+(2) An organisation called Channel 5 Video, available at least in W.H.Smiths
+and Woolworths, produces tapes of UFO, Thunderbirds, Captain Scarlet (under the
+title "Captain Scarlet and the Mysterons", Stingray (yuk), and, of course,
+the Prisoner. Each tape that I have seen contains two episodes of the
+appropriate program. All cost less than UKL10.
+What proportion of the total output of these programmes is available I can't
+say, except for the Prisoner (100%).
+
+Warning for foreign readers:
+These tapes are VHS-PAL. According to "Which?" they work in Australia,
+New Zealand, Europe except France, South Africa, and the Middle East, but not
+North America.
+#! rnews 1077
+Path: alberta!mnetor!uunet!mcvax!ukc!stl!stc!root44!jgh
+From: jgh@root.co.uk (Jeremy G Harris)
+Newsgroups: comp.protocols.tcp-ip
+Subject: Subnetting questions
+Keywords: subnet ethernet
+Message-ID: <498@root44.co.uk>
+Date: 11 Dec 87 10:25:23 GMT
+Organization: Root Computers Ltd., London, England
+Lines: 27
+
+A whole bunch of questions:
+
+
+Does anybody run multiple subnets on a single Ethernet?
+
+    If so, do you use subnet broadcasts or net broadcasts?
+    Do you find it worthwhile to use ethernet multicast for
+    subnet broadcasts? How do you assign the multicast addresses?
+    For what purposes do you still use net broadcast?
+
+    Should redirects be provided by an inter-subnet gateway,
+    when both subnets are on the same Ethernet?
+
+
+What are the semantics of 'ICMP redirect to net' in a subnettted environment?
+
+
+Does anybody run multiple classes of subnet on a single net?
+
+    Does the mechanism proposed in rfc950 ( ICMP broadcasts to
+    discover the subnet mask ) still work? Do you use it?
+
+
+Thanks for your time
+    Jeremy
+-- 
+Jeremy Harris			jgh@root.co.uk
+#! rnews 1006
+Path: alberta!mnetor!uunet!mcvax!ukc!stl!stc!root44!hrc63!nwh
+From: nwh@hrc63.co.uk (Nigel Holder Marconi)
+Newsgroups: comp.unix.wizards
+Subject: Re: /dev/swap - possibility of it being a ramdisk
+Summary: depends on your system ?
+Keywords: /dev/swap
+Message-ID: <476@hrc63.co.uk>
+Date: 11 Dec 87 10:09:05 GMT
+References: <712@qetzal.UUCP> <16869@topaz.rutgers.edu>
+Organization: GEC Hirst Research Centre, Wembley, England.
+Lines: 12
+
+
+I have just added some extra memory to a Sun 3.  Unfortunately, it did
+not increase the usable amount of virtual memory.  I have been informed
+(not by Sun I hasten to add), that 4.x will only allocate memory up to
+the disk swap space size.  Adding more memory will speed things up but will
+not increase your total usable virtual memory size (this is achieved by
+increasing the swap space).  I was also informed that system V does not
+inforce this type of restriction.
+
+
+Nigel Holder			UK JANET:       yf21@uk.co.gec-mrc.u
+				ARPA:           yf21%u.gec-mrc.co.uk@ucl-cs
+#! rnews 781
+Path: alberta!mnetor!uunet!mcvax!enea!luth!jem
+From: jem@sm.luth.se (Jan Erik Mostr|m)
+Newsgroups: comp.sys.mac,comp.sys.mac.hypercard
+Subject: Hypercard/CD-ROM
+Message-ID: <902@luth.luth.se>
+Date: 11 Dec 87 11:31:13 GMT
+Reply-To: Jan Erik Mostr|m <jem@luth.luth.se>
+Organization: University of Lulea, Sweden
+Lines: 8
+Xref: alberta comp.sys.mac:10017 comp.sys.mac.hypercard:200
+UUCP-Path: {uunet,mcvax}!enea!luth.luth.se!jem
+
+
+
+
+Is there someone out there who has experience with Hypercard and CD-ROM.
+I would appreciate any information (and especially about Mac II/CD-ROM).
+-- 
+Jan Erik Mostrom     | {uunet,mcvax}!enea!luth!jem       | Mors certa,
+University of Lulea  | jem@sm.luth.se                    | vita incerta
+Sweden               | jem@luth.UUCP                     |
+#! rnews 1535
+Path: alberta!mnetor!uunet!mcvax!enea!diab!pf
+From: pf@diab.UUCP (Per Fogelstrom)
+Newsgroups: comp.arch
+Subject: Re: Why is SPARC so slow?
+Summary: Yet another "super processor".
+Message-ID: <344@ma.diab.UUCP>
+Date: 11 Dec 87 13:59:12 GMT
+References: <1078@quacky.UUCP> <8809@sgi.SGI.COM> <6964@apple.UUCP>
+Reply-To: pf@ma.UUCP (Per Fogelstrom)
+Organization: Diab Data AB, Taby, Sweden
+Lines: 16
+
+Well, the history repeats once again. A new RISC chip is launched and peopels
+expectations reaches new "high scores". A few years ago there was another risc
+chip set brougth to the market, called the Clipper. This processors performence
+was climed to sweep all competitors off the sceene. Often compared to the
+DEC 8x00 computers. For this chip set the picture has cleared now. The perfor-
+mence range is not much more than can be achived with a 16-20 Mhz 68020. The
+most i have seen of the 33Mhz versions is one running at room temprature.
+Intergraph is one of the companys who is still using the Clipper (They recently
+bought the rights for the chip set from NS/Fairchild) . From what i recall they
+throw out the NS32032 for the Clipper. Well they could have had 2-3 times the
+clipper performance with the NS32532 today. And they called the buy a bargin !
+It's not suprising that the MIPS 2000 gives most power/Mhz, The architecture has
+evolved during many years, without a hard pressure from the marketing such as
+'We must have it NOW!!!'. (John Mashey mayby has another opinion, only my guess)
+
+SO: Why is everybody so suprised ????!
+#! rnews 1169
+Path: alberta!mnetor!uunet!mcvax!mhres!jv
+From: jv@mhres.mh.nl (Johan Vromans)
+Newsgroups: comp.unix.questions
+Subject: Re: Finding Files
+Summary: looking everywhere
+Message-ID: <1503@mhres.mh.nl>
+Date: 12 Dec 87 16:08:12 GMT
+References: <205700003@prism> <4441@ihlpg.ATT.COM>
+Organization: Multihouse N.V., The Netherlands
+Lines: 21
+
+In article <205700003@prism> billc@prism.UUCP writes:
+>
+>	Right now, to find a file somewhere under my current directory,
+>	I use the following alias:
+>
+>	    alias	where	"find \$cwd -name \!* -exec echo {} \;"
+> .. etc ..
+
+On our systems, a small cron script executes every night the following
+command:
+
+	find / -print > /dirfile
+
+Finding a file somewhere can be done by grepping in the /dirfile.
+Of course, the contents of /dirfile are not really up-to-date, but this is
+just a minor drawback. "find" on the whole system (including mounted disks)
+takes more than an hour, a grep in /dirfile much less than a minute.
+-- 
+Johan Vromans                              | jv@mh.nl via European backbone
+Multihouse N.V., Gouda, the Netherlands    | uucp: ..{uunet!}mcvax!mh.nl!jv
+"It is better to light a candle than to curse the darkness"
+#! rnews 904
+Path: alberta!mnetor!uunet!mcvax!mhres!jv
+From: jv@mhres.mh.nl (Johan Vromans)
+Newsgroups: comp.os.vms
+Subject: Re: Are VMS and VAX synonymous?
+Summary: NO
+Message-ID: <1504@mhres.mh.nl>
+Date: 12 Dec 87 16:55:05 GMT
+References: <8712111910.AA18210@ucbvax.Berkeley.EDU>
+Organization: Multihouse N.V., The Netherlands
+Lines: 11
+
+In article <8712111910.AA18210@ucbvax.Berkeley.EDU> "ERI::SMITH" <smith%eri.decnet@mghccc.harvard.edu> writes:
+>But someone who thinks VAX and VMS are synonymous
+>MAY POSSIBLY also be expressing a philosophical stance.
+
+The only thing you can do between "#ifdef vax" and its corresponding "#endif"
+is conclude that you are running on a big-endian machine ....
+
+-- 
+Johan Vromans                              | jv@mh.nl via European backbone
+Multihouse N.V., Gouda, the Netherlands    | uucp: ..{uunet!}mcvax!mh.nl!jv
+"It is better to light a candle than to curse the darkness"
+#! rnews 691
+Path: alberta!mnetor!uunet!mcvax!enea!tut!jh
+From: jh@tut.fi (Juha Hein{nen)
+Newsgroups: comp.lang.scheme
+Subject: Re: Request for MacScheme source for SCOOPS
+Message-ID: <2108@korppi.tut.fi>
+Date: 12 Dec 87 07:32:39 GMT
+References: <8712101554.AA15940@ucbvax.Berkeley.EDU>
+Reply-To: jh@korppi.UUCP (Juha Hein{nen)
+Organization: Tampere University of Technology, Finland
+Lines: 10
+
+MacScheme doesn't have enviroments (atleast my version doesn't).  It
+would be straightforward to port SCOOPS if somebody first provides
+environments.  The hacks provided with MacScheme distribution are not
+enough.
+
+-- 
+	Juha Heinanen
+	Tampere Univ. of Technology
+	Finland
+	jh@tut.fi (Internet), tut!jh (UUCP)
+#! rnews 643
+Path: alberta!mnetor!uunet!mcvax!enea!diab!pf
+From: pf@diab.UUCP (Per Fogelstrom)
+Newsgroups: comp.arch
+Subject: Re: Zilog Z320 32-bit chip
+Keywords: 80,000 vaporware model
+Message-ID: <345@ma.diab.UUCP>
+Date: 12 Dec 87 11:15:23 GMT
+References: <1911@ho95e.ATT.COM> <9071@utzoo.UUCP> <3521@aw.sei.cmu.edu> <485@PT.CS.CMU.EDU>
+Reply-To: pf@ma.UUCP (Per Fogelstrom)
+Organization: Diab Data AB, Taby, Sweden
+Lines: 3
+
+The Z80,000 was put on market just about 8 months ago. It newer reached the
+target specification (e.g. clock speed) and the performence was not impressive.
+It has some nice things, but as someone pointed out, to late ..........
+#! rnews 884
+Path: alberta!mnetor!uunet!mcvax!diku!daimi!erja
+From: erja@daimi.UUCP (Erik Jacobsen)
+Newsgroups: comp.lang.modula2
+Subject: Re: Modula II on IBM PC with HALO graphics
+Keywords: Modula IBM HALO graphics
+Message-ID: <1253@daimi.UUCP>
+Date: 12 Dec 87 13:13:50 GMT
+References: <17237@glacier.STANFORD.EDU>
+Reply-To: erja@daimi.UUCP (Erik Jacobsen)
+Organization: DAIMI: Computer Science Department, Aarhus University, Denmark
+Lines: 10
+
+jbn@glacier.STANFORD.EDU (John B. Nagle) asks in <17237@glacier.STANFORD.EDU>
+> Some questions on Logitec Modula II:
+> 
+> 1.  Are subranges assigned space appropriately?  In particular,
+> does 0..255 occupy only one byte?  
+
+No, subranges occupy the same amount of space as the type they are
+a subrange of. E.g. 0..255 will occupy two bytes. You may use a
+CHAR or a BYTE, and convert to and from CARDINAL everytime you need
+to do some caluculations.
+#! rnews 869
+Path: alberta!mnetor!uunet!mcvax!unido!tub!stx
+From: stx@tub.UUCP (Stefan Taxhet)
+Newsgroups: comp.text,comp.sources.wanted
+Subject: MS-WORD to Q-ONE
+Keywords: MS-WORD Q-ONE DCA
+Message-ID: <319@tub.UUCP>
+Date: 11 Dec 87 18:23:35 GMT
+Organization: Technical University of Berlin, Germany
+Lines: 19
+Xref: alberta comp.text:1346 comp.sources.wanted:2722
+
+
+We're looking for a document conversion program.
+It should translate MS-Word- to Q-ONE-documents.
+
+Q-ONE offers conversions to several formats as:
+Fortune:Word, Wang, IBM's DCA (RFT,FFT)
+Therefor  programs to interchange documents between
+MS-Word and these format would also help us.
+
+Thanks in advance
+
+Stefan Taxhet,
+Communications and Operating Systems Research Group
+Technical University of Berlin
+
+UUCP: ...!pyramid!tub!stx (From the US)
+      ...!mcvax!unido!tub!stx (From Europe)
+
+BITNET: stx@db0tui6.BITNET
+#! rnews 1235
+Path: alberta!mnetor!uunet!mcvax!unido!rmi!kkaempf
+From: kkaempf@rmi.UUCP (Klaus Kaempf)
+Newsgroups: comp.sys.amiga
+Subject: Breaking the 54MB limit on HardDisks
+Keywords: BitMap, Blocksize, filehandler.h
+Message-ID: <821@rmi.UUCP>
+Date: 12 Dec 87 12:19:32 GMT
+Reply-To: kkaempf@rmi.UUCP (Klaus Kaempf)
+Organization: RMI Net, Aachen, W.Germany
+Lines: 19
+
+
+
+Well, maybe that i've overlooked something really important, but i don't
+see the 54MB limit with the AmigaDOS.
+About a yaer ago, when there was no mount command, somebody from CATS
+posted a sample device driver that mounted itself. It set up a device
+structure which described the layout of the device. This structure is
+now documented in dos/filehandler.h. One field in this structure holds
+the number of longwords per block of this device. This is always set
+to 128, giving 512 Bytes per Block.
+Now, if i set this to 256 (1024 Bytes per Block), i should be able to
+increase the disk limit to 108MB.
+Apparently, AmigaDOS supports larger blocksizes. Just have a look into
+the AmigaDOS Manual from Bantam. All block-layouts are described relative
+to a 'SIZE', nowhere is said that SIZE is fixed to 128 !
+
+So where is the problem ??? (Please, send no flames, only facts !)
+
+Klaus
+#! rnews 2545
+Path: alberta!mnetor!uunet!mcvax!botter!ast
+From: ast@cs.vu.nl (Andy Tanenbaum)
+Newsgroups: comp.os.minix
+Subject: Getting rid of _cleanup (finally)
+Message-ID: <1783@botter.cs.vu.nl>
+Date: 13 Dec 87 11:56:59 GMT
+Reply-To: ast@cs.vu.nl (Andy Tanenbaum)
+Organization: VU Informatica, Amsterdam
+Lines: 97
+
+There was a lot of discussion about how to get rid of my calls to _cleanup
+earlier.  Here is the solution that I finally adopted.    The following commands
+should do the job.
+  cc -c -LIB exit.c putc.c
+  ar r /usr/lib/libc.a exit.c putc.c
+  ar x /usr/lib/libc.a cleanup.s
+  ar d /usr/lib/libc.a cleanup.s
+  ar bfork.s /usr/lib/libc.a cleanup.s
+
+This requires the new archiver posted a while back (for the b option).
+It also assumes that putting cleanup before fork.s will include cleanup.s
+after exit.s and putc.s (check this).
+
+Andy Tanenbaum (ast@cs.vu.nl)
+
+
+: This is a shar archive.  Extract with sh, not csh.
+: This archive ends with exit, so do not worry about trailing junk.
+: --------------------------- cut here --------------------------
+PATH=/bin:/usr/bin
+echo Extracting \e\x\i\t\.\c
+sed 's/^X//' > \e\x\i\t\.\c << '+ END-OF-FILE '\e\x\i\t\.\c
+X#include "../include/lib.h"
+X
+XPUBLIC int (*__cleanup)();
+X
+XPUBLIC int exit(status)
+Xint status;
+X{
+X  if (__cleanup) (*__cleanup)();
+X  return callm1(MM, EXIT, status, 0, 0, NIL_PTR, NIL_PTR, NIL_PTR);
+X}
++ END-OF-FILE exit.c
+chmod 'u=rw,g=r,o=r' \e\x\i\t\.\c
+set `sum \e\x\i\t\.\c`
+sum=$1
+case $sum in
+11315)	:;;
+*)	echo 'Bad sum in '\e\x\i\t\.\c >&2
+esac
+echo Extracting \p\u\t\c\.\c
+sed 's/^X//' > \p\u\t\c\.\c << '+ END-OF-FILE '\p\u\t\c\.\c
+X#include "../include/stdio.h"
+X
+Xextern int (*__cleanup)();
+Xextern int _cleanup();
+X
+Xputc(ch, iop)
+Xchar ch;
+XFILE *iop;
+X{
+X	int n,
+X	didwrite = 0;
+X
+X	if (testflag(iop, (_ERR | _EOF)))
+X		return (EOF); 
+X
+X	if ( !testflag(iop,WRITEMODE))
+X		return(EOF);
+X
+X	if ( testflag(iop,UNBUFF)){
+X		n = write(iop->_fd,&ch,1);
+X		iop->_count = 1;
+X		didwrite++;
+X	}
+X	else{
+X		__cleanup = _cleanup;
+X		*iop->_ptr++ = ch;
+X		if ((++iop->_count) >= BUFSIZ && !testflag(iop,STRINGS) ){
+X			n = write(iop->_fd,iop->_buf,iop->_count);
+X			iop->_ptr = iop->_buf;
+X			didwrite++;
+X		}
+X	}
+X
+X	if (didwrite){
+X		if (n<=0 || iop->_count != n){
+X			if (n < 0)
+X				iop->_flags |= _ERR;
+X			else
+X				iop->_flags |= _EOF;
+X			return (EOF);
+X		}
+X		iop->_count=0;
+X	}
+X	return(ch & CMASK);
+X}
+X
++ END-OF-FILE putc.c
+chmod 'u=rw,g=r,o=r' \p\u\t\c\.\c
+set `sum \p\u\t\c\.\c`
+sum=$1
+case $sum in
+49878)	:;;
+*)	echo 'Bad sum in '\p\u\t\c\.\c >&2
+esac
+exit 0
+#! rnews 1120
+Path: alberta!mnetor!uunet!husc6!mit-eddie!uw-beaver!cornell!svax!beck
+From: beck@svax.cs.cornell.edu (Micah Beck)
+Newsgroups: comp.windows.x
+Subject: Document previewing using Xps
+Message-ID: <1898@svax.cs.cornell.edu>
+Date: 14 Dec 87 13:25:54 GMT
+Reply-To: beck@svax.cs.cornell.edu (Micah Beck)
+Distribution: comp
+Organization: Cornell Univ. CS Dept, Ithaca NY
+Lines: 18
+
+In article <6224@jade.BERKELEY.EDU> shipley@web1d.berkeley.edu () writes
+on the subject of troff previewing under X:
+
+>The other thing to try is some version of TROFF which can speak PostScript(tm)
+>which you can then feed through one of the several Xps programs floating
+>around -- these are PostScript(tm) interpreter/previewers for Xwindows.
+
+I've not been very successful in getting Goswell's Xps to preview documents.
+The Postscript file generated from TeX DVI files by dvi2ps and from Ditroff
+files by the Transcript psdit program both cause it to choke, although in
+different ways.
+
+Is anyone using Xps successfully for TeX or Ditroff previewing?  Is there some
+trick?
+
+Micah Beck
+Cornell Dept of Computer Science
+beck@svax.cs.cornell.edu
+#! rnews 1332
+Path: alberta!mnetor!uunet!mcvax!botter!ast
+From: ast@cs.vu.nl (Andy Tanenbaum)
+Newsgroups: comp.os.minix
+Subject: Re: Hard disk partitions?
+Message-ID: <1784@botter.cs.vu.nl>
+Date: 13 Dec 87 12:13:15 GMT
+References: <5500001@ucf-cs.ucf.edu>
+Reply-To: ast@cs.vu.nl (Andy Tanenbaum)
+Organization: VU Informatica, Amsterdam
+Lines: 21
+
+In article <5500001@ucf-cs.ucf.edu> tony@ucf-cs.ucf.edu writes:
+>If partition 1 is set up for DOS and 2 for Minix, with #2 mounted under
+>/usr, Minix crashes unpredictably.  
+
+One thing to remember is that the partition size for partition 1 is one
+smaller than for partition 2.
+
+Another possibility is that the MINIX fdisk and the DOS fdisk don't agree
+on the meaning of the partition table.  If everyone would create their
+partitions from lowest cylinder to highest there would be no ambiguity.
+However, if the order in the partition table is different from the cylinder
+order, there are at least three interpretations.
+  1. Table slot 1 is partition 1
+  2. Innermost cylinder is partition 1
+  3. Outermost cylinder is partition 1
+I believe that the combination of MINIX, DOS, XENIX and Microport together
+exhaust the entire list of possibilities.  I don'know if this is related
+to your problem (which I otherwise can't understand), but it is worth 
+keeping in mind.
+
+Andy Tanenbaum (ast@cs.vu.nl)
+#! rnews 873
+Path: alberta!mnetor!uunet!mcvax!lambert
+From: lambert@cwi.nl (Lambert Meertens)
+Newsgroups: sci.math
+Subject: Re: Fixed Points
+Message-ID: <146@piring.cwi.nl>
+Date: 13 Dec 87 12:09:54 GMT
+References: <2269@ihuxv.ATT.COM>
+Organization: CWI, Amsterdam
+Lines: 14
+
+In article <2269@ihuxv.ATT.COM> eklhad@ihuxv.ATT.COM (K. A. Dahlke) writes:
+) If a continuous function maps the unit square into itself, must it have a
+) fixed point? [...]
+) I seem to remember there is some theorem in topology,
+) without resorting to snakes, that says there is always a fixed point
+) whenever a closed region in a metric space is continuously mapped into itself.
+
+Brouwer's Fixed Point Theorem states that a continuous mapping of an n-cube
+into itself has a fixed point.  This extends, obviously, to any region
+homeomorphic to an n-cube.
+
+-- 
+
+Lambert Meertens, CWI, Amsterdam; lambert@cwi.nl
+#! rnews 1075
+Path: alberta!mnetor!uunet!mcvax!unido!rmi!zentrale
+From: zentrale@rmi.UUCP (RMI Net)
+Newsgroups: rec.ham-radio
+Subject: Re: My PC generates RFI
+Message-ID: <822@rmi.UUCP>
+Date: 13 Dec 87 10:03:45 GMT
+References: <12354296992.20.QUALCOMM@A.ISI.EDU>
+Reply-To: dl3no@rmi.UUCP (Rupert Mohr)
+Organization: RMI Net, Aachen, W.Germany
+Lines: 21
+
+In article <12354296992.20.QUALCOMM@A.ISI.EDU> QUALCOMM@A.ISI.EDU (Franklin Antonio) writes:
+: >  I'd like to know of some ways to reduce interference to my...
+: 
+: All PCs generate RFI to some degree.  In general, the "clones" are worse
+: than the brand name "IBM", "COMPAQ", etc.  The Macintosh is relatively
+: quiet.
+: 
+
+In general: I would not believe that... (But it may be, that some
+IBM's are as quiet as a clone...)
+
+We have a good mixture of various PCs here...
+
+Regarding my recent posting on RFI of my PK-232:
+The PK-232 was innocent. It was the old power supply which interfered
+exactly on 80m and 40m with S9 and 20m with S6...
+
+-rm
+
+P.S. nevertheless: PC's nowadays are much more quiet than those times
+of TRS-80 (sigh).
+#! rnews 1629
+Path: alberta!mnetor!uunet!mcvax!unido!rmi!zentrale
+From: zentrale@rmi.UUCP (RMI Net)
+Newsgroups: rec.ham-radio
+Subject: Re: some SWL questions
+Message-ID: <823@rmi.UUCP>
+Date: 13 Dec 87 10:18:23 GMT
+References: <38c9774f.44e6@apollo.uucp> <871201110223.1.ED@BLACK-BIRD.SCRC.Symbolics.COM>
+Reply-To: dl3no@rmi.UUCP (Rupert Mohr)
+Organization: RMI Net, Aachen, W.Germany
+Lines: 38
+
+In article <871201110223.1.ED@BLACK-BIRD.SCRC.Symbolics.COM> Ed@MEAD.SCRC.SYMBOLICS.COM (Ed Schwalenberg) writes:
+: 
+:     Date: 30 Nov 87 15:30:00 GMT
+:     From: apollo!nelson_p%apollo.uucp@eddie.mit.edu
+: 
+:        Is there a detailed single-source of info on what I might 
+:        hear as I tune around the bands?   The much vaunted World
+:        Radio and TV Handbook just covers broadcasting, which I
+:        have little interest in.
+: 
+: The second source is the Klingenfuss Guide to Utility Stations.
+: This is harder to come by, but is advertised in RDI.
+
+I just got the 6th edition (1988), which is VERY good. You can
+get it directly :
+
+Klingenfuss, Guide to Utility Stations, 6th Edition
+
+Klningenfuss Publications
+Hagenloher Str. 14
+D-7400 Tuebingen
+Fed.Rep.Germany
+Tel. (+41) 7071 62830
+
+Price: DM 60  (abt. $ 35) maybe plus handling.
+They are very fast! I received it two days after ordering by telephone.
+They also have an quarterly update Service.
+
+You find a complete listing sorted by frequency an different listings
+sorted by different services:
+press by time,
+fax  alphebetically with time schedule
+
+addresses, codes, commercial call signs, telegram formats etc.
+
+ALL in English, 500 pages with correct entries......
+
+Rupert
+#! rnews 1503
+Path: alberta!mnetor!uunet!husc6!cmcl2!rutgers!orstcs!mist!koff
+From: koff@mist.cs.orst.edu (Caroline N. Koff)
+Newsgroups: rec.arts.startrek
+Subject: Troi's outfit
+Message-ID: <1501@orstcs.CS.ORST.EDU>
+Date: 14 Dec 87 13:35:02 GMT
+References: <1008@percival.UUCP> <275@hi3.aca.mcc.com.UUCP> <2032@charon.unm.edu> <2432@homxc.UUCP> <1987Dec12.230124.16416@gpu.utcs.toronto.edu> <2216@nicmad.UUCP>
+Sender: netnews@orstcs.CS.ORST.EDU
+Reply-To: koff@mist.UUCP (Caroline N. Koff)
+Distribution: na
+Organization: Oregon State Universtiy - CS - Corvallis, Oregon
+Lines: 17
+
+If people are noticing and mentioning about Yar's breasts, why not
+also mention about Troi's low cut outfit!!  Why does it need to be
+so low cut that it shows her crevice?  Who is she trying to impress?
+Do you think that the women in the future, working with men, will be
+trying to dress sexy?  If so, what about the men?  Why not let them
+show off their body too to make things even?   I think that the
+producers, or whoever is in charge of outfits, and character development 
+is making a contemporary decision regarding the issue of how people 
+will dress in the future.  I.e. he/she thinks that female will be 
+trying to attract males' attention by bringing out her femininity, 
+but not vice versa, which is the current social behavior.
+Or, perhaps the producers are just being comformists with bunch of 
+other tv shows + movie producers by keeping females attractive 
+towards men...   
+
+--Caroline Koff
+koff!cs.orst.edu@cs.net.relay
+#! rnews 1028
+Path: alberta!mnetor!uunet!mcvax!hafro!krafla!frisk
+From: frisk@rhi.is (Fridrik Skulason)
+Newsgroups: comp.sys.ibm.pc
+Subject: Identifying VGA
+Message-ID: <100@krafla.rhi.is>
+Date: 13 Dec 87 11:39:28 GMT
+Reply-To: frisk@rhi.UUCP (Fridrik Skulason)
+Organization: University of Iceland (RHI)
+Lines: 19
+
+In the november issue of Dr.Dobb's Journal there is an article on how to
+identify the video adaptor in your PC. They cover EGA,CGA,MDA,Compaq and
+Hercules(mono).
+
+What I need is information on how to find out if a VGA (or a PGA) adaptor
+is installed.
+
+Also - can someone tell me how to obtain the current cursor position directly
+from these adaptors. That is - I need the location of the 6845 registers.
+
+The reason I can not use the INT10 function provided is that my program has
+to work with some TSR programs that access the hardware directly.
+
+Thanks... 
+-- 
+         Fridrik Skulason          University of Iceland
+         UUCP  frisk@rhi.uucp      BIX  frisk
+
+     This line intentionally left blank ...................
+#! rnews 805
+Path: alberta!mnetor!uunet!husc6!cmcl2!rutgers!orstcs!mist!koff
+From: koff@mist.cs.orst.edu (Caroline N. Koff)
+Newsgroups: rec.arts.startrek
+Subject: Requesting ST:TOS episode directors and writers guide
+Message-ID: <1502@orstcs.CS.ORST.EDU>
+Date: 14 Dec 87 13:38:05 GMT
+References: <1008@percival.UUCP> <275@hi3.aca.mcc.com.UUCP> <2032@charon.unm.edu> <2432@homxc.UUCP> <1987Dec12.230124.16416@gpu.utcs.toronto.edu> <2216@nicmad.UUCP>
+Sender: netnews@orstcs.CS.ORST.EDU
+Reply-To: koff@mist.UUCP (Caroline N. Koff)
+Distribution: na
+Organization: Oregon State Universtiy - CS - Corvallis, Oregon
+Lines: 6
+
+Has anybody ever posted or have a complete list of directors and writers
+for each of the ST:TOS episodes?  If so, may I have a copy?  Thanks in
+advance.
+
+--Caroline Koff
+koff!cs.orst.edu@cs.net.relay
+#! rnews 1125
+Path: alberta!mnetor!uunet!mcvax!enea!sems!olof
+From: olof@sems.SE (Olof Backing)
+Newsgroups: comp.emacs
+Subject: Problems with uEmacs 3.9e and OS-9/68K C.
+Message-ID: <207@sems.SE>
+Date: 13 Dec 87 13:00:39 GMT
+Organization: Sems AB, Stockholm, Sweden
+Lines: 32
+
+I have a problem when I try to compile the latest version of
+microEmacs, ie. 3.9e. The problem occurs in file 'bind.c' at lines
+602, 609 and 642, 650 respectively. 
+
+It's the following lines that causes the error:
+
+600: int (*getbind(c))()
+601:
+602: int c;
+603:
+604: {
+
+The compiler reports an error at line 602 with 'not an argument'. The
+same thing happens at line 642;
+
+639: int (*fncmatch(fname))()
+640:
+641:
+642: int fname;
+643:
+644: {
+
+Since my experiences aren't the very best i C sofar, I would like to
+get some hints on what to do. Maybe Kim Kempf at Microware has the
+answer for me. Feel free to overwelm me with hints. Until then (when I
+recieve the hints...), CU all!
+
+
+-- 
+            ADDRESS: Havrevagen 14, S-175 43  Jarfalla, Sweden
+            PHONE  : (46) 758 33941, 35516 home
+            UUCP   :  ...{uunet,mcvax,ukc,unido}!enea!sems!olof 
+#! rnews 1708
+Path: alberta!mnetor!uunet!husc6!yale!dwald
+From: dwald@yale-zoo-suned..arpa (David Wald)
+Newsgroups: rec.arts.startrek
+Subject: Re: Hide & Q notes and comments and notes and comments and....<<S
+Message-ID: <20252@yale-celray.yale.UUCP>
+Date: 14 Dec 87 04:29:38 GMT
+References: <19962@yale-celray.yale.UUCP> <17300072@silver> <1838@leadsv.UUCP>
+Sender: root@yale.UUCP
+Reply-To: dwald@yale-zoo-suned.UUCP (David Wald)
+Distribution: na
+Organization: Yale University Computer Science Dept, New Haven CT
+Lines: 27
+
+In article <1838@leadsv.UUCP> lilly@leadsv.UUCP (Harriette Lilly) writes:
+>
+>In article <17300072@silver>, sl131008@silver.bacs.indiana.edu writes:
+>> /* Written  7:19 pm  Dec  7, 1987 by sl131008@silver.UUCP in silver:rec.arts.startrek */
+>> /* ..ditto x 7.....
+>> /* Written  9:12 pm  Dec  6, 1987 by dwald@yale in silver:rec.arts.startrek */
+>> /* ---------- "Re: Hide & Q notes and comments <<S" ---------- */
+>> In article <2328@homxc.UUCP> scott@homxc.UUCP (Scott Berry) writes:
+...
+>> David Wald                                                   dwald@yale.UUCP
+...
+>> /* End of text from silver:rec.arts.startrek */
+>> /* ditto x 8
+>
+>
+>       Ummm, are you lost?...
+
+I was a bit puzzled by this too, since I didn't think my article so
+brilliant that anyone would want to repost it eight times.  If anyone
+finds out what happened, could they please send me mail?
+
+
+We now return you to your regularly scheduled nonsense...
+============================================================================
+David Wald                                                   dwald@yale.UUCP
+						      waldave@yalevmx.bitnet
+============================================================================
+#! rnews 761
+Path: alberta!mnetor!uunet!mcvax!enea!sems!olof
+From: olof@sems.SE (Olof Backing)
+Newsgroups: rec.games.misc
+Subject: Larn at dungeon level 10.
+Message-ID: <208@sems.SE>
+Date: 13 Dec 87 18:51:50 GMT
+Organization: Sems AB, Stockholm, Sweden
+Lines: 12
+
+Well folks, I've reached to master warlord (lvl 17, ~550000 Exp). To
+my great dis-something, I haven't found any ladder down to level 11.
+Somewhere back in my human brain, I recall that I've read something
+about how to further down in the dungeon. What do I do ?!. Please give
+me a hint.
+
+
+-- 
+WHOAMI : Olof Backing                               !
+WHERE  : Havrevagen 14, S-175 43  Jarfalla, Sweden  !
+PHONE  : + (46) 758 33941, 35516                    !
+UUCP   :  ...{uunet,mcvax,ukc,unido}!enea!sems!olof !
+#! rnews 1631
+Path: alberta!mnetor!uunet!husc6!yale!dwald
+From: dwald@yale-zoo-suned..arpa (David Wald)
+Newsgroups: rec.arts.startrek
+Subject: Re: Terralian Ship in "Haven"
+Keywords: ST:TNG
+Message-ID: <20253@yale-celray.yale.UUCP>
+Date: 14 Dec 87 04:36:39 GMT
+References: <5243@zen.berkeley.edu> <9615@ufcsv.cis.ufl.EDU>
+Sender: root@yale.UUCP
+Reply-To: dwald@yale-zoo-suned.UUCP (David Wald)
+Distribution: na
+Organization: Yale University Computer Science Dept, New Haven CT
+Lines: 19
+
+In article <9615@ufcsv.cis.ufl.EDU> jco@beach.cis.ufl.edu () writes:
+>In article <5243@zen.berkeley.edu> timlee@cory.Berkeley.EDU (Timothy J. Lee) writes:
+>>Did anyone think that the Terralian ship was pretty big for something that
+>>was built by a group of people whose technology approximated late 20th
+>>century Earth?
+>
+>It was my understanding from the show that the people of 20th century
+>earth could build a virus that could wipe out a planet.  This did NOT
+>mean that they (the Terralians) where of the 20th century tech level.
+
+There was more to the 20th century reference than that, however.
+Dr. Crusher made the point that, since they were only at the technology
+level of ~20th century Earth, it was easy for the disease to get out of
+control and spread over the planet.  The implication was that if they
+were more advanced the disease would not have wiped out the entire world.
+============================================================================
+David Wald                                                   dwald@yale.UUCP
+						      waldave@yalevmx.bitnet
+============================================================================

@@ -1,0 +1,1630 @@
+#! rnews 1312
+Path: alberta!mnetor!uunet!mcvax!ukc!dcl-cs!strath-cs!jml
+From: jml@cs.strath.ac.uk (Joseph McLean)
+Newsgroups: sci.math
+Subject: the extendability of digit sequences into primes
+Message-ID: <753@stracs.cs.strath.ac.uk>
+Date: 2 Dec 87 10:36:33 GMT
+Reply-To: jml@cs.strath.ac.uk (Joseph McLean)
+Organization: Comp. Sci. Dept., Strathclyde Univ., Scotland.
+Lines: 19
+
+Is the following conjecture reasonable and/or provable? :
+
+Given a sequence of digits, starting with a non-zero digit, of arbitrary
+but finite length, is it always possible to extend this sequence by
+appending more digits, in such a way as to form a prime?
+
+e.g. the sequence 1 can be extended into a prime in an infinite number
+of ways, as in 13, 17, 19, 101, 1231, 1579, etc (there an infinite
+number of primes beginning with a 1 by Bertrand's postulate).
+However, it is far more difficult to try and locate a prime which
+starts with the sequence 1528296922945708 (although at least one is known).
+
+My personal opinion is that the conjecture is reasonable, simply because
+one can keep adding digits at the end and checking for primality ad
+infinitum, and the law of averages will do the rest. Of course this is
+totally groundless mathematically, so can anyone provide a heuristic
+argument with more weight?
+
+        jml, the mad mathematician.
+#! rnews 3077
+Path: alberta!mnetor!uunet!husc6!psuvax1!burdvax!bigburd!fritzson
+From: fritzson@bigburd.PRC.Unisys.COM (Richard Fritzson)
+Newsgroups: comp.editors
+Subject: Re: lisp environments (Structure vs. text editors)
+Message-ID: <3375@bigburd.PRC.Unisys.COM>
+Date: 14 Dec 87 02:11:18 GMT
+References: <487@PT.CS.CMU.EDU> <460@cresswell.quintus.UUCP> <499@PT.CS.CMU.EDU>
+Sender: news@bigburd.PRC.Unisys.COM
+Organization: Unisys Corporation, Paoli Research Center; Paoli, PA
+Lines: 56
+
+In article <499@PT.CS.CMU.EDU> ralphw@IUS2.CS.CMU.EDU (Ralph Hyre) writes:
+>In article <460@cresswell.quintus.UUCP> pds@quintus.UUCP (Peter Schachte) writes:
+>>Text editors CANNOT simulate structure editors.  They can do a rather
+>>feeble job of it.  Text editors fall down when context information is
+>
+>I disagree - a PROGRAMMABLE text editor can do anything you want.  This is
+>because it's programmable.  Whether you're happy with the performance or a
+
+Sure it can do anything. The best way for a programmable text editor to
+simulate a structure editor would be for it to build an internal 
+representation (or structure) or what was really being edited and then 
+use its text manipulating primitives to show the user the effect of his 
+editing commands on the structure that is "really" being edited. Now you've
+shown that mocklisp (for example) is a language in which you can implement
+a structure editor. I doubt if it is the best way to do it though.
+
+>>...For example:  a structure editor can supply different commands, different
+>>facilities, for editing comments and code.
+>Seems like there's the potential here for moby modefulness.  I can't see
+>why I would want different commands when I edit code compared with comments.
+
+I don't know about "commands", but Common Lisp comments are nothing
+like Common Lisp code (much to the shame of Common Lisp). I want the
+characters I type in as comments treated differently than those I type in 
+as parts of S-expressions.
+
+>My interest is in an pseudo-WYSIWYG editor which gives you the option
+>of entering/editing text without formatting attributes, then optionally 
+>displaying the text with them. <...>This sort of decoupling between editing a
+>document and a representation of a document could even be used to great
+>advantage in many environments:
+
+You're right. An editor which is really editing the structure underlying
+the visual presentation of it IS a useful thing. 
+
+>	A program code editor might actually be showing you variable names,
+>	statements, and S-expressions while it is really writing the P-code
+>	(or .lbin file) on the fly.
+>	This could result in 'instant' language interpreter facilities and 
+>	fast compilers.
+>	[I admit that this might be hairy to program in MockLisp.]
+
+But it is one of the reasons Xerox structure editor fans are fans.
+
+>[disclaimer: I've never used a 'structure editor' 
+
+No offense intended, but I could tell. If you write any Lisp you should
+look for an opportunity to try SEdit on a D-machine.
+
+
+
+
+-- 
+	-Rich Fritzson
+	 ARPA: fritzson@prc.unisys.com
+	 UUCP: {sdcrdcf,psuvax1,cbmvax}!burdvax!fritzson
+#! rnews 3135
+Path: alberta!mnetor!uunet!husc6!cmcl2!brl-adm!umd5!ames!sdcsvax!sdcc6!loral!dml
+From: dml@loral.UUCP (Dave Lewis)
+Newsgroups: rec.arts.movies
+Subject: Re: Live Action Amber Films
+Summary: Use Zelazny's descriptions!
+Message-ID: <1496@loral.UUCP>
+Date: 14 Dec 87 06:41:04 GMT
+References: <349@morningdew.BBN.COM> <2620001@hpcvlx.HP.COM>
+Reply-To: dml@loral.UUCP (Dave Lewis)
+Followup-To: rec.arts.movies
+Distribution: na
+Organization: Loral Instrumentation, San Diego
+Lines: 59
+
+In article <2620001@hpcvlx.HP.COM> markc@hpcvlx.HP.COM (Mark Cook) writes:
+>>/ hpcvlx:rec.arts.movies / dkovar@lf-server-2.BBN.COM (David Kovar) /  7:07 am  Dec  9, 1987 /
+>>
+>>  Well, someone else was wondering who would be the actors in a Tolkien
+>>film which brought to mind a favorite question of mine from a few years
+>>back: Who would play the parts of a Amber film? I used to have the
+
+>>Corwin: Mel Gibson
+
+Jonathan Pryce. From "Something Wicked This Way Comes".
+
+>  even better, how about Timothy Dalton (James Bond isn't the only thing he
+
+>>Brand: (Who's the guy from Kiss who was in Runaway?)
+
+>  You mean Gene Simmons.  Well, he could play the part but he has to look like
+
+  No way. Brand is "a figure both like Bleys and myself. My features, though
+smaller, my eyes, Bleys' hair. There was a quality of both strength and weak-
+ness, questing and abandonment about him." This is Corwin speaking, of course.
+
+  And Bleys is "a fiery bearded, flame-crowned man, dressed all in red and
+orange, mainly of silk stuff, and he held a sword in his right hand and a
+glass of wine in his left, and the devil himself danced behind his eyes, as
+blue as Flora's, or Eric's. His chin was slight, but the beard covered it."
+
+  I can't think of anyone offhand for either part, but I nominate Gene Simmons
+to play Caine: "Then came the swarthy, dark-eyed countenance of Caine, dressed
+all in satin that was black and green, wearing a dark three-cornered hat set
+at a rakish angle, a green plume of feathers trailing down the back." (Yeah,
+I got "Nine Princes in Amber" lying right next to the keyboard here)
+
+  Random: "a wily-looking little man, with a sharp nose and a laughing mouth
+and a shock of straw-colored hair." How about Dudley Moore (with his hair
+bleached, of course).
+
+  Dierdre: "a black-haired girl with [Flora's] blue eyes, and her hair hung
+long and she was dressed all in black, with a girdle of silver about her
+waist." Lee Meriwether or Kate Jackson.
+
+  Fiona: "with hair like Bleys or Brand, [Corwin's] eyes, and a complexion
+like mother of pearl.  Ann-Margret!
+
+  That's all for now; if people are interested I can type in the whole 2-1/2
+pages of descriptions so we'll REALLY have something to argue over.
+
+-------------------------------
+          Dave Lewis    Loral Instrumentation   San Diego
+
+  hp-sdd --\     ihnp4 --\
+  sdcrdcf --\      bang --\   kontron -\
+  csndvax ---\   calmasd -->-->!crash --\
+  celerity --->------->!sdcsvax!sdcc3 --->--->!loral!dml  (uucp)
+  dcdwest ---/                 gould9 --/
+
+  "I'm alive and he's dead and that's the way I wanted it."
+   -- Corwin, about Borel
+
+-------------------------------
+#! rnews 2421
+Path: alberta!mnetor!uunet!mcvax!ukc!dcl-cs!strath-cs!jim
+From: jim@cs.strath.ac.uk (Jim Reid)
+Newsgroups: comp.mail.headers
+Subject: Re: RFC976 vs. the real world...
+Message-ID: <754@stracs.cs.strath.ac.uk>
+Date: 2 Dec 87 12:51:51 GMT
+References: <18533@amdahl.amdahl.com>
+Reply-To: jim@cs.strath.ac.uk
+Organization: Comp. Sci. Dept., Strathclyde Univ., Scotland.
+Lines: 40
+
+In article <18533@amdahl.amdahl.com> tron@uts.amdahl.com (Ronald S. Karr) writes:
+>Some Introduction:
+>However, we have conflicting ideas concerning what to do with sender
+>addresses in headers.  We do, now, support the idea that a pure !-path
+>coming in can be left as a !-path, with the current hostname prepended
+>(this is optional and is a function of the destination).  However,
+>should I ever produce, in mail originated locally, a From: line in the
+>following form?
+>
+>	From: localhost!username
+
+The answer is perhaps. In an ideal world, everyone will adhere to one
+standard for mail headers - RFC822 possibly, but X.400 is more likely.
+Until that glorious day arrives (if it ever does), mailers at the mail
+'gateways' between networks will have little option but to munge
+addresses because of incompatible mail headers and addressing formats.
+
+What you mail system should do is rewrite mail headers into the
+appropriate form for transmission to a given host. In short, if your
+uucp neighbours only understand bang-style addresses, you mailer should
+only present bang-style paths to these sites. If some sites understand
+RFC822 (user@host.domain), then you should send them RFC822 style mail.
+What would be less easy for the mailer is separating your bang-stlye
+uucp neighbours from those who understand RFC822.
+
+The best mailers (MMDF or sendmail - no flames please!) take an input
+address, convert it to a canonical form and then rewrite the address in
+the appropriate style for the message transfer agent. This is the most
+sensible way of dealing with hybrid addresses like A!B@C. [Does that
+mean send by uucp to A for relaying to user B on host C or does it mean
+send to C for them to relay to user B on uucp host A? Then what if C
+(or A) doesn't like addresses with '!' (or '@') signs in them?]
+
+		Jim
+-- 
+ARPA:	jim%cs.strath.ac.uk@ucl-cs.arpa, jim@cs.strath.ac.uk
+UUCP:	jim@strath-cs.uucp, ...!seismo!mcvax!ukc!strath-cs!jim
+JANET:	jim@uk.ac.strath.cs
+
+"JANET domain ordering is swapped around so's there'd be some use for rev(1)!"
+#! rnews 3873
+Path: alberta!mnetor!uunet!husc6!cmcl2!brl-adm!umd5!ames!sdcsvax!sdcc6!loral!dml
+From: dml@loral.UUCP (Dave Lewis)
+Newsgroups: rec.arts.sf-lovers
+Subject: Re: One more long-gone show
+Summary: What S. F. movies should be
+Keywords: Questor
+Message-ID: <1497@loral.UUCP>
+Date: 14 Dec 87 06:45:22 GMT
+References: <1672@bsu-cs.UUCP>
+Reply-To: dml@loral.UUCP (Dave Lewis)
+Followup-To: rec.arts.sf-lovers
+Distribution: na
+Organization: Loral Instrumentation, San Diego
+Lines: 64
+
+In article <1672@bsu-cs.UUCP> cfchiesa@bsu-cs.UUCP (Christopher F. Chiesa) writes:
+>Anyone remember a movie called _The_Questor_Tapes_ ?  Basic premise: gov't
+>project constructs an android according to eccentric scientist's specs; and-
+
+>C.Chiesa
+
+  Yea, verily, I recall The Questor Tapes. I've forgotten the scientist's
+name, but he was a very rich and secretive genius known for several major
+advances in robotics and cybernetics. About 2 years previous to the start
+of the movie, he had disappeared, leaving only a partially completed project
+he called Questor. Much of the work was complete, including a small fusion
+reactor, most of the brain, and a lot of the support machinery. He also left
+a BIG mag tape of programs, which some government idiot had partially erased
+while trying to decode it. Questor, when activated, did nothing; the team
+that assembled him figured it was because of the bad tape.
+
+  Late that night, Questor got up, used the 'finishing' molds to give himself
+human features, and walked out. The scientist had known one member of the
+Questor-assembly team and put his name and address on the program tape; by
+good fortune it had survived the attempted decoding. Questor knows only that
+he must find `a boat' -- other details have been erased.
+
+  The government catches up with them in a playground and some fool shoots
+Questor. Apparently the shock knocks some bits loose because when he sees
+a jungle gym that looks like Noah's Ark he remembers, "the boat, the boat
+of legend. [whatsisname] is waiting for me there." He also remembers that
+if he doesn't find the scientist within about two days, his fusion power
+supply is programmed to overload and blow up.
+
+  They patch him up and he leads them a merry chase to Mt. Ararat where he
+finds his creator in a cave hidden by a force barrier/hologram projection.
+There is a long row of metallic slabs suspended about a meter above the
+floor; on each lies a defunct robot. Each one wears clothing from a time
+far earlier than the next. Questor's creator lies on the second to last
+slab, still conscious but unable to move.
+
+  These robots have been watching over the human race for more than ten
+thousand years. Each one lasts two hundred years, then builds his successor.
+Questor's predecessor was brought to an early end by some combination of
+pollution and radiation exposure; he has provided Questor with extra
+shielding so he will last the full two centuries.
+
+  Questor is the last. By the end of his term, the human race will have
+reached a point where we can make our own decisions without guidance.
+The robots were placed here by some advanced aliens to see us through our
+racial childhood, to allow us a chance to mature and achieve whatever
+potential we have.
+
+  The Questor Tapes was an excellent movie, one makers of more recent films
+should take a lesson from. Very few other movies have impressed me as much
+as "2001: A Space Odyssey" and "The Questor Tapes". They show up the likes
+of"Close Encounters of the Third Kind" and "E.T." for the vapid silliness
+they are.
+
+-------------------------------
+          Dave Lewis    Loral Instrumentation   San Diego
+
+  hp-sdd --\     ihnp4 --\
+  sdcrdcf --\      bang --\   kontron -\
+  csndvax ---\   calmasd -->-->!crash --\
+  celerity --->------->!sdcsvax!sdcc3 --->--->!loral!dml  (uucp)
+  dcdwest ---/                 gould9 --/
+
+-------------------------------
+#! rnews 1384
+Path: alberta!mnetor!uunet!mcvax!ukc!its63b!hwcs!jack
+From: jack@cs.hw.ac.uk (Jack Campin)
+Newsgroups: rec.arts.sf-lovers
+Subject: Re: M. John Harrison
+Message-ID: <1560@brahma.cs.hw.ac.uk>
+Date: 2 Dec 87 18:20:17 GMT
+References: <1950@charon.unm.edu>
+Reply-To: jack@cs.glasgow.ac.uk (Jack Campin)
+Organization: PISA Project, Glesga Yoonie
+Lines: 23
+Summary:
+
+Expires:
+
+Sender:
+
+Followup-To:
+
+
+
+
+[ignore the above address and use my signature]
+
+
+By far the best thing I have read by MJH is a long short story called
+"Running Down", about a man with unwanted psychic powers that cause things
+to malfunction, decay and fall apart around him. It is set in a Britain
+in the near future of when the story was written (i.e. about now) in which
+the whole society reflects a similar dingy, pointless chaos - remarkably
+like Britain after 8 years of Thatcher, in fact.
+He's very good at describing that sort of situation - his novel "The Centauri
+Device" does it at length, though his suggested political solution is bloody
+stupid. His understanding of anarchism is about on a level with Robert Anton
+Wilson's.
+
+- jack
+
+-- 
+ARPA: jack%cs.glasgow.ac.uk@nss.cs.ucl.ac.uk
+JANET:jack@uk.ac.glasgow.cs       USENET: ...mcvax!ukc!cs.glasgow.ac.uk!jack
+Mail: Jack Campin, Computing Science Department, University of Glasgow,
+      17 Lilybank Gardens, Glasgow G12 8QQ, Scotland (041 339 8855 x 6045)
+#! rnews 1188
+Path: alberta!mnetor!uunet!mcvax!ukc!its63b!hwcs!jack
+From: jack@cs.hw.ac.uk (Jack Campin)
+Newsgroups: rec.music.classical
+Subject: Re: Tippett
+Message-ID: <1561@brahma.cs.hw.ac.uk>
+Date: 2 Dec 87 18:38:20 GMT
+References: <1950@bath63.ux63.bath.ac.uk>
+Reply-To: jack@cs.glasgow.ac.uk (Jack Campin)
+Organization: PISA Project, Glesga Yoonie
+Lines: 15
+Summary:
+
+Expires:
+
+Sender:
+
+Followup-To:
+
+
+
+[ignore the above email address and use my signature]
+Tippett moved on a LONG way musically after "A Child Of Our Time".
+I believe his masterpiece is the Triple Concerto for violin, viola and cello.
+There is a wonderful recording of it by Pauk, Imai and Kirschbaum with the LSO
+under Davis.
+A problem I find with a lot of his music is the silly words. The man really
+shouldn't have tried writing his own libretti that often.
+I believe he's got another opera in the pipeline, due for its premiere in the
+next few months.
+-- 
+ARPA: jack%cs.glasgow.ac.uk@nss.cs.ucl.ac.uk
+JANET:jack@uk.ac.glasgow.cs       USENET: ...mcvax!ukc!cs.glasgow.ac.uk!jack
+Mail: Jack Campin, Computing Science Department, University of Glasgow,
+      17 Lilybank Gardens, Glasgow G12 8QQ, Scotland (041 339 8855 x 6045)
+#! rnews 894
+Path: alberta!mnetor!uunet!mcvax!ukc!eagle!jg
+From: jg@eagle.ukc.ac.uk (J.Grant)
+Newsgroups: comp.sys.mac
+Subject: The Spinning watch cursor
+Message-ID: <4023@eagle.ukc.ac.uk>
+Date: 3 Dec 87 14:59:09 GMT
+Reply-To: jg@ukc.ac.uk (J.Grant)
+Organization: Computing Lab, University of Kent at Canterbury, UK.
+Lines: 11
+
+OK - I've changed my spinning watch back into the lovely sand-timer
+(remember the good old days?);  I've changed the CURS resource in the
+Finder and also in the System so that I have various quantities
+of sand in the top & bottom, but there is still a watch lurking!
+
+More precisely, where does the watch that says 9 o'clock live, as
+now I get the magic watch followed by the sand1->7, then the watch
+again as the cycle repeats.  This only happens in the Finder, so I
+suspect that there must be a watch lurking elsewhere, but where?
+
+Ps. system 4.2b(5?) & Finder 6.0 (Mac 512Ke)
+#! rnews 3539
+Path: alberta!mnetor!uunet!mcvax!ukc!its63b!csnjr
+From: csnjr@its63b.ed.ac.uk (Nick Rothwell)
+Newsgroups: rec.music.synth,rec.music.makers
+Subject: Casio MG500, Roland MT-32, MIDI bug? [LONG]
+Summary: Where's the MIDI bug in this lot?:
+Keywords: MG500 MT-32 MIDI
+Message-ID: <805@its63b.ed.ac.uk>
+Date: 3 Dec 87 13:10:56 GMT
+Reply-To: nick%ed.lfcs@uk.ac.ucl.cs.nss (Nick Rothwell)
+Organization: LFCS, University of Edinburgh
+Lines: 46
+Xref: alberta rec.music.synth:1879 rec.music.makers:1070
+
+Last weekend a friend and I strolled into a music shop and ended up playing
+with the new Casio MG500 MIDI guitar linked into a Roland MT-32. I don't
+play guitar, and was just along for the curiosity, but I've got a few comments
+to make and a question about what I consider to be a MIDI bug in one of the
+instruments.
+   Firstly - the performance of the MG500. I wasn't actually playing it (I was
+just pushing buttons on the MT-32 instead), but I was impressed with its
+speed and tracking ability - it was fast and followed pitch accurately,
+responding to pitch bend and so on; it generally sounded pretty tight.
+There were a couple of things I didn't like - but maybe it's a generic
+weakness of all guitar-to-MIDI systems. Firstly, the guitar transmits
+velocity information (hit the string harder -> louder/brighter note), but
+gives no control (other than pitch-bend) once a note's sounding - there's
+nothing equivalent to aftertouch/modulation so once a note sounds you're
+at the mercy of the synth until you stop the string.
+Point two - You've got six strings, so you can only sound six synth voices.
+This is probably obvious, but playing a guitar patch through MIDI doesn't
+sound like a real guitar, because each touch of a string retriggers the voice
+on that string, sometimes in a rather distracting way. On a real (classical)
+guitar you have the resonance of the soundbox to hang on to notes so you
+aren't aware of this (I presume - comments?)
+Now for what is (in my opinion) a MIDI Bug! Play two different notes on
+two strings and you get two voices - ok so far. Play the same note on two
+different strings and you get one voice. Humm. Play two different notes on
+two strings and slide one note up to the other, and one of the voices is
+chopped off. I think this is a bug - something somewhere doesn't want to
+the same note more than once. Needless to say, this completely screws up
+a number of guitar chords.
+   We mentioned this to the guy in the shop. He seemed convinced that it's
+a problem with the MIDI spec. itself - if you play a keyboard synth, you
+have to release the middle C key to play it again, don't you? I think this
+is a load of dingos kidneys - if I send my D-50 two separate middle C
+note on messages, then I'll get two voices cycling through the envelopes at
+middle C pitch. This is what happens with the sustain pedal on, as well.
+   What's the verdict, net people? I think the guy was wrong (quite adamant,
+but wrong...) and there's a bug in one of the boxes. I suspect the MG500.
+If the MT-32 is anything like the D-50, then it doesn't care about playing
+the same note twice. (A quick note in passing that synths with less voices
+(Juno106 for instance) often won't double a voice, in an attempt to play
+chords properly without running out.)
+-- 
+Nick Rothwell,	Laboratory for Foundations of Computer Science, Edinburgh.
+		nick%lfcs.ed.ac.uk@nss.cs.ucl.ac.uk
+		<Atlantic Ocean>!mcvax!ukc!lfcs!nick
+~~ ~~ ~~ ~~ ~~ ~~ ~~ ~~ ~~ ~~ ~~ ~~ ~~ ~~ ~~ ~~ ~~ ~~ ~~ ~~
+"Nothing's forgotten. Nothing is ever forgotten."   - Herne
+#! rnews 1505
+Path: alberta!mnetor!uunet!mcvax!ukc!dcl-cs!bath63!pes
+From: pes@ux63.bath.ac.uk (Smee)
+Newsgroups: comp.sys.atari.st
+Subject: Re: Resource file question
+Keywords: resource mwc rcs .rsc dri c
+Message-ID: <1963@bath63.ux63.bath.ac.uk>
+Date: 3 Dec 87 10:33:26 GMT
+References: <1592@wiley.UUCP>
+Reply-To: pes@ux63.bath.ac.uk (Smee)
+Organization: AUCC c/o University of Bath
+Lines: 19
+
+
+You might try looking to see if K-Resource is still available (by Kuma Software,
+who else?).  It's been out a long while.  It's now available bundled with some
+of the MetaComCo stuff (in particular the new Lattice C) but I believe that
+Kuma still do it separately as well.  Don't have a clue what it costs, but
+must be cheaper than a new compiler.
+
+It produces (by switch option) appropriate 'include' type files for C,
+FORTRAN, and 2 other languages which I've conveniently forgotten -- in
+addition to the expected .RSC file.  Will also produce a 'non-specific
+structured description' file (they say, I've never tried this) which is
+alleged to be pretty easy to massage into an appropriate 'include' for
+any unsupported language you might like.
+
+The documentation is written in a bit of a 'too-folksy' style for my liking,
+but the program is pretty intuitive to use which makes up for some of that.
+It does, however, assume that you have some sort of a clue as to what the
+various resource items/flags mean and do -- it doesn't teach you how to use
+RSC files or what they mean, but rather gives a handle for making them.
+#! rnews 1258
+Path: alberta!mnetor!uunet!mcvax!ukc!its63b!hwcs!neil
+From: neil@cs.hw.ac.uk (Neil Forsyth)
+Newsgroups: comp.sys.atari.st
+Subject: Bug in bets test Gulam
+Keywords: none
+Message-ID: <1562@brahma.cs.hw.ac.uk>
+Date: 3 Dec 87 09:46:32 GMT
+Organization: Computer Science, Heriot-Watt U., Scotland
+Lines: 28
+
+
+I think I have found a bug in the latest version of Gulam.
+
+         alias test 'echo $<'
+
+produces a couple of spurious charcters on the input line.
+
+         $<%&
+
+The characters are usually above $80. The alpha version didn't do this.
+I just delete them by backspacing anyway.
+
+         echo $<
+
+by itself works fine.
+
+-------------------------------------------------------------------------------
+"I think all right thinking people in this country are sick and tired of being
+told that ordinary decent people are fed up in this country with being sick and
+tired. I'm certainly not and I'm sick and tired of being told that I am!"
+- Monty Python
+
+ Neil Forsyth                           JANET:  neil@uk.ac.hw.cs
+ Dept. of Computer Science              ARPA:   neil@cs.hw.ac.uk
+ Heriot-Watt University                 UUCP:   ..!ukc!cs.hw.ac.uk!neil
+ Edinburgh
+ Scotland
+-------------------------------------------------------------------------------
+#! rnews 1009
+Path: alberta!mnetor!uunet!mcvax!ukc!its63b!hwcs!jack
+From: jack@cs.hw.ac.uk (Jack Campin)
+Newsgroups: comp.sys.mac
+Subject: Re: how strong of a magnet?
+Message-ID: <1564@brahma.cs.hw.ac.uk>
+Date: 3 Dec 87 18:59:42 GMT
+References: <9554@shemp.UCLA.EDU>
+Reply-To: jack@cs.glasgow.ac.uk (Jack Campin)
+Organization: PISA Project, Glesga Yoonie
+Lines: 12
+Summary:
+
+Expires:
+
+Sender:
+
+Followup-To:
+
+
+
+[ignore the above email address and use my signature]
+This may be an FOAF story (urban folklore) but I have heard that the mag-lev
+train at Birmingham Airport lets enough field into the passenger compartment
+to wipe floppies.
+Then again, I have also heard that story about ordinary underground railways
+and it certainly isn't true of them.
+-- 
+ARPA: jack%cs.glasgow.ac.uk@nss.cs.ucl.ac.uk
+JANET:jack@uk.ac.glasgow.cs       USENET: ...mcvax!ukc!cs.glasgow.ac.uk!jack
+Mail: Jack Campin, Computing Science Department, University of Glasgow,
+      17 Lilybank Gardens, Glasgow G12 8QQ, Scotland (041 339 8855 x 6045)
+#! rnews 988
+Path: alberta!mnetor!uunet!mcvax!ukc!its63b!csan
+From: csan@its63b.ed.ac.uk (Andie)
+Newsgroups: comp.sys.atari.st
+Subject: Re: Resource file question
+Keywords: Kuma
+Message-ID: <808@its63b.ed.ac.uk>
+Date: 3 Dec 87 23:08:12 GMT
+References: <1592@wiley.UUCP> <1298@saturn.ucsc.edu>
+Reply-To: csan@its63b.ed.ac.uk (Andie)
+Organization: Computer Science Department, Edinburgh University
+Lines: 14
+
+In article <1298@saturn.ucsc.edu> koreth@ssyx.ucsc.edu (Steven Grimm) writes:
+>
+>Kuma Software makes the best resource editor I've seen.  It's called
+>"K-Resource" and is a really friendly, well-thought-out piece of software.
+>
+I am in total agreement here. I use it in preference to any others I have.
+
+Andie Ness . Department of Computer Science ,Edinburgh University.
+
+ARPA:  csan%ed.itspna@nss.cs.ucl.ac.uk   UUCP:  ...!uunet!mcvax!ukc!itspna!csan
+                   	JANET: csan@uk.ac.ed.itspna
+
+% These are my own views and any resemblance to any coherent reasoning is
+% probably a typo.
+#! rnews 852
+Path: alberta!mnetor!uunet!mcvax!ukc!stc!idec!howellg
+From: howellg@idec.stc.co.uk (Gareth Howell)
+Newsgroups: rec.ham-radio.packet,comp.protocols.tcp-ip
+Subject: NEEDED: KISS for TNC220
+Message-ID: <869@idec.stc.co.uk>
+Date: 1 Dec 87 09:05:59 GMT
+Organization: ICL Network Systems, Stevenage, Herts. UK
+Lines: 12
+Xref: alberta rec.ham-radio.packet:767 comp.protocols.tcp-ip:1918
+
+I have a Pacomm TNC220 on which I want to run KISS and thence the KA9Q
+tcp/ip package.  Unfortunately I don't have a KISS for the TNC.
+Can anybody help.  I would prefer the co-resident bootstrap with a
+downloaded KISS module if possible.
+ta Gareth
+====
+
+-- 
+Gareth Howell  <howellg@idec.stc.co.uk>  G6KVK @ IO91VX
+ICL NS PNBC, England, SG1 1YB    Tel:+44 (0)438 738294
+howellg%idec%ukc@mcvax.uucp, mcvax!ukc!idec!howellg@uunet.uu.net
+G6KVK @ G4SPV (uk packet 144.650MHz)
+#! rnews 710
+Path: alberta!mnetor!uunet!mcvax!ukc!stc!hilda
+From: hilda@tcom.stc.co.uk ( Jeff Tracey )
+Newsgroups: rec.arts.sf-lovers
+Subject: Thunderbirds are GO!!!
+Keywords: FAB
+Message-ID: <1503@arran.tcom.stc.co.uk>
+Date: 2 Dec 87 10:54:39 GMT
+Organization: STC Telecoms, London N11 1HB.
+Lines: 14
+
+A few quick trivia questions on Thunderbirds :-
+
+1) Does anybody know what the phrase 'FAB' stands for ??? 
+
+2) What's the first mission that International Rescue accomplished ?
+
+3) What's the Butler's name on the Island AND who is his daughter ? 
+
+
+Regards,
+
+Steve Hillyer.  <hilda@tcom.stc.co.uk> || ...uunet!mcvax!ukc!stc!hilda
+STC Telecommunications, Oakleigh Rd South, London N11 1HB. 
+Phone : +44 1 368 1234 x3358
+#! rnews 1159
+Path: alberta!mnetor!uunet!mcvax!ukc!stc!btnix!crouch
+From: crouch@btnix.axion.bt.co.uk (Chris Rouch)
+Newsgroups: comp.os.vms
+Subject: callable TPU?
+Keywords: TPU callable editor
+Message-ID: <632@btnix.axion.bt.co.uk>
+Date: 3 Dec 87 11:33:58 GMT
+Organization: British Telecom Research Labs, Martlesham Heath, IPSWICH, UK
+Lines: 17
+
+I read somewhere that there is a callable version of EDT, available by using
+EDT$EDIT(...). Does anyone know if there is a similar function for the TPU
+editor and/or other commands such as MAIL, PRINT etc. If somebody could
+also point me in the direction of the VMS manual which contains this
+information (assuming there is one), I would be very grateful.
+
+		Chris Rouch
+
+--------------------------------------------------------------------------------
+vax to vax (UUCP)       CRouch@axion.bt.co.uk (...!ukc!btnix!crouch)
+desk to desk            RT3124, 310 SSTF,
+			British Telecom Research Laboratories,
+			Martlesham Heath, IPSWICH, IP5 7RE, UK.
+voice to voice          +44 473 646093
+
+	"Ours is not to look back, ours to continue the crack."
+--------------------------------------------------------------------------------
+#! rnews 1090
+Path: alberta!mnetor!uunet!mcvax!ukc!stc!pete
+From: pete@tcom.stc.co.uk (Peter Kendell)
+Newsgroups: rec.music.classical
+Subject: Durufle virgin seeks advice
+Message-ID: <483@stc-f.tcom.stc.co.uk>
+Date: 3 Dec 87 11:50:35 GMT
+Organization: STC Telecoms, London N11 1HB.
+Lines: 25
+
+
+	Being curious, as the name was completely new to me, I borrowed 
+	the Hyperion CD of Durufle's Requiem from my local public 
+	library. I enjoyed it very much and would like to find out more
+	about him, so :-
+
+	- What else has he written? (I believe he's not been very prolific)
+	
+	- What else has been recorded?
+	
+	- Is his other work similar to the Requiem; it is better, worse or
+	  just different?
+
+	- I thought I heard a Holst influence; is this typical?
+
+	- Are there other 20th Century composers in a similar vein that I
+	  should try?
+
+	
+	
+-- 
+------------------------------------------------------------------------------
+|		  Peter Kendell <pete@tcom.stc.co.uk>	        	     |
+|				...{uunet!}mcvax!ukc!stc!pete		     |
+------------------------------------------------------------------------------
+#! rnews 1235
+Path: alberta!mnetor!uunet!mcvax!ukc!stc!praxis!gauss!drb
+From: drb@praxis.co.uk (David Brownbridge)
+Newsgroups: comp.unix.wizards
+Subject: Re: //host vs "mount point"
+Message-ID: <1606@newton.praxis.co.uk>
+Date: 3 Dec 87 12:42:36 GMT
+References: <648@tut.cis.ohio-state.edu> <1668@tut.cis.ohio-state.edu> <38c15248.4580@hi-csc.UUCP> <9559@mimsy.UUCP> <411@PT.CS.CMU.EDU>
+Sender: nobody@praxis.co.uk
+Reply-To: drb%praxis.uucp@ukc.ac.uk(David Brownbridge)
+Organization: Praxis Systems plc, Bath, UK
+Lines: 19
+
+In article <411@PT.CS.CMU.EDU> jgm@K.GP.CS.CMU.EDU (John Myers) writes:
+>Just to add to the confusion, let me put in a plug in for the Carnegie-Mellon
+>University Computer Science Department's syntax:
+>
+>/../host
+
+We built a system which also allowed super-super-roots and so on ad infinitum.
+
+ /../NearbyHost
+ /../../OtherSite/host
+ /../../../OtherCountry/AnotherSite/host
+
+"/.." makes sense to me which is why I promoted it as the "University of
+Newcastle upon Tyne Computing Laboratory's syntax" :-) Some old-timers must
+remember the "Newcastle Connection" distributed UNIX system which Lindsay
+Marshall and I wrote in 1981-2.
+
+"Not for the iron fist but for the helping hand" 
+[Billy Bragg/Oyster Band "Between The Wars"]
+#! rnews 1785
+Path: alberta!mnetor!uunet!mcvax!ukc!stc!datlog!slxsys!jpp
+From: jpp@slxsys.specialix.co.uk (John Pettitt)
+Newsgroups: comp.unix.xenix
+Subject: Re: smail2.5
+Summary: smail on xenix without writing new programs
+Keywords: At last, a 'real' mailer for Xenix (are you listening SCO) :-)
+Message-ID: <106@slxsys.specialix.co.uk>
+Date: 3 Dec 87 06:44:07 GMT
+References: <484@rel.eds.com>
+Reply-To: jpp@slxsys.UUCP (John Pettitt)
+Organization: Specialix International, London, UK.
+Lines: 27
+
+In article <484@rel.eds.com> bob@rel.eds.com (Bob Leffler) writes:
+>During the last several weeks there have been numerous solutions posted to
+>the net to resolved the interface problem with Xenix and smail 2.5.  I
+>have tried all the solutions that I am aware of and my conclusion for the
+>best approach is a combination of two.
+
+	lots of stuff about how to install smail deleted.
+
+I have just installed smail 2.5 on Xenix 386.  The solution I used
+here was to replace /usr/lib/mail/execmail with a link to (copy of)
+/bin/smail.  I also moved the old sco execmail to execmail.sco and used
+it as the local delivery agent.  The above will not work as it stands
+because the command syntax for execmail is not the same as smail. This
+can be corrected by swapping the meaning of the -F and -f switches in
+smail (main.c and defs.h).   The local delivery macro in defs.h should
+be set to give /usr/lib/mail/execmail.com -f from to.   With this
+setup you get the sco mailer (mailx) and smail with both From and From:
+lines correct.  Also as execmail is still used for 'local' delivery
+micnet (sco's RS232 "LAN") still works.
+
+
+
+
+-- 
+John Pettitt G6KCQ, CIX jpettitt, Voice +44 1 398 9422
+UUCP:  ...uunet!mcvax!ukc!pyrltd!slxsys!jpp  (jpp@slxsys.co.uk)
+Disclaimer: I don't even own a cat to share my views !
+#! rnews 1287
+Path: alberta!mnetor!uunet!mcvax!lambert
+From: lambert@cwi.nl (Lambert Meertens)
+Newsgroups: sci.math
+Subject: Re: Least-squares fitting
+Message-ID: <135@piring.cwi.nl>
+Date: 5 Dec 87 14:41:10 GMT
+References: <1823@culdev1.UUCP>
+Organization: CWI, Amsterdam
+Lines: 28
+
+In article <1823@culdev1.UUCP> drw@culdev1.UUCP (Dale Worley) writes:
+) Is is known how to perform least-squares fitting where the "error" is
+) the perpendicular distance between the point and the line?
+
+This least-squares fit still passes through the "center of gravity" of the
+data points, so assume that the data has been reduced such that the
+averages of the x- and y-coordinates are both zero.  Let the equation of
+the line to be determined be
+
+    x*(sin phi) - y*(cos phi) = 0,
+
+that is, it is the line making an angle phi with the x-axis.  Put
+
+    XX = SUM_i x[i]^2,
+    XY = SUM_i x[i]*y[i],
+    YY = SUM_i y[i]^2.
+
+Then tan(2*phi) = 2*XY/(XX-YY).
+
+This gives two solutions for phi.  Take the one such that the point
+(XX-YY, 2*XY) lies on the ray through the origin with angle 2*phi.
+(Remark.  It is possible to solve the coefficients for x and y
+algebraically, without going through the arctan routine, but it is harder
+then to get the signs correct.)
+
+-- 
+
+Lambert Meertens, CWI, Amsterdam; lambert@cwi.nl
+#! rnews 852
+Path: alberta!mnetor!uunet!mcvax!inria!imag!bordier
+From: bordier@imag.UUCP (Jerome Bordier)
+Newsgroups: comp.sys.mac
+Subject: Re: Arabic Wordprocessing / Publishing
+Message-ID: <2285@imag.UUCP>
+Date: 4 Dec 87 10:24:35 GMT
+Reply-To: bordier@imag.UUCP (Jerome Bordier)
+Organization: IMAG, University of Grenoble, France
+Lines: 14
+
+"Winsoft", a small firm developping and selling software for the Macintosh,
+has made "Wintext", a word processor fully compatible with the "Arabic
+Macintosh+" (you have to obtain the Arabic keyboard distributed by Apple).
+Their address is:
+	Winsoft
+	34 boulevard de l'Esplanade
+	38000 GRENOBLE   France
+Phone no.:   76.87.56.01
+
+-- 
+Jerome BORDIER   Laboratoire Structures Discretes  Institut IMAG
+		 B.P.68 - 38402 SAINT MARTIN D'HERES CEDEX   France
+E.Mail:
+bordier@imag.imag.fr   or   {uunet.uu.net|mcvax}!imag!bordier
+#! rnews 1182
+Path: alberta!mnetor!uunet!mcvax!inria!rouaix
+From: rouaix@inria.UUCP (Francois Rouaix)
+Newsgroups: comp.sys.amiga
+Subject: POPCLI III Another Bug
+Keywords: left-amiga-esc timing
+Message-ID: <587@inria.UUCP>
+Date: 5 Dec 87 17:45:19 GMT
+Organization: INRIA, Rocquencourt. France
+Lines: 20
+
+
+	Well, it seems there is another bug in Popcli III.
+	Just try 
+		1> run popcli 30
+	and then press Left-Amiga-Esc: the drive (where c: is) spins for
+	a moment and nothing happens.
+	The new 'screen-blanker' works all right but the automatic launch
+	is defeated.
+	Same for values of 10 and 40 seconds.
+	I didn't have time to figure out the limit value for which Popcli will
+	work (it works with default value and 240s).
+	Anyway, despite I *love* the new feature (let's keep the secret :-),
+	I'd rather have the old screen-blanker : at least I can sleep while
+	the Amiga is still on and working, and also it won't eat CPU-time I
+	need for Ray-tracing !!
+-- 
+
+*- Francois Rouaix                    /       When the going gets tough,     *
+*- USENET:rouaix@inria.inria.fr     \/            the guru goes meditating...*
+*  SYSOP of Sgt. Flam's Lonely Amigas Club. (33) (1) 39-55-84-59 (Videotext) *
+#! rnews 539
+Path: alberta!mnetor!uunet!husc6!uwvax!rutgers!lll-lcc!ames!sdcsvax!ucsdhub!hp-sdd!ncr-sd!crash!pnet01!hhaller
+From: hhaller@pnet01.cts.com (Harry Haller)
+Newsgroups: comp.dcom.modems
+Subject: Re: Facsimile on PC
+Message-ID: <2140@crash.cts.com>
+Date: 14 Dec 87 04:36:13 GMT
+Sender: news@crash.cts.com
+Organization: People-Net [pnet01], El Cajon, CA
+Lines: 4
+
+There is a board you can plug into the backplane that purports to give you
+full FAX capability with editing. Of course, I forget the name, but if you
+look in the literature...
+()
+#! rnews 1436
+Path: alberta!mnetor!uunet!husc6!uwvax!rutgers!lll-lcc!ames!sdcsvax!ucsdhub!hp-sdd!ncr-sd!crash!pnet01!dm
+From: dm@pnet01.cts.com (Dan Melson)
+Newsgroups: rec.aviation
+Subject: Re: ARSA transition phraseology
+Message-ID: <2141@crash.cts.com>
+Date: 14 Dec 87 06:16:11 GMT
+Sender: news@crash.cts.com
+Organization: People-Net [pnet01], El Cajon, CA
+Lines: 21
+
+The question was asked why an ARSA controller might want to know your
+destination.
+
+Actually, what they really want to know is where you're going *now*, like
+'direct PMD' or 'following I5 northbound' (I have *no* idea of what type of
+airspace that will take you through at any given altitude) or whatever course,
+heading, or whatever you intend to take through the ARSA.
+
+Now, if you're going to get flight following, the controller is going to want
+to know your complete route of flight for which you want flight following,
+so that it can be entered into the machine and the autumated handoffs can be
+used between sectors and facilities.
+
+As for why, that's very simple.  For purposes of calling traffic, which I
+consider to be sufficient, if no one else does.  The same reason the
+controller at the VFR tower asks your direction of departure.  If nothing
+else, the controller can always tell the left downwind departures 'traffic a
+(whatever) reported 6 SE for a left base entry', or whatever is appropriate.
+
+MY opinions ONLY!
+                                              DM
+#! rnews 2759
+Path: alberta!mnetor!uunet!mcvax!diku!iesd!jacob
+From: jacob@iesd.uucp (Jacob stergaard B{kke)
+Newsgroups: comp.ai
+Subject: job search, Comp. eng.
+Summary: I'm looking for a job
+Keywords: Job, Computer. eng., Computer. sci., M.S.
+Message-ID: <152@iesd.uucp>
+Date: 2 Dec 87 13:20:07 GMT
+Reply-To: jacob@iesd.UUCP (Jacob \stergaard B{kke)
+Organization: Dept. of Comp. Sci., Aalborg University, Denmark (student)
+Lines: 69
+
+I'm looking for a job in Computer Engineering to begin around July
+1988. I'm getting my Master of Science in Computer Engineering June
+1988 and at present holding a degree equal to BS in Electronic
+Engineering. My BS studies have included:
+	
+	Computer hardware (hands-on knowledge with mc68k),
+	Analog electronic 
+	Control engineering (analog and digital control)
+
+My MS studies have included:
+
+	Software development (man-machine interface, what people want
+			      from programs) 
+	Compiler construction (an expertsystem shell) 
+	Program environment (for CCS programming) 
+	Distributed operating systems (in UNIX)
+ 	Compiler mapping object-orinted language on parallel computers
+
+Furthermore I do have experience in conventional programming (PASCAL,
+C, postscript, UNIX (awk, shell-scripts(C-shell) and yacc/lex) (and Basic)),
+functional programming (LISP and ML) and logical programming (Prolog)
+and knowledge about object-oriented programming. And I
+have also attended courses in VLSI design, databases, etc. I have been
+working with CDC under NOS/Telex, VAX 11/750 under Ultrix, SUN 3 under
+Sun OS 4.3 (UNIX), MacIntosh (LISA) under Finder and IBM S36 under IBM
+property operating system.  
+
+My spoken English is excellent and my written English is satisfactory,
+good knowledge of the Scandinavian languages (Danish (of course),
+Swedish and Norwegian), some speaking and reading knowledge of German
+and limited knowledge of French and Spanish (and Latin). 
+
+I have 5 years experience in group project work in engineering and
+computer scinence areas, broad social interest, good health.
+
+My interest include computer hardware and software, operating system
+design, expertsystems, distributed, concurrency and teaching.
+
+I'm open on location (outside Denmark) but I have relatives or other
+reasons to be especially intereted in:
+
+	Canada (British Colombia or Toronto)
+	USA (New England or Pacific Coast)
+	Pacific (New Zealand or Oceania)
+	Thailand
+	Scotland (Highlands)
+
+I'll look forward to any reponds.
+
+		Yours sincerely
+			
+			Jacob Baekke, Denmark
+
+For further information:
+
+Reply to:     	jacob@iesd.uucp, {...}!mcvax!diku!ised!jacob  or
+		 
+at Univ:	Jacob Baekke 
+		S9D (in spring S10)
+		Strandvejen 19
+		AUC
+		DK--9000 Aalborg
+		Denmark
+
+private:	Jacob Baekke
+		Davids Alle 48
+		DK--9000 Aalborg
+		Denmark
+		Tel. 45-(0)8102673
+#! rnews 2425
+Path: alberta!mnetor!uunet!husc6!bbn!rochester!cornell!uw-beaver!uw-june!uw-entropy!dataio!suvax1!hirayama
+From: hirayama@suvax1.UUCP (Pat Hirayama)
+Newsgroups: rec.arts.anime
+Subject: Re: Speed Racer and the Mach 5
+Message-ID: <810@suvax1.UUCP>
+Date: 14 Dec 87 05:28:25 GMT
+References: <1103@jumbo.dec.com>
+Organization: Seattle University, Seattle, WA.
+Lines: 45
+
+in article <1103@jumbo.dec.com>, schubert@jumbo.dec.com (Ann Schubert) says:
+> Posted: Thu Dec 10 15:26:21 1987
+> 
+> 
+>       THIS IS A RE-POST FROM REC.ARTS.TV
+> 
+> 
+> In article <4540011@wdl1.UUCP> (James Y. Nakamura) writes:
+> 
+> I have a question about Speed.  We can't figure out all the neato gadgets his
+> car had I think it went like:
+> 	1:	Jacks that also made the car able to jump.
+> 	2:	???
+> 	3:	Saw blades that cut through stuff	
+> 	4:	Closes off the top so the Mach 5 becomes a sub..
+> 	5:	Homing pidgeon on a rope.
+> 
+
+        Don't forget the special treads which would appear on his tires
+        to allow for climbing up rough ground or driving near vertical.
+        
+        Every now and then, I remember that they would add a new option
+        (boy, don't you wish your friendly neighborhood dealership would
+         offer some of these for your car?).  Unfortunately, it has been
+        many years since I last saw Speed Racer, but I do remember one 
+        episode which added little winglets which would come out from under-
+        neath the doors.  This added a little gliding ability.  Any one
+        else remember any?
+        
+
+> Also why did Speed have a G on his shirt?  Go doesn't really wash with me and
+> I don't know enough Japanese to equate letters. 
+> 
+
+        I used to know this but I can't remember anymore, though I
+        suspect that it might have to do with the original name of
+        the character/title of the show in Nihongo.  Help anyone?
+
+*******************************************************************************
+*                                          --Pat Hirayama                     *
+*                                          --Seattle University               *
+*                                                                             *
+* "Yamato Hasshin!" - Kodai Susumu                                            *
+*                                                                             *
+*******************************************************************************
+#! rnews 684
+Path: alberta!mnetor!uunet!mcvax!inria!axis!matra!godefroy
+From: godefroy@matra.UUCP (Eric Godefroy)
+Newsgroups: comp.unix.wizards
+Subject: 8 bits on a pseudo-tty
+Message-ID: <252@matra.matra.UUCP>
+Date: 3 Dec 87 13:33:27 GMT
+Reply-To: godefroy@matra.UUCP (Eric Godefroy)
+Organization: Matra Datasysteme
+Lines: 9
+
+On 4.2 bsd, it seems difficult to set a pseudo-tty (ptyp / ttyp) in
+the pass8 mode. Is it impossible really or how can I do that ?
+
+----------------------------------------------------------
+
+ Eric Godefroy				UUCP: mcvax!inria!matra!godefroy
+ Matra Datasysteme			Tel:  (33-1) 30 58 98 00
+ 1, av Niepce				Fax:  (33-1) 30 45 41 59
+ 78180 Montigny-le-Bretonneux   France
+#! rnews 2663
+Path: alberta!mnetor!uunet!husc6!bbn!rochester!cornell!uw-beaver!uw-june!uw-entropy!dataio!suvax1!hirayama
+From: hirayama@suvax1.UUCP (Pat Hirayama)
+Newsgroups: rec.arts.sf-lovers,rec.arts.anime
+Subject: Re: Old TV shows
+Message-ID: <811@suvax1.UUCP>
+Date: 14 Dec 87 05:54:39 GMT
+References: <4254@dandelion.CI.COM>
+Organization: Seattle University, Seattle, WA.
+Lines: 40
+Xref: alberta rec.arts.sf-lovers:9224 rec.arts.anime:249
+
+in article <4254@dandelion.CI.COM>, david@dandelion.CI.COM (David M. Watson) says:
+> Xref: suvax1 rec.arts.sf-lovers:7102 rec.arts.anime:235
+> 
+> 
+> I have foggy but pleasant memories of three other converted Japanese
+> 	- (not anime, but...) Ultraman! (Was it: "Hiyata! The beta capsule!"?)
+> 		He was a large silver "good-monster" with a red light
+> 		mounted on his chest that would blink whenever his batteries	
+> 		were getting low.  And in his valiant, exhausting fights
+> 		against the dinosaur types that frequently showed up to
+> 		menace the World, he almost always came close to running out!
+> 		And I remember a obligatory post-crisis trip to the jewelery
+> 		store for Hiyata and friend!
+> 
+> Would anyone like to refresh my memory about any of these three?
+> 
+       - Ultraman was one of several incredibly popular shows in Japan during
+         the late 60s/early 70s/early 80s.  Actually, there were several shows
+         each featuring one or more of the "Ultra" brothers, of whom Ultraman
+         was the "leader/head/eldest (you get the idea)".  There was also
+         Ultra 5 and a bunch of others which I can't remember and it would 
+         take a long time to dig out the books.  There was something of a
+         revival when UltraMan 80 (?) was released in Japan.  
+
+         Of these, I believe that only the original Ultraman was released
+         and dubbed for the American market.
+
+       - By the way, Hayata would be the way to spell his name (though it
+         would be more accurately pronounced by you gaijin as "Hiyata".
+         
+       - Of course, there is nary a trace of him now in Japan.  Programs
+         have this incredible tendency of grabbing hold of everyone, then
+         they drop it for something new.  
+
+*****************************************************************************
+*                                          -Pat Hirayama                    *
+*                                          -Seattle University              *
+*                                                                           *
+* > No messages or quotes right now <                                       *
+*****************************************************************************
+#! rnews 1910
+Path: alberta!mnetor!uunet!mcvax!enea!tut!santra!nispa
+From: nispa@hutcs.hut.fi (Tapani Lindgren)
+Newsgroups: comp.unix.wizards,comp.unix.questions
+Subject: Unattended dumps (BSD4.3)
+Message-ID: <9032@santra.UUCP>
+Date: 4 Dec 87 15:19:19 GMT
+Sender: news@santra.UUCP
+Followup-To: comp.unix.wizards
+Organization: Helsinki University of Technology, Finland
+Lines: 28
+Xref: alberta comp.unix.wizards:5739 comp.unix.questions:4767
+
+I have encountered a problem trying to make a shell script that would
+make incremental backups at nighttime without operator attendance.
+The problem results from dump(8) program requiring occasional
+responses from the operator through /dev/tty.  The script is
+run from another script, /usr/adm/daily, under cron control and has no
+controlling terminal, so it just hangs trying to read /dev/tty.  It would
+be ok if dump just aborted when facing a situation that would require
+operator intervention. The script should never hang in a loop under
+any circumstances, because /usr/adm/daily must do other things too
+and finish after a reasonable time.
+
+Currently I have the dump script run a background subshell that sleeps for
+an hour and then kills the dump script (if it still runs) and all dump
+processes.  This is very complicated, however, and the watchdog process
+is almost 50% of the whole script.  It is also very slow - I would
+like it to stop immediately if it finds an error, report it to log file,
+rewind the tape, and let /usr/adm/daily continue its work.
+
+Has anyone out there in the Netland have any suggestions of what to do?
+Can yes(1) somehow be piped to a program that reads /dev/tty?
+Could dump(8) be modified to abort at errors without any questions?
+What kind of unattended backup systems do you have?
+
+---
+Tapani Lindgren, Helsinki Univ. of Technology, CS dept.
+INTERNET:	nispa@hutcs.hut.fi
+UUCP:		mcvax!santra!hutcs!nispa
+BITNET:		nispa%hutcs.UUCP@fingate.BITNET
+#! rnews 2315
+Path: alberta!mnetor!uunet!husc6!bbn!oberon!pollux.usc.edu!kurtzman
+From: kurtzman@pollux.usc.edu (Stephen Kurtzman)
+Newsgroups: rec.food.cooking
+Subject: Re: Cooking Wines
+Message-ID: <5698@oberon.USC.EDU>
+Date: 14 Dec 87 11:38:44 GMT
+References: <4628@pyr.gatech.EDU> <10722@sri-unix.ARPA> <2028@ttrdc.UUCP>
+Sender: nobody@oberon.USC.EDU
+Reply-To: kurtzman@pollux.usc.edu (Stephen Kurtzman)
+Organization: University of Southern California, Los Angeles, CA
+Lines: 37
+
+In article <2028@ttrdc.UUCP> levy@ttrdc.UUCP (Daniel R. Levy) writes:
+>
+>2) (more seriously) I've seen bottles of "wine for cooking" that have had
+>   salt (and vinegar?) added.  These might be OK for sauces (yeah, the
+>   snootier gourmets wouldn't want anything to do with them) but they
+>   would obviously be horrible to drink.
+
+I think that these wines would be particularly bad for sauces that require
+wine as a major component and require reducing the wine. There are two
+reasons that come to mind:
+
+1) What is normally labeled as cooking wine is usually wine that is not good
+enough to sell as table wine. If the taste is not the best, reducing it will
+only concentrate its flaws.
+
+2) Cooking wines contain salt. Reducing a cooking wine will concentrate the
+salt. This could really ruin the sauce. 
+
+There best reason I have seen for using a good wine to cook with was given
+by Alexis Bespaloff in the "New Signet Book of Wine", which states
+
+ "Furthermore, it is actually uneconomical to buy cheap wine for cooking.
+  Say that an elaborate lobster dish calls for a spoonful or two of sherry
+  to heighten its flavor. A cook who runs out to buy a bottle of cheap
+  sherry will diminish the taste of an expensive and time-consuming dish with
+  a quarter's worth of wine. What's more, because the wine is a poor example
+  of its type, it may not be enjoyable to drink, so the spoonful of wine has,
+  in fact, cost the full price of the bottle."
+
+That is fairly sound reasoning. Of course, the last sentence does not
+necessarily follow. You could keep the cheap wine around to diminish several
+meals.
+
+BTW, I recommend the "New Signet Book of Wine" to anyone who wants to learn
+more about wine. It is available for $4.50 as a paperback. Quite a value
+when you compare it to the $20-or-more, glossy coffee-table wine books out
+on the market.
+#! rnews 1809
+Path: alberta!mnetor!uunet!mcvax!enea!luth!d2c-usg
+From: d2c-usg@sm.luth.se (Ulrik"Rick"Sandberg)
+Newsgroups: rec.music.misc
+Subject: Re: Yes and ELP questions......
+Keywords: Tales from Topographic Oceans
+Message-ID: <435@psi.luth.se>
+Date: 4 Dec 87 18:28:34 GMT
+References: <748@augusta.UUCP> <434@psi.luth.se>
+Reply-To: Ulrik"Rick"Sandberg <d2c-usg@psi.luth.se>
+Organization: University of Lulea, Sweden
+Lines: 28
+UUCP-Path: {uunet,mcvax}!enea!psi.luth.se!d2c-usg
+
+
+In article <434@psi.luth.se> I wrote:
+>In article <748@augusta.UUCP> bs@augusta.UUCP (Burch Seymour) writes:
+>>been looking for Tales on CD without success. To get to the point, is
+>>it (Tales) on CD?  
+>
+>One of my friends ordered it from a Recordshop in Gothenburg, but got
+>the answer that it was sold out. However, they didn't say that the
+>record isn't existing on CD. He was supposed to recieve it later.
+>Any wiser of that?
+>
+
+Correction:
+
+Received is spelled received, not recieved. :-)
+
+My friend told me that they said "Tales.. is not on CD." That's why he didn't
+get it. Sorry for the confusing information.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~                                                                             ~
+~  Ulrik 'Rick' Sandberg  d2c-usg@luth.UUCP (or)                              ~
+~  Computer Technology	  d2c-usg@psi.luth.se (or)                            ~
+~  University of Lulea    {uunet,mcvax}!enea!psi.luth.se!d2c-usg              ~
+~  Sweden                                                                     ~
+~  phone: (0920)-977 90 (home)       "I feel lost in the city..."             ~
+~                                       --  Jon Anderson  --                  ~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#! rnews 1128
+Path: alberta!mnetor!uunet!husc6!rutgers!lll-lcc!pyramid!decwrl!cssaus.dec.com!bell
+From: bell@cssaus.dec.com (Peter Bell, SNA-2, Sydney)
+Newsgroups: rec.music.classical
+Subject: Hogwood
+Message-ID: <8712141101.AA04882@decwrl.dec.com>
+Date: 15 Dec 87 05:23:00 GMT
+Organization: Digital Equipment Corporation
+Lines: 15
+
+I have just finished singing (in choir) under Hogwood, it was an experience. We
+sang Schuberts Mass in G, (as Schubert wrote it, missing a few phrases of the
+Credo). Hogwood knew exactly what he wanted, and worked till we did it right.
+Then as we tidied up the last few problems, he would let us sing through whole
+sections, then go back and point out all the problems.
+
+We also sang the Messiah (not with Hogwood unfortunately) the delight of
+those performances was Elizabeth Cambells singing "He was despised..."
+
+In this performance the two trumpeters waited off stage until just before their
+appearances in each half, the first trumpet parts were played by a large
+trumpeter (in nice to see that Sydney musicains are not starving) on what
+looked like a very small valved trumpet (trumpet in F??).
+
+Peter.
+#! rnews 1252
+Path: alberta!mnetor!uunet!mcvax!dutrun!winffhp
+From: winffhp@dutrun.UUCP (Frits Post and/or Andrew Glassner)
+Newsgroups: comp.graphics
+Subject: abstracts wanted
+Keywords: ray tracing, abstracts
+Message-ID: <190@dutrun.UUCP>
+Date: 2 Dec 87 09:14:55 GMT
+Organization: Delft University of Technology,The Netherlands
+Lines: 21
+
+I am preparing a list of technical memos, technical notes,
+internal reports, and other such low-circulation documents
+that deal with ray tracing.  I'm interested in documents
+both large and small.  The documents need not be expressly
+about ray tracing; the criterion is that the information in
+the document be useful to ray tracing researchers in some way.
+
+If you have prepared such a document, please send me enough
+information to digest it.  That would at least include your
+name and organization, the document's title, perhaps a reference
+number, and (very important!) an abstract.  
+
+All contributors will receive a complete copy of the final list.
+
+-Andrew Glassner
+  email until 15 December: uunet!mcvax!dutrun!frits
+  email after 15 December: glassner@unc.cs.edu  ,  unc!glassner
+-- 
+             ...mcvax!dutrun!frits    
+             Faculty of Mathematics and Informatics
+             Delft University of Technology
+#! rnews 593
+Path: alberta!mnetor!uunet!mcvax!lambert
+From: lambert@cwi.nl (Lambert Meertens)
+Newsgroups: sci.lang
+Subject: Re: Acquiring native accents
+Message-ID: <136@piring.cwi.nl>
+Date: 5 Dec 87 22:56:44 GMT
+Organization: CWI, Amsterdam
+Lines: 8
+
+When I speak English I hear no Dutch accent in my voice.  But if my voice
+is recorded and played back to me I find the Dutch accent unmistakable.  If
+this phenomenon is a general one, it goes a good deal towards explaining
+why adult learners of a new language do not fully master the native accent.
+
+-- 
+
+Lambert Meertens, CWI, Amsterdam; lambert@cwi.nl
+#! rnews 6735
+Path: alberta!mnetor!uunet!mcvax!philmds!leffe!janpo
+From: janpo@leffe.UUCP (janpo)
+Newsgroups: rec.music.misc
+Subject: Re: Ideas for improving the debate (was: Digital vs. Analog music)
+Summary: Digital versus Analog
+Keywords: CDs expensive audiophile equip. fourier analysis
+Message-ID: <43@leffe.UUCP>
+Date: 4 Dec 87 13:55:04 GMT
+References: <574@ucdavis.ucdavis.edu> <522@altura.srcsip.UUCP> <3051@batcomputer.tn.cornell.edu>
+Organization: Philips I&E DTS Eindhoven
+Lines: 123
+
+
+
+1) Mr. Konar, press the 'n' key immediately! There's another arrogant
+   audiophile going to pollute the net with his view on the Digital vs.
+   Analog issue.
+
+2) I'm not very much acquainted with the news stuff on the net, but it
+   seems we don't receive the rec.audio newsgroup here in Europe. Can
+   something be done about that?
+
+3) Now let me come to the point.
+   In article <3051@batcomputer.tn.cornell.edu> eacj@batcomputer.tn.cornell
+   (Julian Vrieslander) he writes:
+>Konar than goes on to comment about the "arrogance" of audiophiles who still
+>prefer analog recordings to digital.  He says the issue should be laid to rest
+>, the implicit assumption being that the case has been proven that analog 
+>recording is obsolete.
+
+>I for one think that the issue is still an open (and interesting) one, but I
+>am a bit surprised at how polarized and closed the recent comments to this
+>thread have been.  
+
+I agree with him, so let me do my bit now. A technology not being perfect
+, or getting close to that, is still worth a discussion. Remember that it
+took about a 100 years of thorough research from Edison's first grammophone
+to the modern high quality turntables. Don't expect digital audio to be
+perfect now only a few years after its introduction, no matter what the
+commercial guys say. They are only interested in your hard-earned $$$$.
+
+Until now I have only been in the opportunity to make a good comparison
+between a high-end turntable and some first genaration. I'll summarize
+the pros and cons of which I think are important and which I can think of
+now. Many of them are well known, others may not.
+
+PROS OF ANALOG:
+- Cheap records.
+- As John Vrieslander mentioned: More real, more spatious, more delicate,
+  more emotionally involving. I won't try to find other words for this
+  description 'cause I can't think of a better one. Unfortunately, this
+  can only be heard on good, say > $2k-$3k systems without an infinite
+  number of knobs, lights and other gadgets normally found in aeroplane
+  cockpits.
+
+CONS OF ANALOG:
+- More hissy, rumble,scratches,sound degrading after many times of
+  playing the record. This counts less when you have good records
+  (Japanese ones are most often excellent but hard to get now.) and take
+  good care of them.
+- No flat frequency response, especially at the low and high end.
+- Phase distortion.
+- Harmonic distortion increases with amplitude.
+
+PROS OF DIGITAL:
+- Longer durability than records (?). Less hissy, no rumble or ticks of
+  scratches.
+- Almost no phase distortion, flat frequency response within the audio
+  range.
+- Easy to use.
+- Slightly (!) more dynamic. Why only slightly? Well, the 96 dB dynamic
+  range theoretically possible with a CD is not very practical. In reality
+  it is compressed, as far as I know, to some 40-60 dB depending on the
+  music (Pop, Jazz, Classic) because:
+  a) No one wants to run continuously to his volume knob to adjust the
+     volume.If not compressed the music will either be banging through your 
+     living room and of your neighbours or it will drown in the inevitable 
+     background noise.
+  b) Studio equipment has a dynamic range of less than, say, 70 to 80 dB
+     when you assume the Signal to Noise ratio being equal to the dynamic
+     range.
+  c) Sound gets to distorted at low levels. (See also cons)
+  d) A dynamic headroom of 10 dB is desired.
+  With all this limitations the dynamic range of CD's is not much different
+  with that of a good record.
+- Excellent bass response. Deep and well defined.
+- Very stable stereo image.
+
+CONS OF DIGITAL:
+- Expensive records.
+- When listening to a CD, it seems as if there is no "space" around around
+  the instruments and voices. It sounds cold and not very lively.
+- First generation players and the cheaper CD players nowadays suffer from
+  very distorted high tones. They sound harsh. Cymbals for instance sound
+  like someone is sawing them into pieces instead giving it a gentle hit
+  with a drum-stick. They do not sound crisp and clear.
+- Distortion increases dramatically with lower amplitudes (!). It can be
+  more than 1.5 % at low levels. And it's a very nasty kind of distortion.
+- CD players produce (digital) noise above the audio range. This noise itself
+  can not be heard but other audio equipment may suffer from intermodulation
+  distortion which brings this noise back in the audio range. 
+- Many CD players, especially the first ones, do not seem to be very reliable
+  mechanically.
+- I've heard that digital audio recording is quite different from analog.
+  I mean in terms of how it has to be done properly. I don't mean the
+  equipment needed, that's quite obvious. Not all studio crew seem to know
+  how to make a good digital recording. Does anyone know more about that?
+
+Well, this must be enough stuff to think and talk about.
+
+The above mentioned cons of digital audio may be overcome in the latest
+players but I have not had the opportunity until now to carefully listen
+to them and to compare them. According to some serious audio magazines
+available here in Holland they seem to be improved. Many top-of-the-line
+models now have separated power supplys for the digital and analog
+circuitry, opto-couplers between those circuits, an additional analog filter
+to filter out > 20 kHz noise, 16 bit with with n times oversampling, stable
+and rigid chassis and improved error correction. All this may have solved
+(some) of the cons I mentioned but I'm not sure. Players which have one or
+more of these improvements and thus may be of interest (At least for Julian
+Vrieslander and me) are: Philips (Magnavox in the USA I believe) CD 650 and
+CD 960, Nakamichi, Mission, Meridian and if memory serves me well, Acoustical
+Research (Or Audio Research. Don't know anymore). The latter two may be
+difficult to get in the USA, they are made in the UK. No doubt that there
+are more good CD players but can't think of others now. These are the
+players I consider buying when normal LP's are no longer available.
+
+Pooh! That was more than I intended to write but still far less than I can
+tell about this stuff.
+
+                                        Kind regards from
+                                        Jan Postma
+
+
+And on the seventh day, God went surfing!
+#! rnews 1424
+Path: alberta!mnetor!uunet!mcvax!cernvax!ethz!heiser
+From: heiser@ethz.UUCP (Gernot Heiser)
+Newsgroups: comp.emacs
+Subject: Setting terminal-emulator's environment
+Keywords: GNU Emacs function `terminal-emulator'
+Message-ID: <261@bernina.UUCP>
+Date: 5 Dec 87 13:42:37 GMT
+Reply-To: heiser@ethz.UUCP (Gernot Heiser)
+Organization: ETH Zuerich, Switzerland
+Lines: 18
+
+
+Using the  GNU emacs terminal-emulator   to run interactive  programs  would be
+quite limited if the parent emacs  can't be used  for editing (when the program
+run under the emulator starts up an editor).  While some  programs  (like `rn')
+allow to explicitely specify the  editor, a general  solution would require  to
+specify `emacsclient'  in the `EDITOR'   environment  variable of  the  process
+running under the terminal emulator.
+
+Naturally this could be done by running  the  shell under the emulator, setting
+the   environment of  the shell, and  then running   the program  we are really
+interested  in.  A  better way  would be    to set  the   environment from  the
+`terminal-mode-hook'. Is there any means to achieve this???? (I'm running GNU
+Emacs version 18.49.)
+-- 
+Gernot Heiser                   Phone:       +41 1/256 23 48
+Integrated Systems Laboratory   CSNET/ARPA:  heiser%ifi.ethz.ch@relay.cs.net
+ETH Zuerich                     EARN/BITNET: GRIDFILE@CZHETH5A
+CH-8092 Zuerich, Switzerland    EUNET/UUCP:  {uunet,...}!mcvax!ethz!heiser
+#! rnews 1617
+Path: alberta!mnetor!uunet!mcvax!enea!sommar
+From: sommar@enea.UUCP (Erland Sommarskog)
+Newsgroups: rec.music.misc
+Subject: Re: another net.question
+Message-ID: <2496@enea.UUCP>
+Date: 5 Dec 87 16:46:48 GMT
+References: <251@ho7cad.ATT.COM>
+Reply-To: sommar@enea.UUCP(Erland Sommarskog)
+Followup-To: rec.music.misc
+Organization: ENEA DATA Svenska AB, Sweden
+Lines: 27
+
+P.CLARK (prc@ho7cad.ATT.COM) writes:
+>	Should a band play the entire new album when they do a concert?
+
+
+No, why should they? There may be songs on the album that are 
+very good listening to at home, but just doesn't make it live,
+just as there are songs with the opposite character; good live, 
+but just a bore on disc.
+
+Deep Purple and Marillion and good example of extremes in both
+ends. When I saw D.P. in February this year, they played three 
+of the ten songs from "The House of Blue Light", their latest 
+album. That is a quite decent product, but I didn't miss those
+songs anyway. (I, and everyone else, would have been much more 
+disappointed if they had left out "Smoke on the Water".) 
+  Marillion on the other hand; on the two tours they made after
+"Misplaced Childhood", they insisted on playing entire album
+as one long song. There are many parts on that album that just
+becomes dead passages where nothing happens when they are played
+live. ("Bitter Suite" and "Blind Curve" for instance.) Marillion
+is no good live band, and playing obsolete material does not
+make things better.
+-- 
+Erland Sommarskog       
+ENEA Data, Stockholm    
+sommar@enea.UUCP        
+                   C, it's a 3rd class language, you can tell by the name.
+#! rnews 4410
+Path: alberta!mnetor!uunet!mcvax!enea!sommar
+From: sommar@enea.UUCP (Erland Sommarskog)
+Newsgroups: rec.music.misc
+Subject: Re: More than Yes
+Message-ID: <2502@enea.UUCP>
+Date: 5 Dec 87 19:18:59 GMT
+References: <22034@ucbvax.BERKELEY.EDU>
+Reply-To: sommar@enea.UUCP(Erland Sommarskog)
+Followup-To: rec.music.misc
+Organization: ENEA DATA Svenska AB, Sweden
+Lines: 72
+
+Grady Toss (ebm@ernie.Berkeley.EDU) writes:
+>Whenever this newsgroup gets around to discussing 70's/80's fusion (the
+>current go-round sparked by the proof that Yes is Best), the content
+>seems to be limited to the same 5 or 6 groups (Yes, Rush, ELP, King
+>Crimson, Pink Floyd, Genesis, etc.).  
+
+Grady seems to be confusing the issue a bit here. He talks about fusion and 
+the mentions groups that belong(ed) to the symphonic-rock genre. (I prefer
+that term instead of "progressive") For me "fusion" is a synonym with 
+jazz-rock. Anyway, that is more of question of semantics, the two genres 
+have a lot in common. (The main difference maybe being that symphony-rock 
+is European and fusion American.)
+
+The reason why these groups are being discussed the most is probably that
+they have gained the greatest commercial succes. This may or may not 
+be correlated to the fact they are the best. 
+
+>Doesn't (didn't) anyone listen to
+>some of the (apparently) lesser-known fusion greats?  Bands and artists
+>like Arti + Mestieri, Brand X, Arthur Brown & Kingdom Come, Egg, Gilgamesh,
+>Hatfield & The North, Henry Cow, Alain Markusfeld, National Health, PFM,
+>Quiet Sun, Return to Forever, Seventh Wave, The Soft Machine, UK and
+>Weather Report.  
+
+Being quite fond of this kind of music, I feel obliged to comment. It's
+a real mixture Grady presents and I must admit there are names I have 
+never heard. Anyway, I think he is a bit unfair, some of them have 
+certainly been discussed on the net. For instance, I posted a discograhpy 
+on Brand X some month ago. Some comments to the other names:
+  PFM (Premiata Forneria Marconi) have been mentioned from time to time,
+the Italian answer on Genesis, which developed in a different way. Now
+disbanded, I believe. One day or another may be I'll post a discography.
+  Quiet Sun. The band in which Phil Manzanera played before he joined
+Roxy Music. Their "Mainstream" is rather like jazz, but not mainstream.
+  Seventh Wave. This is the name I never expected to see on the net! I
+bought their "Things to Come" when I was 15 and I was really fond of it
+then. These days I don't find that amount of synthesizers so exciting as
+I did then.
+  Wheather Report. Quite well-known. But really, you do only need "Heavy
+Wheather", the one with "Birdland". May be some more, "Mysterious Traveller"
+perhaps, but then you'll find that they all sound the same.
+
+>As I said before, I find much of Yes and ELP to be very dull, and un-
+>affecting.  I like Rush, though more live than on record.  
+
+As you can guess, I don't share Grady's view here. Yes has made good
+music, yet never really touched my soul, probably due to their utterly
+stupid and semi-religious lyrics. "Brain Salad Surgery" is a very good
+record, the rest of what ELP have done is so-so. Rush don't turn me on 
+at all, on the other hand. The net discussion inspired me to try 
+"A Farewell to Kings" (A random choice). May be I would have liked them 
+10 years ago, but not today with those lyrics and that voice.
+
+>So, were Yes, ELP, Pink Floyd, King Crimson, Genesis and Rush really "it"
+>as far as most progrock fans go, or did some of these "lesser known" artists
+>(and all the others I forgot or never knew) filter out to larger audiences?
+
+Depends on how you define your terms here, but I can easily think 
+of more groups, some of them succesful, some of them not, some of them
+good, some them not so good:
+Kansas, Saga, Asia, Jethro Tull, Roxy Music, Gentle Giant, Van Der Graaf
+Generator, George Duke, Billy Cobham, Al DiMeola, Herbie Hancock, Dixie
+Dregs, Ange, (Mahavishnu) John McLaughlin, Santana, Bill Bruford etc
+  I think that most of these people have had their share of the discussion
+on the net. So to conclude, I do not really share Grady's initial obser-
+vation. However some particular groups are certainly being over-discussed,
+namely Rush, Yes and recently also Pink Floyd.
+-- 
+Erland Sommarskog       
+ENEA Data, Stockholm    
+sommar@enea.UUCP        
+                   C, it's a 3rd class language, you can tell by the

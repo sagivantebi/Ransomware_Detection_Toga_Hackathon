@@ -1,0 +1,2118 @@
+ name.
+#! rnews 916
+Path: alberta!mnetor!uunet!mcvax!enea!tut!santra!clinet!waldo
+From: waldo@clinet.FI (Tuomas Siltala)
+Newsgroups: rec.music.synth
+Subject: Siel DK80 sequenceer
+Keywords: How to use?
+Message-ID: <553@clinet.FI>
+Date: 5 Dec 87 21:36:23 GMT
+Reply-To: waldo@clinet.UUCP (Tuomas Siltala)
+Organization: City Lines Oy, Helsinki, Finland
+Lines: 17
+
+My friend bought a Siel DK80 synthesizer and now he is wondering how
+the sequencer in that machine works.
+ 
+ 
+Unfortunately we don't have any manuals for it.
+ 
+Could somebody kindly send me information concerning this problem?
+ 
+Thank you!
+ 
+------------------------------------------------------------------------------
+ 
+  Tuomas Siltala                                 Internet: waldo@clinet.FI
+  Kalevankatu 51 B 37
+  SF-00180 Helsinki, Finland                     Telephone: +358-0-6947735
+ 
+------------------------------------------------------------------------------
+#! rnews 1655
+Path: alberta!mnetor!uunet!mcvax!enea!luth!d2c-czl
+From: d2c-czl@sm.luth.se (Caj Zell)
+Newsgroups: rec.music.misc
+Subject: Re: Black Sabbath songs
+Message-ID: <437@psi.luth.se>
+Date: 6 Dec 87 01:38:40 GMT
+References: <1208@gumby.wisc.edu> <3590@h.cc.purdue.edu>
+Reply-To: Caj Zell <d2c-czl@psi.luth.se>
+Organization: University of Lulea, Sweden
+Lines: 25
+UUCP-Path: {uunet,mcvax}!enea!psi.luth.se!d2c-czl
+
+
+In article <3590@h.cc.purdue.edu> acu@h.cc.purdue.edu.UUCP (Floyd McWilliams)
+writes:
+
+>	While we're talking about Sabbath, does anyone know who does the
+>vocals on "Solitute" (from the Master of Reality album) and "It's All Right"
+>(from Technical Ecstasy)?  It sure doesn't sound like the Oz...
+
+I would like to add another song:"Swinging The Chain" on _Never Say Die!_.
+Who the hell does the vocals here?
+
+By the way,has anybody heard the new album?
+
+
+      XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      X                                                            X
+      X                                                            X
+      X   Caj Zell                 	 ________________________  X
+      X   University of Lulea            :                      :  X
+      X   Sweden                         : Jazz is not dead,    :  X
+      X  				 : it just smells funny :  X
+      X   mail: d2c-czl@psi.luth.se	 : -Frank Zappa         :  X
+      X                                  :                      :  X
+      X                                  -----------------------:  X
+      X                                                            X
+      XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+#! rnews 760
+Path: alberta!mnetor!uunet!mcvax!unido!gmdka!florin
+From: florin@gmdka.UUCP
+Newsgroups: comp.windows.x
+Subject: C++ re-hacks of X11 include files - (nf)
+Message-ID: <2800001@gmdka.UUCP>
+Date: 3 Dec 87 13:16:00 GMT
+Lines: 14
+Nf-ID: #N:gmdka:2800001:000:458
+Nf-From: gmdka!florin    Dec  3 14:16:00 1987
+
+Hi there,
+
+I'm actually working on C++ re-hacks of the X11 include files.
+There are some problems with Xlib.h. In structures
+Visual, XWindowAttributes and XColormapEvent there are variables named
+``class'' and ``new'' which cause serious problems (C++ keywords) !
+
+For the moment I've changed the names, but this is an awful hack. Does anybody
+know a better solution ?
+
+     -- Florin
+
+UUCP:  ...!uunet!unido!gmdka!florin
+X.400: florin@karlsruhe.gmd.dbp.de
+#! rnews 4069
+Path: alberta!mnetor!uunet!mcvax!ukc!reading!onion!riddle!domo
+From: domo@riddle.UUCP (Dominic Dunlop)
+Newsgroups: comp.unix.xenix,comp.sys.att,comp.sys.intel
+Subject: How to load AT&T 6300 Plus packages to generic UNIX V.3
+Summary: Here's a shell script to do it for you
+Keywords: Intel, 386/ix, Microport, Prime
+Message-ID: <522@riddle.UUCP>
+Date: 4 Dec 87 17:47:52 GMT
+Reply-To: domo@riddle.UUCP (Dominic Dunlop)
+Followup-To: comp.unix.xenix
+Organization: Sphinx Ltd., Maidenhead, England
+Lines: 106
+Xref: alberta comp.unix.xenix:1170 comp.sys.att:1825 comp.sys.intel:379
+
+[If there's a Microport newsgroup, it doesn't come here]
+
+				Background
+
+AT&T's generic UNIX V.3 for the 80386 (as sold in binary form by AT&T,
+Bell Technologies, Intel, Interactive Systems, Microport, Prime etc.)
+will run binaries created for UNIX V.2 on the 80286.  A large number of
+packages exists for AT&T's 6300 Plus, an 80286-based system running V.2.
+These can be run on 80386-based systems while you're waiting for
+software authors to come up with native 80386 ports of their products.
+
+				Problem
+
+You are supposed to load packages onto your 6300 Plus using the system's
+administration procedures.  These handle weird multi-volume cpio diskette
+sets, which are a pig to load unless you have the installation software.
+Which you don't if you're trying to load the software onto an 80386-based
+system running 386/ix, Microport, or whatever.
+
+				Solution
+
+Here's a shell script which does the job.  If you want to know the details,
+it reads 350k, starting at offset 9k, from each 360k diskette in the
+installation set, piping the result into cpio -c.  It the fires off the
+Install program which should be part of the application package.  As the
+comments remark, there's not a lot of error checking, as it's essentially
+a quick hack.  Also, testing is about at the ``worked twice in a row''
+level.  Despite all that, I hope it's useful to somebody out there.
+
+Dominic Dunlop
+domo@sphinx.co.uk  domo@riddle.uucp
+
+++++cut here++++++++cut here++++++++cut here++++++++cut here++++
+:
+# load_script
+#
+#   Shell script to load software packages delivered in AT&T PC
+#   6300+ UNIX V.2 format on systems where the PC 6300+
+#   installation procedure is not available (eg 386/ix).
+#   The script can be executed by any user who can read the raw
+#   diskette device.  However, the root password is requested
+#   before files are moved to their final destinations if this
+#   script is not run by the super-user.
+#
+#   Note that this script does NOT check that sufficient space is
+#   available to load the package.  In general, your /usr file
+#   system should have at least (700 * diskettes_in_package)
+#   blocks free before installation.  Note also that there is no
+#   check that the diskettes are in the correct format, or that
+#   they are inserted in the correct order.
+#
+# 871204 DFD	Created
+
+# Change the following device assignment if the 360kB raw
+# diskette device on your system has a different name.
+DEV=${DEV-/dev/rdsk/f0d9dt}
+
+if [ ! -r $DEV -o ! -c $DEV ]
+then
+	 cat << E_O_F
+Can't read $DEV.  Check raw diskette device name and/or your
+access permissions.
+E_O_F
+exit 1
+fi
+
+cd /usr/tmp
+mkdir install 2>/dev/null
+cd install
+IT="the first diskette of the package"
+
+trap "echo Installation aborted.; rm -r /usr/tmp/install; exit 1" 2 15
+(
+	while echo "Insert $IT and hit return >\c" 1>&2  \
+		&& read ANS
+	do
+		IT="next diskette"
+		echo "The following files are being loaded:" 1>&2
+		dd if=$DEV ibs=1k obs=5k skip=9 count=350 2>/dev/null
+	done
+) | cpio -icvmudB 1>&2
+
+chmod +x Install
+
+trap 2 15
+
+cat << E_O_F
+Files read from diskettes.  You may remove the last diskette from
+the drive.  If you are not already logged in as the super-user,
+Please enter the root password to continue with installation.
+E_O_F
+if su root -c ./Install
+then
+	cat << E_O_F
+Installation complete.  You should execute
+	rm -r /usr/tmp/install
+to remove installation scratch files at a convenient time.
+E_O_F
+else
+	cat << E_O_F
+Installation failed.  To retry,
+	su
+	cd /usr/tmp/install
+	./Install
+E_O_F
+fi
+#! rnews 1801
+Path: alberta!mnetor!uunet!mcvax!ukc!reading!onion!bru-me!ralph
+From: ralph@me.brunel.ac.uk (Ralph Mitchell)
+Newsgroups: comp.graphics,sci.space,sci.space.shuttle
+Subject: Re: 3d digitized shuttle data
+Message-ID: <338@Pluto.me.brunel.ac.uk>
+Date: 4 Dec 87 09:49:43 GMT
+References: <509@otto.cvedc.UUCP>
+Reply-To: ralph@me.brunel.ac.uk (Ralph Mitchell)
+Organization: Brunel University, Uxbridge, UK
+Lines: 26
+Xref: alberta comp.graphics:1381 sci.space:3674 sci.space.shuttle:445
+
+In article <509@otto.cvedc.UUCP> billa@otto.UUCP (Bill Anderson) writes:
+>In article <> apollo@ecf.toronto.edu (Vince Pugliese) writes:
+>>
+>>As well I will be include a very simple C program, hacked together by fellow group member
+>> [...]
+>
+>If anyone out there in netland converts this C program so that it can be
+>run on suns, please post the results of your work to the net.
+
+It has already been done.  The program should be in /usr/demo/SRC/shaded.c,
+the shuttle data is in /usr/demo/DATA/space.dat.  There are notes on running
+it in /usr/demo/README.  The program displays 2 windows with cursor lines, to
+enable you to select the 3d viewpoint, and there's a pop-up menu for setting
+fill style and colour, &c.  For monochrome you need to select the "edges" (I
+think) fill style or it'll look pretty wierd.  Also, if your display surface
+doesn't support hidden surface removal, you'll get a wireframe effect that
+can be confusing to the eye.
+
+/usr/demo/DATA also contains data files for an icosahedron, a pyramid, a
+ball and a Klein bottle.
+
+--
+ From:  Ralph Mitchell at Brunel University, Uxbridge, UB8, 3PH, UK
+ JANET: ralph@uk.ac.brunel.cc	  ARPA:  ralph%cc.brunel.ac.uk@cwi.nl
+ UUCP:  ...ukc!cc.brunel!ralph   PHONE: +44 895 74000 x2561
+ "There's so many different worlds, so many different Suns" -- Dire Straits
+#! rnews 1156
+Path: alberta!mnetor!uunet!mcvax!ukc!its63b!bob
+From: bob@its63b.ed.ac.uk (ERCF08 Bob Gray)
+Newsgroups: rec.arts.sf-lovers
+Subject: Re: SPACE WAR BLUES (was Re: Gibson)
+Message-ID: <809@its63b.ed.ac.uk>
+Date: 4 Dec 87 12:49:58 GMT
+References: <8711211710.AA02986@decwrl.dec.com>
+Reply-To: bob@its63b.ed.ac.uk (ERCF08 Bob Gray)
+Organization: I.T. School, Univ. of Edinburgh, U.K.
+Lines: 17
+
+In article <8711211710.AA02986@decwrl.dec.com> boyajian@akov68.dec.com (JERRY BOYAJIAN) writes:
+>(Oh, before anyone asks the obvious question, the author was Richard
+>Lupoff, who is one of the best unknown science fiction writers around.)
+
+I find this statement hard to believe, based on the quality
+of his book "Circumpolar". It is full of characters which
+barely qualify as two dimensional, offensive racial stereotypes
+and various other assorted characters whose collective IQ doesn't get
+into double figures. I rated this book as -****.
+
+I cannot believe that someone who turned out such complete
+drivel could improve enough in other books to even qualify
+as average.
+
+I am however, willing to be surprised. What other books of
+his would people recommend?
+	Bob.
+#! rnews 1599
+Path: alberta!mnetor!uunet!mcvax!ukc!its63b!bob
+From: bob@its63b.ed.ac.uk (ERCF08 Bob Gray)
+Newsgroups: sci.misc
+Subject: Re: Grey Goo that's too smart for its own good
+Keywords: nanotechnology foresight drexler
+Message-ID: <810@its63b.ed.ac.uk>
+Date: 4 Dec 87 13:10:07 GMT
+References: <799@sbcs.sunysb.edu> <2698@drivax.UUCP> <1063@sugar.UUCP> <2411@watcgl.waterloo.edu> <1445@m-net.UUCP> <1526@mmm.UUCP> <2783@drivax.UUCP>
+Reply-To: bob@its63b.ed.ac.uk (ERCF08 Bob Gray)
+Organization: I.T. School, Univ. of Edinburgh, U.K.
+Lines: 23
+
+In article <2783@drivax.UUCP> macleod@drivax.UUCP (MacLeod) writes:
+>In article <1526@mmm.UUCP> cipher@mmm.UUCP (Andre Guirard) writes:
+>>In article <1445@m-net.UUCP> russ@m-net.UUCP (Russ Cage) writes:
+>>>In <2411@watcgl.waterloo.edu> kdmoen@watcgl.waterloo.edu (Doug Moen) writes:
+>>>>[...]  If it *does* turn out to be possible to build Grey Goo,
+>>>>then by the time fabrication technology catches up, perhaps we can have
+>>>>a wide spectrum of Goo killing techniques already available.
+>
+>Goo seems almost inevitable. It should not be a big problem, of itself;
+>the definition of Goo (for those not familiar with the problem) is that
+>of a nanomachine that will use any available energy and raw material to
+>reproduce itself periodically.  If it reproduces at 2x per year you have
+>one problem, relatively minor; if it reproduces at 512x per minute, you have 
+>quite another.
+
+I can hear the squeals from the anti-nuclear type lobby already
+
+	Can you PROVE it is safe?
+	Campaign against the Grey Goo!
+	prevent Nano-technology!
+
+and not a :-> in sight.
+	Bob.
+#! rnews 3115
+Path: alberta!mnetor!uunet!mcvax!ukc!cheviot!robert
+From: robert@cheviot.newcastle.ac.uk (Robert Stroud)
+Newsgroups: comp.unix.wizards
+Subject: Re: //host vs "mount point"
+Message-ID: <2584@cheviot.newcastle.ac.uk>
+Date: 4 Dec 87 16:22:51 GMT
+References: <648@tut.cis.ohio-state.edu> <1668@tut.cis.ohio-state.edu> <38c15248.4580@hi-csc.UUCP> <9559@mimsy.UUCP> <411@PT.CS.CMU.EDU> <6769@brl-smoke.ARPA>
+Reply-To: robert@cheviot (Robert Stroud)
+Organization: Computing Laboratory, U of Newcastle upon Tyne, UK NE17RU
+Lines: 62
+
+In article <6769@brl-smoke.ARPA> gwyn@brl.arpa (Doug Gwyn (VLD/VMB) <gwyn>) writes:
+>In article <411@PT.CS.CMU.EDU> jgm@K.GP.CS.CMU.EDU (John Myers) writes:
+>>Just to add to the confusion, let me put in a plug in for the Carnegie-Mellon
+>>University Computer Science Department's syntax:
+>>/../host
+>
+>Stolen from the Newcastle Connection.
+>
+>>"/.." is known as the "super-root".  It seems logically consistent to me...
+>
+>So, what is the result of
+>	$ cd /..
+>	$ pwd
+
+/.. of course!!
+
+If you add directories above root (and remember that with the Newcastle
+Connection, /.. was just a directory rather than some mysterious 
+"super-root") so that it is possible for your current directory to
+be in an uncle or cousin relationship with root (rather than a direct
+descendent), then you have to modify the pwd algorithm accordingly.
+
+pwd assumes that if you go up the tree with ".." enough times you will
+get to root. If your current directory is in a sideways relationship
+to root, this assumption will no longer be valid.
+
+The modified pwd algorithm should work like this:
+
+(1) Go up the tree with .. from your current directory until you
+find / or reach the base of the tree (a directory which is its own
+parent).
+
+(2) If you didn't reach / in (1), then starting from / go up to
+the base of the tree with .. and prefix the appropriate number of
+/..'s to the string from (1).
+
+For example, after cd /../../C/D, step (1) will give /C/D and step (2)
+will give /../.. so the answer is /../../C/D.
+
+This is relatively straightforward to implement. I've made the necessary
+modifications to the System V /bin/pwd and sh (which has a built-in pwd)
+for use with a kernel implementation of the Newcastle Connection.
+
+The tricky bit is getting the shortest possible pathname. For example,
+if / corresponds to /../../A/B in the global naming tree, then after
+cd /../C, the modified pwd algorithm would give /../../A/C which is
+correct but redundant. (/../../A is the same as /.. if / is /../../A/B).
+
+This can be fixed if you keep a record of everywhere you visit in (1) and
+stop in (2) when you reach somewhere you've visited before, but since in
+an infinite naming tree this would require an infinite amount of storage
+and isn't very efficient in any case, it is easier to simply implement
+the algorithm given (which also requires an infinite amount of storage
+in the general case of course!) and ignore this problem.
+
+Robert J Stroud,
+Computing Laboratory,
+University of Newcastle upon Tyne.
+
+ARPA robert%cheviot.newcastle@nss.cs.ucl.ac.uk
+UUCP ...!ukc!cheviot!robert
+JANET robert@newcastle.cheviot
+#! rnews 835
+Path: alberta!mnetor!uunet!mcvax!ukc!dcl-cs!nott-cs!pyr1.cs.ucl.ac.uk!awylie
+From: awylie@pyr1.cs.ucl.ac.uk
+Newsgroups: comp.sys.ibm.pc
+Subject: Re: Standard date bug
+Message-ID: <39500002@pyr1.cs.ucl.ac.uk>
+Date: 4 Dec 87 13:58:00 GMT
+References: <7457@eddie.MIT.EDU>
+Lines: 12
+Nf-ID: #R:eddie.MIT.EDU:7457:pyr1.cs.ucl.ac.uk:39500002:000:432
+Nf-From: pyr1.cs.ucl.ac.uk!awylie    Dec  4 13:58:00 1987
+
+
+I have a Taiwanese XT clone with some strange BIOS and MSDOS 3.2 and the
+bug has annoyed me some time. This is NOT the 'subtle' bug mentioned in
+another reply, but a simple non-increment of the date at midnight. This
+wreaks havoc with MAKE!
+   I shall try CLOCKFIX.SYS tonight. Thanks very much to the poster, his
+was the only really useful solution proposed.
+
+Andrew Wylie
+University of London Computer Centre
+
+awylie@uk.ac.ucl.cs
+#! rnews 847
+Path: alberta!mnetor!uunet!mcvax!ukc!dcl-cs!bath63!sc_dra
+From: sc_dra@ux63.bath.ac.uk (Dave Allum)
+Newsgroups: comp.sys.atari.st
+Subject: Hard Disk Optimisers
+Summary: Recommendations wanted
+Message-ID: <1972@bath63.ux63.bath.ac.uk>
+Date: 4 Dec 87 15:53:49 GMT
+Reply-To: sc_dra@ux63.bath.ac.uk (Dave Allum)
+Organization: SWURCC, University of Bath, U.K.
+Lines: 13
+
+
+Does anyone have any recommendations for and/or experience of hard disk
+optimisers for the ST?
+
+The only ones I have come across are Simon Poole's DLII and Michtron's
+Tune Up! (their exclamation mark, not mine).
+
+I have tried neither (DLII did some strange things with a ram disk I 
+tested it on, and I'd rather not pay for Tune Up! until I have some
+favorable reports on it) and would be very interested in  anyone's
+experiences with the above or any other such beasts.
+
+Thanks.
+#! rnews 1573
+Path: alberta!mnetor!uunet!mcvax!ukc!its63b!bob
+From: bob@its63b.ed.ac.uk (ERCF08 Bob Gray)
+Newsgroups: sci.physics
+Subject: Re: GR question
+Message-ID: <811@its63b.ed.ac.uk>
+Date: 4 Dec 87 17:31:49 GMT
+References: <4688@cit-vax.Caltech.Edu> <895@ubc-vision.UUCP>
+Reply-To: bob@its63b.ed.ac.uk (ERCF08 Bob Gray)
+Organization: I.T. School, Univ. of Edinburgh, U.K.
+Lines: 28
+
+In article <895@ubc-vision.UUCP> majka@ubc-vision.UUCP (Marc Majka) writes:
+>would see the "poor fellow's" delta-t getting longer.  The poor fellow
+>crosses the Absolute Event Horizon in a finite amount of (his) time.
+>The observer sees the poor fellow falling more and more slowly (while
+>also seeing him getting exponentially red-shifted) toward r=2M, but
+>never getting there.  I liked the presentation of this in my GR textbook:
+
+The observer, if he waited around long enough, would also
+see the black hole evaporate by Hawkins' radiation.
+
+But, from the point of view of the observer, the "poor fellow"
+can never cross the event horizon before the hole evaporates
+away from under him.
+
+Therefore, the "poor fellow" must observe one of two things.
+Either he crosses the event horizon in a finite amount of
+time, or he will observe the black hole to vanish as he
+approaches.
+
+1. sets up a paradox, but 2. implies that anything falling
+into a black hole can't get into the black hole before it
+evaporates. i.e. the black hole can't form in the first
+place. It just get very close to it.
+
+
+Would someone please comment on the above. I am sure I must
+be missing something. (I'm no physicist)
+	Bob.
+#! rnews 2122
+Path: alberta!mnetor!uunet!mcvax!ukc!its63b!hwcs!zen!frank
+From: frank@zen.UUCP (Frank Wales)
+Newsgroups: news.config
+Subject: Updated map entry for zen
+Keywords: new host computer
+Message-ID: <787@zen.UUCP>
+Date: 3 Dec 87 22:20:52 GMT
+Organization: Zengrange Limited, Leeds, England
+Lines: 47
+
+
+It's a bit late  again,  we've been  running  the new system for about 3
+months now, but here is our updated map entry:
+
+#N	zen
+#S	HP 9000 Model 840; HP-UX 1.1 (V.2)
+#O	Zengrange Limited
+#C	Julian Perry, Frank Wales
+#E	jules@zen.co.uk ...!mcvax!ukc!zen.co.uk!jules
+#T	+44 532 489048
+#P	Greenfield Road, Leeds, West Yorkshire, England, LS9 8DB
+#L	01 31 22 W / 53 47 42 N
+#R
+#
+zen	hwcs(DAILY)
+
+
+Who we are and what we do:
+
+As a company, we produce  custom  solutions  on  hand-held  and portable
+equipment,  primarily   customising   Hewlett-Packard   hand-helds.  For
+example, we recently installed almost 6 000 HP-71 hand-held computers as
+networked  terminals in 430 DHSS offices as part of a Document  Tracking
+System developed by us to a DHSS specification.
+
+We're not just a software  house, but also develop custom  packaging and
+electronics where necessary too.  Our customers are primarily government
+departments  (here and abroad), but we have also  produced  products for
+individual sale through dealers (such as the Zenwand-71 barcode wand for
+the HP-71, which span off of the DHSS contract).
+
+Although our products are almost exclusively  related to hand-helds, our
+expertise  stretches through to custom chip design and  mainframe-hosted
+software  packages  (mainly  under Unix).  As a  consequence,  we regard
+ourselves as a solutions  house, rather than being specific to software,
+hardware, design or whatever.
+
+We have one  office [in  Leeds],  have been  around for seven  years and
+employ over 40 people at present.  Is that a reasonable summary?
+
+Jules & Frank
+
+Julian Perry               [ jules@zen.co.uk  ...!mcvax!ukc!zen.co.uk!jules ]
+Frank Wales                [ frank@zen.co.uk  ...!mcvax!ukc!zen.co.uk!frank ]
+System Managers
+Zengrange Limited          Phone: +44 532 489048 ext 217
+Leeds, England.
+#! rnews 1158
+Path: alberta!mnetor!uunet!mcvax!ukc!its63b!hwcs!jack
+From: jack@cs.hw.ac.uk (Jack Campin)
+Newsgroups: rec.music.classical
+Subject: Re: re repeat repeating pieces
+Message-ID: <1567@brahma.cs.hw.ac.uk>
+Date: 4 Dec 87 18:18:28 GMT
+References: <8712011820.AA18589@decwrl.dec.com>
+Reply-To: jack@cs.glasgow.ac.uk (Jack Campin)
+Organization: PISA Project, Glesga Yoonie
+Lines: 13
+Summary:
+
+Expires:
+
+Sender:
+
+Followup-To:
+
+
+
+[ignore the above email address and use my signature]
+I may have missed some of this thread, but I haven't heard anyone mention
+Satie yet. His Vexations for piano is meant to be repeated 840 times
+(it takes about 18 hours to perform). He also wrote some pieces of music
+to be played in particular spaces - "Music for a Boardroom" is one
+that comes to mind - which go round and round in circles. (I think that one
+would produce some #@$% aggressive board meetings).
+-- 
+ARPA: jack%cs.glasgow.ac.uk@nss.cs.ucl.ac.uk
+JANET:jack@uk.ac.glasgow.cs       USENET: ...mcvax!ukc!cs.glasgow.ac.uk!jack
+Mail: Jack Campin, Computing Science Department, University of Glasgow,
+      17 Lilybank Gardens, Glasgow G12 8QQ, Scotland (041 339 8855 x 6045)
+#! rnews 1124
+Path: alberta!mnetor!uunet!mcvax!ukc!stl!dww
+From: dww@stl.stc.co.uk (David Wright)
+Newsgroups: comp.os.vms
+Subject: Problem with VMS 4.6 if your uVAX has EMULEX CS02's
+Message-ID: <596@acer.stl.stc.co.uk>
+Date: 4 Dec 87 21:54:38 GMT
+Reply-To: dww@stl.UUCP (David Wright)
+Organization: STL,Harlow,UK.
+Lines: 16
+
+Our System Manager has reported that there is a problem with using EMULEX CS02
+QBUS comms cards which are not at the latest revision level, under VMS 4.6.   
+These cards appeared to work fine under VMS 4.5 and earlier.
+
+The EMULEX CS02 card, configured as two DHV-11 8-line muxs, gives phantom
+devices when running SHOW DEVICE.   For example, TXC0 to TXC7 become TXC0 to
+TXC15.  There are problems in using the lines - for example Control-Y acts
+on the group of lines not just one!  There are other problems known to EMULEX. 
+
+The solution is to upgrade the firmware PROM on the card to at least
+revision P.  Emulex may make a charge for this.
+
+-- 
+Regards,
+        David Wright           STL, London Road, Harlow, Essex  CM17 9NA, UK
+dww@stl.stc.co.uk <or> ...uunet!mcvax!ukc!stl!dww <or> PSI%234237100122::DWW
+#! rnews 384
+Path: alberta!mnetor!uunet!mcvax!ukc!stc!root44!jgh
+From: jgh@root.co.uk (Jeremy G Harris)
+Newsgroups: comp.sys.amiga
+Subject: New Kickstart
+Keywords: Kickstart workbench janus
+Message-ID: <489@root44.co.uk>
+Date: 4 Dec 87 19:05:27 GMT
+Organization: Root Computers Ltd., London, England
+Lines: 3
+
+Will the Workbench-less Kickstart initialise Janus?
+-- 
+Jeremy Harris			jgh@root.co.uk
+#! rnews 1018
+Path: alberta!mnetor!uunet!mcvax!unido!stollco!til
+From: til@stollco.UUCP (tilgner)
+Newsgroups: sci.astro
+Subject: The current state of Hubble Constant?
+Keywords: Cosmology
+Message-ID: <142@stollco.UUCP>
+Date: 5 Dec 87 18:32:42 GMT
+Organization: Stollmann Gmbh, D 2000 Hamburg 50
+Lines: 17
+
+I am just preparing a 'semi-popular' lecture on how the
+value of the Hubble Constant is determined.
+
+As is generally
+known, the values of different authors fluctuates between
+ca. 50 to 100 km/(sec Mpc). The latest discussion of this
+problem which I know of is M. Rowan-Robinson's book
+"The Cosmological Distance Ladder" (Freeman 1985). He
+advocates 67 km/(sec Mpc) after a detailed discussion of
+the different distance indicators.
+
+Now I would like to know: What is the current state of
+affairs? The responses of the advocates of the various
+values, for example by Sandage & Tammann or de Vaucouleurs
+(= the grand old men of this topic)? Somehow I missed
+their reactions. Can anybody give me a hint via e-mail?
+I'll summarize.
+#! rnews 2734
+Path: alberta!mnetor!uunet!mcvax!enea!ttds!draken!zap
+From: zap@draken.nada.kth.se (Svante Lindahl)
+Newsgroups: comp.unix.wizards,comp.emacs
+Subject: Re: Emacs csh alias
+Message-ID: <235@draken.nada.kth.se>
+Date: 6 Dec 87 07:00:31 GMT
+References: <10672@brl-adm.ARPA>
+Reply-To: zap@nada.kth.se (Svante Lindahl)
+Followup-To: comp.emacs
+Organization: The Royal Inst. of Techn., Stockholm
+Lines: 49
+Xref: alberta comp.unix.wizards:5741 comp.emacs:2402
+
+[Warning: Extensive inclusion, but I have included a new newsgroup in
+ the newsgroups-line, and directed followups to it (comp.emacs)]
+
+In article <10672@brl-adm.ARPA> dsill@NSWC-OAS.arpa (Dave Sill) writes:
+>I've been trying to set up a C-Shell (4.2 BSD) alias for Emacs (GNU
+>17.64, not that it matters) which, when run the first time will
+>actually run Emacs, but after suspending Emacs with C-z, will bring
+>the background Emacs job to the foreground.  The catch is that I'd
+>also like the alias to re-load emacs if I exit with C-x C-c.  Simply
+>stated, I want an alias named "emacs" which will load Emacs if it
+>isn't already loaded, but will foreground a background Emacs if one
+>exists.
+>
+>I know I could do this with a script (if I assume the Emacs job is
+>always job %1), but I'd prefer an alias since they're faster.  It
+>would be especially nice to determine which background job was the
+>Emacs job and foreground *it*, instead of just assuming job %1.
+>
+>Any ideas or alternate approaches?  Should I just put up with the
+>occasional "fg: No such job." message?
+
+Here is something which should do part of what you want. It doesn't
+accomplish to start a new emacs process if you exited the last one
+with C-x C-c - unless the first one had never been suspended!
+Whenever you get "fg: No such job" just type ``i!!'', reinvoking the
+commandline prefixed with an "i", "iemacs" standing for "init emacs".
+
+alias emacs iemacs
+alias iemacs 'alias emacs remacs; "emacs" \!* ; alias emacs iemacs'
+alias remacs fg %emacs
+
+Here we use a special version of suspend-emacs, that will look for a
+file ".emacs_pause" in the user's home directory when emacs is
+resumed. In this file suspend-emacs expects to find the current
+working directory and an optional "command line" that is parsed like
+the initial command line.  Very useful!
+This could be done using "suspend-resume-hook", but the hook wasn't
+available in 17.?? when this was first implemented here.
+
+These are the aliases I use together with the special version of
+suspend-emacs.
+
+alias emacs iemacs
+alias remacs 'echo `pwd` \!* >\! ~/.emacs_pause ; %emacs'
+alias iemacs 'alias emacs remacs; "emacs" \!* ; alias emacs iemacs'
+alias kemacs 'alias emacs iemacs; remacs -kill'
+
+
+Svante Lindahl		zap@nada.kth.se		uunet!nada.kth.se!zap
+#! rnews 2721
+Path: alberta!mnetor!uunet!mcvax!diku!iesd!jpc
+From: jpc@iesd.uucp (Jens P. Christensen)
+Newsgroups: comp.unix.questions,comp.unix.wizards,sci.math.stat
+Subject: Problems with S statistical package
+Summary: Cannot make S work properly on Sun-3
+Keywords: S AT&T Sun-3 SunOS 3.4
+Message-ID: <162@iesd.uucp>
+Date: 5 Dec 87 19:41:09 GMT
+Reply-To: jpc@iesd.UUCP (Jens P. Christensen)
+Followup-To: comp.unix.questions
+Organization: Dept. of Comp. Sci., Aalborg University, Denmark
+Lines: 58
+Xref: alberta comp.unix.questions:4768 comp.unix.wizards:5742 sci.math.stat:213
+
+Could anyone please shed light on a problem I have in compiling the S
+statistical package from AT&T on our Sun-3 system:
+
+System specifics: Sun 3/260 under SunOS 3.4 using the m4 macro
+processor supplied with the S system. S version date: Fri Feb 28 1986
+
+Using the hints on compiling with BSD4.2 systems I only get apparently
+harmless warnings under the compilation. This could for example be:
+
+Warning on line 84 of hcp.f: local variable i never used
+Warning on line 96 of stems.f: statement cannot be reached
+f77: Warning: File with unknown suffix (/usr/local/src/s/S/newfun/lib/grz)
+     passed to ld
+or
+"dprint.c", line 20: warning: illegal combination of pointer and integer, op =
+
+Furthermore there are problems with the utility routine scandata.C, which
+fails with error: too many local variables. This is fixed by making the
+declaration of "table" global. Not pretty, but it works.
+
+These are all the kinds of problems that appear during the
+compilation, and it *will* result in an executable, except....
+The f...ing system doesn't even know how to add two numbers, as seen in
+the following:
+
+One-time initialization for new S user in /usr.MC68020/iesd/tap/jpc ...
+Directories swork and sdata created
+> 1 + 2
+Bad operator: +
+Error in +
+> 
+
+Running the tests supplied with the system ($A/DOTEST ALL) will not
+give better results. This is an excerpt from $TEST/current/apply:
+
+> prefix("apply.")    # test of apply and multivariate stuff, some time-series
+> $Random.seed_c(57,0,3,0,0,0,49,16,0,0,0,0)	# to initialize at same spot
+> matr_matrix(rnorm(100),20,5)
+Invalid distribution: rnorm
+Error in rnorm
+Dumped
+> print(cm_apply(matr,2,"mean")); apply(matr,2,"var")
+apply.matr not found
+Dumped
+ .
+ .
+and more depressing errors...
+Why does the prefix command work, while the matr_matrix(rnorm... stuff don't?
+
+So, have *anybody* made this run on a Sun system, and how did you do it?
+All suggestions or pointers to which direction I should go, are welcome.
+
+regards,
+-- 
+Jens Peter Christensen                               jpc@iesd.uucp
+Department of Math. and Computer Science             {...}!mcvax!diku!iesd!jpc
+Aalborg University Centre
+Denmark
+#! rnews 1496
+Path: alberta!mnetor!uunet!mcvax!lambert
+From: lambert@cwi.nl (Lambert Meertens)
+Newsgroups: sci.math.symbolic
+Subject: Bug in Macsyma SOLVE
+Message-ID: <137@piring.cwi.nl>
+Date: 6 Dec 87 21:50:53 GMT
+Organization: CWI, Amsterdam
+Lines: 39
+
+This is UNIX MACSYMA Release 309.2.
+
+(c1) x^12-12*x^11+48*x^10-40*x^9-193*x^8+392*x^7+44*x^6+8*x^5-977*x^4
+     -604*x^3+2108*x^2+4913;
+
+      12       11       10       9        8        7       6      5        4
+(d1) x   - 12 x   + 48 x   - 40 x  - 193 x  + 392 x  + 44 x  + 8 x  - 977 x
+                                                             3         2
+                                                      - 604 x  + 2108 x  + 4913
+
+(c2) solve(%);
+                      6       5       4        3        2
+(d2)          [0 = - x  + 12 x  - 47 x  + 188 x  - 527 x  - 4913]
+
+That looks wrong, but let's check if it factors (d1):
+
+(c3) part(%,1,2);
+                    6       5       4        3        2
+(d3)             - x  + 12 x  - 47 x  + 188 x  - 527 x  - 4913
+
+(c4) gcd(%,d1);
+
+(d4)                                   1
+
+No, it does not.  Let's have a look at the real roots of (d1) and (d3):
+
+(c5) realroots(d1)$ %,numer;
+
+(d6) [x = - 1.960768669843674, x = - 1.544090360403061, x = 3.544090360403061,
+                                                         x = 3.960768669843674]
+(c7) realroots(d3)$ %,numer;
+
+(d8)           [x = 5.472395747900009, x = 7.766151040792465]
+
+Way off.
+
+-- 
+
+Lambert Meertens, CWI, Amsterdam; lambert@cwi.nl
+#! rnews 989
+Path: alberta!mnetor!uunet!mcvax!unido!tub!actisb!bernd
+From: bernd@actisb.UUCP (Gunter Nitzler)
+Newsgroups: comp.sources.bugs
+Subject: Re: Starchart printing problem
+Message-ID: <116@actisb.UUCP>
+Date: 6 Dec 87 15:55:23 GMT
+References: <3554@ames.arpa>
+Reply-To: bernd@actisb.UUCP (Bernd-Gunter Nitzler)
+Organization: Actis in Berlin GmbH, W. Germany
+Lines: 19
+
+In article <3554@ames.arpa> yee@ames.UUCP (Peter E. Yee) writes:
+>I compiled and ran the starchart program.  The starpost version prints out
+>the outline of the chart and the legend.  Nothing more.  No stars, no planets,
+>no nebulas.  Nothing.  Is it just me, or has anyone else had this problem?
+
+I had the same problem and have found two bugs:
+
+In starchart.c, line 243 old:
+	char ras[2], ....
+new:
+	char ras[20], ...
+
+In starchart.c, line 757 old:
+	    sscanf(cbuf, "%*5s%f%f%f %[^\n]", &ra, &de, &sc, legend);
+new:
+	    sscanf(cbuf, "%*5s%lf%lf%lf %[^\n]", &ra, &de, &sc, legend);
+
+This two changes fixes the bugs.
+Bernd.
+#! rnews 2244
+Path: alberta!mnetor!uunet!mcvax!enea!tut!santra!jmunkki
+From: jmunkki@santra.UUCP (Juri Munkki)
+Newsgroups: comp.sys.mac
+Subject: Color CopyBits Is Too Slow!
+Keywords: Mac II Color QuickDraw Animation Speed Optimization
+Message-ID: <9130@santra.UUCP>
+Date: 6 Dec 87 21:13:10 GMT
+Organization: Helsinki University of Technology, Finland
+Lines: 76
+
+
+I experimented with offscreen pixmaps today. It seems that Color
+Quickdraw is very flexible, but too slow for good animation. Most of the
+overhead comes from color matching and conversion. I guess I could write
+my own color matching routine, but I think there should be a fast way to
+do a simple copy operation.
+
+In most painting programs the actual painting could be done on an
+offscreen bitmap with the same color table as the best gDevice.
+
+It takes about twice as much time to do a copybits in srcCopy mode than
+it takes in the srcXor mode. Below is a short program that draws to an
+offscreen pixmap and then copies it back to the screen. Try different
+transfer modes and note the speed difference. The code is written in LS
+C 2.13. Even srcXor, which is the fastest usable mode, is too slow for
+really high quality animation.
+
+How can it be done faster?
+
+#include <MacTypes.h>
+#include <QuickDraw.h>
+#include <Color.h>
+#include <WindowMgr.h>
+
+WindowPtr	onScreen;
+CGrafPtr	offS;
+RGBColor	temp;
+PixMapPtr	offP;
+
+void	main()
+{
+	int	i;
+	
+	InitGraf(&thePort);	InitCursor();
+	InitFonts();		InitWindows();
+		
+	onScreen=GetNewWindow(1000,0L,-1);
+
+	offS=(CGrafPtr)NewPtr(sizeof(*offS));
+
+	OpenCPort(offS);
+	HLock(offS->portPixMap);
+	offP=*(offS->portPixMap);
+
+	SetRect(&offP->bounds,0,0,256,256);
+	PortSize(256,256);
+	offP->rowBytes=32768L+256;
+
+	offP->baseAddr=NewPtr(65536L);
+
+	EraseRect(&offS->portRect);
+	temp.blue=65535;
+	temp.red=0;
+	temp.green=0;
+	RGBForeColor(&temp);
+	for(i=0;i<256;i+=4)
+	{	MoveTo(i,0);
+		LineTo(255-i,255);
+	}
+
+	SysBeep(10);
+	HideCursor();
+	for(i=100;i;i--)
+		CopyBits(&((GrafPtr)offS)->portBits,&onScreen->portBits,
+				 &offS->portRect,&offS->portRect,srcXor,0);
+	SysBeep(10);
+	while(!Button());
+}
+
+Juri Munkki
+jmunkki@santra.hut.fi
+jmunkki@fingate.bitnet
+lk-jmu@finhut.bitnet
+
+P.S. The window is longword aligned and a color table was copied from the
+     system file.
+#! rnews 617
+Path: alberta!mnetor!uunet!mcvax!enea!chalmers!benke
+From: benke@chalmers.UUCP (Bengt-Eric Ericson)
+Newsgroups: comp.sys.ibm.pc
+Subject: Re: WARNING! FASTBACK may corrupt your hard disk!
+Message-ID: <2239@chalmers.UUCP>
+Date: 6 Dec 87 21:16:48 GMT
+References: <703@vaxine.UUCP> <3225@bnrmtv.UUCP> <7024@sunybcs.UUCP>
+Reply-To: benke@chalmers.UUCP (Bengt-Eric Ericson)
+Organization: Dept. of CS, Chalmers, Sweden
+Lines: 3
+Keywords:Computer Shopper
+
+
+In some article in this group there is said something about
+"Computer Shopper". Is this a magazine or what? Please
+enlight us guys here in the land of Polar bears. :-)
+#! rnews 2432
+Path: alberta!mnetor!uunet!mcvax!ukc!eagle!kjws
+From: kjws@eagle.ukc.ac.uk (K.J.W.Smithers)
+Newsgroups: comp.sys.amiga
+Subject: Re: A2090A HD controller
+Message-ID: <4038@eagle.ukc.ac.uk>
+Date: 6 Dec 87 14:46:00 GMT
+References: <5474@oberon.USC.EDU> <6575@ccicpg.UUCP> <2903@cbmvax.UUCP>
+Reply-To: kjws@ukc.ac.uk (K.J.W.Smithers)
+Organization: Computing Lab, University of Kent at Canterbury, UK.
+Lines: 56
+Summary:
+
+Expires:
+
+Sender:
+
+Followup-To:
+
+
+In article <2903@cbmvax.UUCP> you write:
+>
+>This is one of the things that the updated hddisk device I announced
+>awhile ago (and will mail to people over usenet) fixes.  If you don't
+>have have a 2090 card, the software that comes with your 2090 is
+>the new driver, so it will work fine in overscan.
+>-- 
+>andy finkel		{ihnp4|seismo|allegra}!cbmvax!andy 
+>Commodore-Amiga, Inc.
+>
+
+I have an A2090 card and a CSA68020/68881 board with no 32 bit ram.
+ 
+ They will Not work together. (but both work seperately)
+
+I think the driver (hddisk) is dated  1986 , is this the latest driver?
+(If not could you please e-mail me the latest version)
+
+The problem is when I run binddrivers that task stops, (binddrivers
+never exits). It seems to fallover on a particular call to execbase.
+The last instruction (displayed by MetaScope) is  mov a2,(a0)
+
+If i move the hddisk from expansion draw , to hddisk.device in the
+devs draw, i can mount the harddisk (dh0:) , but when i do a
+cd dh0: , the cd command displays 'Cant find dh0:'
+
+I am running morerows, 672*266 on a B2000 rev 4.0 board (pal) with
+2Mbytes expansion ram , 2*3.5inch drives, and (hopefully) A2090 +
+20 Mbyte hard disk, and a CSA 68020/68881 board.
+
+I have also done the wire-link modification to the main B2000 board,
+as required by CSA for the 68020 board on Rev4.0 and later boards.
+
+Slots are as follows :-
+
+     I  I  E  E  E  M  H     6
+     B  B  M  M  M  E  A     8
+     M  M  P  P  P  M  R     0
+           T  T  T  O  D     2
+	   Y  Y  Y  R  D     0
+                    Y  I     C
+                       S     P
+                       K     U
+
+   Thanks in advance for any help
+		
+	Kit Smithers
+
+____________________________________________________________________________
+   Kit Smithers			kjws@ukc.ac.uk
+				kjws@ukc.UUCP
+				!mcvax!ukc!kjws
+
+The man who can not stay fast and hard at the same time !
+Live for ever, or die in the attempt.
+______________________________________________________________________________
+#! rnews 1572
+Path: alberta!mnetor!uunet!mcvax!ukc!its63b!ajcd
+From: ajcd@its63b.ed.ac.uk (Angus Duggan, Department of Computer Science, University of Edinburgh,)
+Newsgroups: rec.games.hack
+Subject: pickup option - suggestion
+Keywords: pickup HACKOPTIONS
+Message-ID: <813@its63b.ed.ac.uk>
+Date: 6 Dec 87 11:47:56 GMT
+Reply-To: ajcd@its63b.ed.ac.uk (Angus Duggan)
+Organization: I.T. School, Univ. of Edinburgh, U.K.
+Lines: 23
+
+Here's a suggestion for an improvement (at least I think it is :-) to the
+"pickup" option in nethack, which someone who is familiar with the source
+code might like to implement -
+
+Make the "pickup" option a composite option like "packorder", and re-write
+the picking up code so that the types of objects specified will be
+automatically picked up. All other objects could still be picked up by ','.
+
+e.g. "pickup:?+/=!)"  would pick up scrolls, spellbooks, wands, rings,
+                                   potions, and weapons.
+
+This would be useful for those of us who don't like carrying hoards of
+gold around, and also to prevent picking up dead cockatrices while still
+picking up other objects.
+
+BTW, does anyone know what the options "null" and "news" do?
+-- 
+Angus Duggan, Department of Computer Science, University of Edinburgh,
+James Clerk Maxwell Building, The King's Buildings, Mayfield Road,
+Edinburgh, EH9 3JZ, Scotland, U.K.
+JANET:  ajcd@uk.ac.ed.ecsvax  ARPA: ajcd%ecsvax.ed.ac.uk@cs.ucl.ac.uk
+USENET: ajcd@ecsvax.ed.ac.uk  UUCP: ...!seismo!mcvax!ukc!ecsvax.ed.ac.uk!ajcd
+BITNET: psuvax1!ecsvax.ed.ac.uk!ajcd or ajcd%ecsvax.ed.ac.uk@earn.rl.ac.uk
+#! rnews 4243
+Path: alberta!mnetor!uunet!mcvax!ukc!its63b!simon
+From: simon@its63b.ed.ac.uk (ECSC68 S Brown CS)
+Newsgroups: comp.lang.c
+Subject: Re: stdio error detection
+Message-ID: <814@its63b.ed.ac.uk>
+Date: 6 Dec 87 17:35:07 GMT
+References: <10649@brl-adm.ARPA>
+Reply-To: simon%lfcs.ed.ac.uk@nss.cs.ucl.ac.uk (Simon Brown)
+Organization: LFCS, University of Edinburgh
+Lines: 87
+
+In article <10649@brl-adm.ARPA> dsill@NSWC-OAS.arpa (Dave Sill) writes:
+>>I used to be rather fond of C, but this error stuff is quite
+>>incredibly bad.  The problem isn't really the language; it's
+>>the libraries.
+>
+>Rather than messing with errno, I think a new variable, say, liberr,
+>should be used.  An include file, say liberr.h, could contain macro
+>definitions for the various types of errors.  A macro named LIBERR
+>could also be defined in liberr.h so code could be written that would
+>take advantage of liberr if it was available or handle errors in the
+>usual way if it's not.  Even better would be to have LIBERR be a
+>predefined macro like ANSI, unix, vax, et cetera.
+>
+
+This still has the same problem as with "errno"- namely that you're trying
+to describe a general ``error condition'' using a single number! I'm told
+that VMS (but it's a good idea for all that...) provides a stack of error 
+values which allows a program to search backward to find out what the "real" 
+error was, depending on what kind of detail is required. If you have several
+levels of library calls between you and the system call that failed, this
+can be extremely useful- it's not really much use having an error-value
+if you can't even tell what system call it came from (let alone what parameters
+were *passed* to that system call to cause it to fail!).
+
+A *decent* error-returning mechanism would describe:
+
+	1. What call (syscall or library call) failed.
+	   This could be a number- you could use something like internet
+	   addressing to put some kind of structure into it:
+		libc.stdio.fopen
+	2. Why it failed.
+	   Simple E-numbers will do for this (although I suppose they'd
+	   have to be grouped for different libraries):
+		E_STDIO.E_CANNOT_OPEN_FILE
+	3. What value it returned.
+		(FILE *)NULL
+	3. What parameters were passed to it.
+	   This is the most difficult one, because it would have to have
+	   some kind of idea as to the types involved. It could (I suppose)
+	   deal only with string types (and convert any other type into
+	   "printable" form by doing the equivalent of sprintf()'ing it).
+	   It also has to be a "list", which means it would probably have
+	   to be done using something like "argc,argv":
+		argc: 2
+		argv: "mumble.splat", "r"
+
+If the error is not "dealt with", then this information should propogate
+down (together with the info from the callee's failure), and so on...
+
+So, If you do a
+	fopen("mumble.splat","r")
+and it fails, then the following would be left on the stack (in some format
+or other) to be dealt with by some error-diagnosing function:
+
+	kernel.open:
+		param 1: "mumble.splat" [string]
+		param 2: 0 [int]
+		returns: -1 [int]
+		error: E_KERNEL.ENOENT
+	libc.stdio.fopen:
+		param 1: "mumble.splat" [string]
+		param 2: "r" [string]
+		returns: 0 [FILE *]
+		error: E_LIBC.E_STDIO.E_CANNOT_OPEN_FILE
+
+The error-diagnosing stuff could then print something *useful* such as
+	stdio fopen: couldn't open file "mumble.splat" for reading, because:
+	    kernel open: no file or directory "mumble.splat"
+
+(and of course the format of these messages could be user-configurable, so
+that noddies would just get the information they need, whereas people who
+understand what they're doing could get reams and reams of info- just by setting
+some environment parameter to the appropriate value).
+
+Of course, all this stuff would have to be known by the compiler, and I'm sure
+it'd be dead slow to execute!
+
+-- 
+--------------------------------------------------
+| Simon Brown                                    |
+| Laboratory for Foundations of Computer Science |
+| Department of Computer Science                 |
+| University of Edinburgh, Scotland, UK.         |
+--------------------------------------------------
+ UUCP:  uunet!mcvax!ukc!lfcs!simon
+ ARPA:  simon%lfcs.ed@nss.cs.ucl.ac.uk      "Life's like that, you know"
+ JANET: simon@uk.ac.ed.lfcs
+#! rnews 665
+Path: alberta!mnetor!uunet!mcvax!henk
+From: henk@cwi.nl (Henk Schouten)
+Newsgroups: rec.games.board
+Subject: diplomacy
+Keywords: pbm
+Message-ID: <138@piring.cwi.nl>
+Date: 7 Dec 87 08:36:16 GMT
+Organization: CWI, Amsterdam
+Lines: 9
+
+A local group is going to start a diplomacy game by mail. We have
+only few players so I would like to take part in the game myself.
+To do so, I would like to have the moves evaluated by a
+program. Before writing such a program myself, I would like to
+ask if anyone has or knows of such a program in the public
+domain, preferrably written in C. Code or pointers to it will be
+greatly appreciated.
+				Henk Schouten
+				..!nl!cwi!henk
+#! rnews 1298
+Path: alberta!mnetor!uunet!mcvax!varol
+From: varol@cwi.nl (Varol Akman)
+Newsgroups: sci.crypt
+Subject: Re: NSA advertisment
+Summary: Somewhat naive, huh?
+Message-ID: <139@piring.cwi.nl>
+Date: 7 Dec 87 08:59:02 GMT
+References: <4781@cit-vax.Caltech.Edu>
+Organization: CWI, Amsterdam
+Lines: 22
+
+palmer@tybalt.caltech.edu.UUCP (David Palmer) writes:
+>I just read a magazine add seeking people to work at the NSA (pg. 80R of
+>Dec. 1987 IEEE Spectrum)
+>The graphic is 10,000,0... (100 zeros) written on three lines.  The first
+>paragraph of the text reads:
+>	You're looking at a "googol." Ten raised to the 100th power.
+>	One followed by 100 zeros.  Counting 24 hours a day, you would
+>	need 120 years to reach a googol.  Two lifetimes.  It's a
+>	number that's impossible to grasp.  A number beyond our imagination.
+>... material deleted ...
+
+This strikes me as quite odd.  I mean, if something can be done in two lifetimes
+then, darn it, it is well within my imagination.
+If it can be done within 20 lifetimes
+I can still grasp how difficult it should be.  A real difficult thing would
+be something that takes say 10^100 lifetimes.
+
+In short, I find the above ad quite naive.  NSA guys should probably
+have something better than this for the inspring encryption student.
+What do you say?
+
+-Varol Akman
+#! rnews 1520
+Path: alberta!mnetor!uunet!mcvax!prlb2!ronse
+From: ronse@prlb2.UUCP (Christian Ronse)
+Newsgroups: sci.math
+Subject: Re: Least-squares fitting
+Summary: see Duda & Hart, Chapter 9, for a solution
+Keywords: ``eigenvector line fitting''
+Message-ID: <387@prlb2.UUCP>
+Date: 7 Dec 87 09:22:11 GMT
+References: <1823@culdev1.UUCP> <528@amethyst.ma.arizona.edu>
+Organization: Philips Research Laboratory, Brussels
+Lines: 21
+
+From article <528@amethyst.ma.arizona.edu> by hdunne@amethyst.ma.arizona.edu:
+< In article <1823@culdev1.UUCP> drw@culdev1.UUCP (Dale Worley) writes:
+	[deleted ...]
+< }Is is known how to perform least-squares fitting where the "error" is
+< }the perpendicular distance between the point and the line?
+< }
+< If the point is (x_i,y_i) and the line is y = a*x + b, then the square of the
+< perpendicular distance is [(y_i - a*x_i - b)^2]/(1 + a^2) (assuming the line
+< isn't vertical). Taking the sum of the squared distances and setting the
+< partial derivatives wrt. a and b equal to zero, you get the same equations 
+< for a and b as you get from the usual least-squares procedure.
+
+See the book ``Pattern Classification and Scene Analysis'' by R.O. Duda & P.E.
+Hart, Chapter 9. Section 9.2.1 introduces the usual least square fitting
+(``minimum-squared-error line fitting''), and 9.2.2 the one asked by Dale
+(``eigenvector line fitting''). There the problem is solved.
+
+Christian Ronse		maldoror@prlb2.UUCP
+{uunet|philabs|mcvax|...}!prlb2!{maldoror|ronse}
+
+	STAT ROSA PRISTINA NOMINE, NOMINA NUDA TENEMUS
+#! rnews 977
+Path: alberta!mnetor!uunet!mcvax!ukc!stl!stc!idec!camcon!mb
+From: mb@camcon.uucp (Mike Bell)
+Newsgroups: comp.sys.ibm.pc
+Subject: Re: Neat voice|gag program
+Summary: How does HELPME work?
+Message-ID: <1107@titan.camcon.uucp>
+Date: 2 Dec 87 14:25:07 GMT
+References: <3692@uwmcsd1.UUCP>
+Distribution: all
+Organization: Cambridge Consultants Ltd., Cambridge, UK
+Lines: 15
+
+in article <3692@uwmcsd1.UUCP>, cmaag@csd4.milw.wisc.edu 
+(posting to comp.binaries.ibm.pc)  says:
+
+> Here is a neat little program I found on a local bbs.  It uses the speaker
+> to generate a very-realistic (the best I've heard on a PC!) voice that
+> says something to the effect of "Help!  I'm locked in this computer!
+> Let me out! Help!".  
+
+I just played it, and was much impressed. Given the rudimentary
+nature of IBM PC's, can anybody explain how it achieves its
+effect?
+-- 
+---------------		UUCP:  ...mcvax!ukc!camcon!mb
+-- Mike Bell --		or:    mb%camcon.uucp
+---------------		Phone: +44 223 358855
+#! rnews 710
+Path: alberta!mnetor!uunet!mcvax!ukc!stl!stc!idec!camcon!mb
+From: mb@camcon.uucp (Mike Bell)
+Newsgroups: comp.sources.bugs
+Subject: Re: v12i071:  StarChart program (Minor correction)
+Message-ID: <1114@titan.camcon.uucp>
+Date: 4 Dec 87 15:48:15 GMT
+References: <1110@artemis3.camcon.uucp>
+Organization: Cambridge Consultants Ltd., Cambridge, UK
+Lines: 10
+
+in article <1110@artemis3.camcon.uucp>, mb@camcon.uucp (Mike Bell) says:
+> 	(Problem found on Sun 4.3 BSD Unix)
+
+Sorry, that should have been Sun Release 3.4 of 4.2 BSD... (well it
+was correct within an order of magnitude:-)
+
+-- 
+---------------		UUCP:  ...mcvax!ukc!camcon!mb
+-- Mike Bell --		or:    mb%camcon.uucp
+---------------		Phone: +44 223 358855
+#! rnews 2447
+Path: alberta!mnetor!uunet!mcvax!tuvie!rcvie
+From: rcvie@tuvie (ELIN Forsch.z.)
+Newsgroups: comp.lang.c
+Subject: Re: Autoincrement question
+Message-ID: <548@tuvie>
+Date: 7 Dec 87 10:00:58 GMT
+References: <1507@ogcvax.UUCP>
+Organization: TU Vienna EDP-Center, Vienna, AUSTRIA
+Lines: 58
+
+In article <1507@ogcvax.UUCP>, schaefer@ogcvax.UUCP (Barton E. Schaefer) writes:
+> (I realize this might be similar to another question asked recently, but ...)
+> 
+> Another student here at OGC recently came to me with a question about the
+> C autoincrement operator.  The following program is representative of the
+> code he wrote, which did not do what he expected:
+> 
+>     struct foo { struct foo *tmp; char junk[32]; } foolist[4];
+> 
+>     main ()
+>     {
+> 	struct foo *bar;
+> 
+> 	bar = foolist;
+> 	/* Do something with bar */
+> 	bar->tmp = bar++;		/* This is the problem line */
+> 	/* Do something else */
+>     }
+> 
+
+This is really dangerous programming. The points where the left and where the
+right "bar" are evaluated are implementation defined. The problem is similar to
+another one, which a friend of mine had some time ago. He tried to pack as much
+as possible into the control part of a while loop using the following statement:
+
+while (a[i]=b[i++])
+  ;
+
+Things were even worse here, as the program behaved even differently depending
+on whether it was compiled with the optimization option or not. Non optimized
+everything worked as expected but in the optimized version only for the first
+assignment "i" was incremented after the assignment, for all the following
+assignments it was incremented after the evaluation of "b[i]" but before the 
+assignment. Nevertheless this behaviour was in the sense of both K&R and ANSI.
+The only thing you can trust on, is that the *operand* of the increment
+operator is evaluated before its incrementation. One way to achieve the desired
+behaviour is, as you suggested yourself, to write:
+
+> What he really wanted was the equivalent of
+> 	bar->tmp = bar;
+> 	bar++;
+
+and not (for the same reasons stated above):
+
+> 	(bar++)->tmp = bar;
+
+If there is any necessity to have the whole semantic in one *expression*, use
+the comma operator, as
+
+bar->tmp = bar, bar++;
+
+This operator *guarantees* the sequential evaluation of its operands from
+left to right.
+
+In real life: Dipl.Ing. Dietmar Weickert
+              ALCATEL Austria - ELIN Research Center
+              Floridusg. 50
+          A - 1210 Vienna / Austria
+#! rnews 1822
+Path: alberta!mnetor!uunet!mcvax!steven
+From: steven@cwi.nl (Steven Pemberton)
+Newsgroups: comp.sys.atari.st
+Subject: Re: Alcyon C Bug N++
+Message-ID: <140@piring.cwi.nl>
+Date: 7 Dec 87 14:59:48 GMT
+References: <8712051307.AA12109@ucbvax.Berkeley.EDU>
+Reply-To: steven@cwi.nl (or try mcvax!steven.uucp)
+Organization: CWI, Amsterdam
+Lines: 38
+
+For people interested, here are a couple of bugs in the Alcyon
+compiler that we've been hitting our heads against for the last few
+weeks:
+
+	1) The compiler doesn't seem able to cope with nested
+	   initialisations. For instance, a struct with an array in
+	   the middle:
+		static struct foo table[] = {
+			{ ...... {.....} ......},
+			...
+		}
+	   The compiler complains about mismatched braces.
+	   Cure: 'unwrap' the struct declaration, so it's all at the
+		 same level.
+
+	2) In a construct like
+		bar *p = (expression1, expression2);
+	   the result of expression2 gets coerced to int, and then
+	   back to bar *, meaning basically that you get bombs on the
+	   screen when you try to use p, due to a wrong address.
+	   Cure: use
+		bar *p = (expression1, (bar *) expression2);
+
+	3) We believe that 'complicated' initialisations to auto
+	   variables in functions (for instance where the
+	   initialisation involves a call to another function) often
+	   come out wrong. However, by this point, we despaired, and
+	   stopped using the compiler, so we never followed up on it.
+
+I might point out that we're trying to compile a BIG program: 30,000
+lines of C, so just trying to trace bug 2 took us a LOT of time.
+
+By the way, just for interest: to compile the lot from scratch, using
+a ram disk for temporaries would take 4 hours. When we reinitialised
+the disk partition, and copied the files back, a recompile only took
+1.5 hours!
+
+Steven Pemberton, CWI, Amsterdam; steven@cwi.nl
+#! rnews 1265
+Path: alberta!mnetor!uunet!mcvax!mhres!jv
+From: jv@mhres.mh.nl (Johan Vromans)
+Newsgroups: comp.sys.hp
+Subject: Re: syslogd on HP-UX
+Summary: I have one
+Message-ID: <1495@mhres.mh.nl>
+Date: 7 Dec 87 12:19:02 GMT
+References: <641@ucdavis.ucdavis.edu>
+Sender: jv@mhres.mh.nl
+Reply-To: jv@mhres.mh.nl (Johan Vromans)
+Organization: Multihouse N.V., The Netherlands
+Lines: 20
+
+In article <641@ucdavis.ucdavis.edu> arons@iris.ucdavis.edu (Tom Arons) writes:
+>Has anyone successfully ported syslog(3) and syslogd from 4.2 or
+>4.3 BSD to HP-UX 5.3 running on a 9000 series 300?
+>
+>It doesn't look like it would be too hard to do, but I don't want to
+>reinvent the wheel.
+
+I once implemented a syslogd for HP-UX using message queues. I have posted
+it to comp.sources.unix some time ago, but I can mail it if you cannot find
+it.
+
+Features: (almost) BSD compatible, no network support, runs as a daemon,
+communicates with message queues.
+If no daemon is running, calling 'syslog' is effectivily a no-op.
+I have used it when I tried to get sendmail running.
+
+
+
+-- 
+Johan Vromans                              | jv@mh.nl via European backbone
+Multihouse N.V., Gouda, the Netherlands    | uucp: ..{uunet!}mcvax!mh.nl!jv
+"It is better to light a candle than to curse the darkness"
+#! rnews 1036
+Path: alberta!mnetor!uunet!mcvax!botter!wundt!michael
+From: michael@wundt.psy.vu.nl (M.A.M. Michael)
+Newsgroups: comp.sys.mac
+Subject: Address for update of VersaTerm requested
+Message-ID: <164@wundt.psy.vu.nl>
+Date: 7 Dec 87 16:30:39 GMT
+Reply-To: michael@psy.vu.nl.UUCP (M.A.M. Felt)
+Organization: VU Psychologie, Amsterdam
+Lines: 24
+
+!!!!!!!!!!!!!!!!!!!!!!!!!
+Please reply via e-mail.
+!!!!!!!!!!!!!!!!!!!!!!!!!
+
+When I purchased VersaTerm 2+ years ago I didn't bother to register.
+Now I wish I had. It's about time for an update.
+
+The manual lists the address:
+Peripherals Computers & Supplies Inc
+2232 Perkiomen Avenue
+Mt. Penn, PA 19606
+
+Is this still current (other VersaTerm Users)?
+
+In either case, an e-mail reply will be appreciated.
+The dealer (I bought it from) here is still selling
+the same version of two years ago. (1.42)
+
+Thanks, michael felt
+-- 
+Michael Felt	Psychology Dept, Vrije Universiteit, Amsterdam, Netherlands
+InterNet:	michael@psy.vu.nl
+UUCP:		...!mcvax!vupsy!michael , michael@vupsy.UUCP
+AppleLink:	HOL0038
+#! rnews 600
+Path: alberta!mnetor!uunet!mcvax!inria!axis!alastair
+From: alastair@axis.fr (Alastair Adamson)
+Newsgroups: comp.text
+Subject: To break or not to break
+Summary: br command in [nt]roff
+Message-ID: <348@axis.fr>
+Date: 7 Dec 87 08:33:25 GMT
+Organization: Axis Digital, Paris
+Lines: 9
+
+I have long wondered at the ubiquitous [nt]roff request
+	'br
+found in the mm macros and elsewhere. Could someone
+please elucidate the use of the break request with
+the no-break command character ' used?
+
+Thanks in advance, Alastair Adamson,
+	alastair@axis.fr
+	Axis Digital, 135 rue d'Aguesseau, 92100, Boulogne, France
+#! rnews 8193
+Path: alberta!mnetor!uunet!mcvax!botter!ast
+From: ast@cs.vu.nl (Andy Tanenbaum)
+Newsgroups: comp.os.minix
+Subject: New program: treecmp.c
+Message-ID: <1774@botter.cs.vu.nl>
+Date: 7 Dec 87 20:53:16 GMT
+Reply-To: ast@cs.vu.nl (Andy Tanenbaum)
+Organization: VU Informatica, Amsterdam
+Lines: 321
+
+
+I have written a program to recursively compare the contents of two given
+directories, file for file.  The program descends the tree and reports about
+files that are missing or different.  Some day, if I ever get around to
+producing V1.3 of MINIX, I will make a tree of the current version next to
+the V1.2 tree, and then run this program to get a list of all files that
+are different.  Then I can make diff listings etc.  In reality, the reason
+I wrote it however, is that I had just copied my MINIX tree from one part
+of the disk to another, and I wanted to make sure nothing was forgotten.
+I am sure there are other uses as well.    One could no doubt write a shell
+script to do this same thing, or perhaps use find, but this program is
+much faster, being able to compare two 8 megabyte trees in about 12
+minutes on a Z-248.
+
+Please post any bugs you find.
+
+Andy Tanenbaum (ast@cs.vu.nl)
+
+----------------------------- treecmp.c ---------------------------------
+/* treecmp - compare two trees		Author: Andy Tanenbaum */
+
+/* This program recursively compares two trees and reports on differences.
+ * It can be used, for example, when a project consists of a large number
+ * of files and directories.  When a new release (i.e., a new tree) has been
+ * prepared, the old and new tree can be compared to give a list of what has
+ * changed.  The algorithm used is that the first tree is recursively
+ * descended and for each file or directory found, the corresponding one in
+ * the other tree checked.  The two arguments are not completely symmetric
+ * because the first tree is descended, not the second one, but reversing
+ * the arguments will still detect all the differences, only they will be
+ * printed in a different order.  The program needs lots of stack space
+ * because routines with local arrays are called recursively. The call is
+ *    treecmp [-v] dir1 dir2
+ * The -v flag (verbose) prints the directory names as they are processed.
+ */
+
+#include <stat.h>
+
+#define BUFSIZE 4096		/* size of file buffers */
+#define MAXPATH 128		/* longest acceptable path */
+#define DIRENTLEN 14		/* number of characters in a file name */
+
+struct dirstruct {		/* layout of a directory entry */
+  unsigned inum;
+  char fname[DIRENTLEN];
+};
+
+struct stat stat1, stat2;	/* stat buffers */
+
+char buf1[BUFSIZE];		/* used for comparing bufs */
+char buf2[BUFSIZE];		/* used for comparing bufs */
+
+int verbose;			/* set if mode is verbose */
+
+main(argc, argv)
+int argc;
+char *argv[];
+{
+  char *p;
+
+  if (argc < 3 || argc > 4) usage();
+  p = argv[1];
+  if (argc == 4) {
+	if (*p == '-' && *(p+1) == 'v') 
+		verbose++;
+	else
+		usage();
+  }
+
+  if (argc == 3)
+	compare(argv[1], argv[2]);
+  else
+	compare(argv[2], argv[3]);
+
+  exit(0);
+}
+
+compare(f1, f2)
+char *f1, *f2;
+{
+/* This is the main comparision routine.  It gets two path names as arguments
+ * and stats them both.  Depending on the results, it calls other routines
+ * to compare directories or files.
+ */
+
+  int type1, type2;
+
+  if (stat(f1, &stat1)  < 0) {
+	printf("Cannot stat %s\n", f1);
+	return;
+  }
+
+  if (stat(f2, &stat2)  < 0) {
+	printf("Missing file: %s\n", f2);
+	return;
+  }
+
+  /* Examine the types of the files. */
+  type1 = stat1.st_mode & S_IFMT;
+  type2 = stat2.st_mode & S_IFMT;
+  if (type1 != type2) {
+	printf("Type diff: %s and %s\n", f1, f2);
+	return;
+  }
+
+  /* The types are the same. */
+  switch(type1) {
+	case S_IFREG:	regular(f1, f2);
+			break;
+
+	case S_IFDIR:	directory(f1, f2);
+			break;
+
+	case S_IFCHR:
+	case S_IFBLK:	break;
+
+	default:	printf("Unknown file type %o\n", type1);
+  }
+  return;
+}
+
+regular(f1, f2)
+char *f1, *f2;
+{
+/* Compare to regular files.  If they are different, complain. */
+
+  int fd1, fd2, n1, n2, i;
+  unsigned bytes;
+  long count;
+  char *p1, *p2;
+
+  if (stat1.st_size != stat2.st_size) {
+	printf("Size diff: %s and %s\n", f1, f2);
+	return;
+  }
+
+  /* The sizes are the same.  We actually have to read the files now. */
+  fd1 = open(f1, 0);
+  if (fd1 < 0) {
+	printf("Cannot open %s for reading\n", f1);
+	return;
+  }
+
+  fd2 = open(f2, 0);
+  if (fd2 < 0) {
+	printf("Cannot open %s for reading\n", f2);
+	return;
+  }
+
+  count = stat1.st_size;
+  while (count > 0L) {
+	bytes = (unsigned) (count > BUFSIZE ? BUFSIZE : count);	/* rd count */
+	n1 = read(fd1, buf1, bytes);
+	n2 = read(fd2, buf2, bytes);
+	if (n1 != n2) {
+		printf("Length diff: %s and %s\n", f1, f2);
+		close(fd1);
+		close(fd2);
+		return;
+	}
+
+	/* Compare the buffers. */
+	i = n1;
+	p1 = buf1;
+	p2 = buf2;
+	while (i--) {
+		if (*p1++ != *p2++) {
+			printf("File diff: %s and %s\n", f1, f2);
+			close(fd1);
+			close(fd2);
+			return;
+		}
+	}
+	count -= n1;
+  }
+  close(fd1);
+  close(fd2);
+}
+
+directory(f1, f2)
+char *f1, *f2;
+{
+/* Recursively compare two directories by reading them and comparing their
+ * contents.  The order of the entries need not be the same.
+ */
+
+  int fd1, fd2, n1, n2, ent1, ent2, i, used1 = 0, used2 = 0;
+  char *dir1buf, *dir2buf;
+  char name1buf[MAXPATH], name2buf[MAXPATH];
+  struct dirstruct *dp1, *dp2;
+  unsigned dir1bytes, dir2bytes;
+  extern char *malloc();
+
+  /* Allocate space to read in the directories */
+  dir1bytes = (unsigned) stat1.st_size;
+  dir1buf = malloc(dir1bytes);
+  if (dir1buf == 0) {
+	printf("Cannot process directory %s: out of memory\n", f1);
+	return;
+  }
+
+  dir2bytes = (unsigned) stat2.st_size;
+  dir2buf = malloc(dir2bytes);
+  if (dir2buf == 0) {
+	printf("Cannot process directory %s: out of memory\n", f2);
+	free(dir1buf);
+	return;
+  }
+
+  /* Read in the directories. */
+  fd1 = open(f1, 0);
+  if (fd1 > 0) n1 = read(fd1, dir1buf, dir1bytes);
+  if (fd1 < 0 || n1 != dir1bytes) {
+	printf("Cannot read directory %s\n", f1);
+	free(dir1buf);
+	free(dir2buf);
+	if (fd1 > 0) close(fd1);
+	return;
+  }
+  close(fd1);
+
+  fd2 = open(f2, 0);
+  if (fd2 > 0) n2 = read(fd2, dir2buf, dir2bytes);
+  if (fd2 < 0 || n2 != dir2bytes) {
+	printf("Cannot read directory %s\n", f2);
+	free(dir1buf);
+	free(dir2buf);
+	close(fd1);
+	if (fd2 > 0) close(fd2);
+	return;
+  }
+  close(fd2);
+
+  /* Linearly search directories */
+  ent1 = dir1bytes/sizeof(struct dirstruct);
+  dp1 = (struct dirstruct *) dir1buf;
+  for (i = 0; i < ent1; i++) {
+	if (dp1->inum != 0) used1++;
+	dp1++;
+  }
+
+  ent2 = dir2bytes/sizeof(struct dirstruct);
+  dp2 = (struct dirstruct *) dir2buf;
+  for (i = 0; i < ent2; i++) {
+	if (dp2->inum != 0) used2++;
+	dp2++;
+  }
+
+  if (verbose) printf("Directory %s: %d entries\n", f1, used1);
+
+  /* Check to see if any entries in dir2 are missing from dir1. */
+  dp1 = (struct dirstruct *) dir1buf;
+  dp2 = (struct dirstruct *) dir2buf;
+  for (i = 0; i < ent2; i++) {
+	if (dp2->inum == 0 || strcmp(dp2->fname, ".") == 0 || 
+		strcmp(dp2->fname, "..") == 0) {
+			dp2++;
+			continue;
+	}
+	check(dp2->fname, dp1, ent1, f1);
+	dp2++;
+  }
+
+  /* Recursively process all the entries in dir1. */
+  dp1 = (struct dirstruct *) dir1buf;
+  for (i = 0; i < ent1; i++) {
+	if (dp1->inum == 0 || strcmp(dp1->fname, ".") == 0 || 
+		strcmp(dp1->fname, "..") == 0) {
+			dp1++;
+			continue;
+	}
+	if (strlen(f1) + DIRENTLEN >= MAXPATH) {
+		printf("Path too long: %s\n", f1);
+		free(dir1buf);
+		free(dir2buf);
+		return;
+	}
+	if (strlen(f2) + DIRENTLEN >= MAXPATH) {
+		printf("Path too long: %s\n", f2);
+		free(dir1buf);
+		free(dir2buf);
+		return;
+	}
+	
+	strcpy(name1buf, f1);
+	strcat(name1buf, "/");
+	strncat(name1buf, dp1->fname, DIRENTLEN);
+	strcpy(name2buf, f2);
+	strcat(name2buf, "/");
+	strncat(name2buf, dp1->fname, DIRENTLEN);
+ 
+	/* Here is the recursive call to process an entry. */
+	compare(name1buf, name2buf);	/* recursive call */
+	dp1++;
+  }
+
+  free(dir1buf);
+  free(dir2buf);
+}
+
+check(s, dp1, ent1, f1)
+char *s;
+struct dirstruct *dp1;
+int ent1;
+char *f1;
+{
+/* See if the file name 's' is present in the directory 'dirbuf'. */
+  int i;
+
+  for (i = 0; i < ent1; i++) {
+	if (strncmp(dp1->fname, s, DIRENTLEN) == 0) return;
+	dp1++;
+  }
+  printf("Missing file: %s/%s\n", f1, s);
+}
+
+usage()
+{
+  printf("Usage: treecmp [-v] dir1 dir2\n");
+  exit(0);
+}
+#! rnews 1196
+Path: alberta!mnetor!uunet!mcvax!prlb2!kulcs!kdv
+From: kdv@kulcs.UUCP (Karel De Vlaminck)
+Newsgroups: comp.text
+Subject: Laserprinters for troff on NCR Tower
+Message-ID: <1066@kulcs.UUCP>
+Date: 7 Dec 87 19:18:01 GMT
+Reply-To: kdv@kulcs.UUCP ()
+Organization: Katholieke Universiteit Leuven, Dept. Computer Science
+Lines: 22
+
+
+1) We want to connect a laserprinter for use with troff
+on a NCR Tower System. Has anyone experience with this?
+
+2) We will have access to a KYOCERA F-1000 or F-1200 laser printer.
+Does anyone know about the existence of a filter for the
+troff output to the laserprinter (which uses 'Prescribe').
+
+3) This laserprinter also has an HP Laserjet Plus emulation.
+Another solution would then be to use a troff output filter
+for the HP Laserjet.  So I will ask the same question
+about the existence for this filter.
+
+Please mail responses directly to me. If there are usefull
+responses, I will post a summary to the net.
+
+Karel De Vlaminck
+
+                                | K. U. Leuven
+  kdv@kulcs.uucp                | Department of Computer Science
+  or ...!mcvax!prlb2!kulcs!kdv  | Celestijnenlaan 200 A
+  Phone:  +(32) 16-200656 x3565 | B-3030 Leuven (Heverlee), Belgium
+#! rnews 685
+Path: alberta!mnetor!uunet!mcvax!cernvax!ethz!solaris!wyle
+From: wyle@solaris.ifi.ethz.ch@relay.cs.net (Mitchell Wyle)
+Newsgroups: comp.unix.questions,comp.text
+Subject: Scribe, GML
+Keywords: Generalized Mark-up Languages, Scribe
+Message-ID: <194@A14A.solaris.ifi.ethz.ch@relay.cs.net>
+Date: 7 Dec 87 17:14:05 GMT
+Organization: SOT sun cluster, ETH Zuerich
+Lines: 7
+Xref: alberta comp.unix.questions:4769 comp.text:1344
+
+Where can I buy Scribe?  Are there other implementations of
+a standard Markup Language on BSD Unix?  What is Scribe?
+
+Please respond via e-mail; if there are enough "me too's,"
+I'll post.
+
+-Mitch Wyle  (wyle@solaris.uucp |  wyle@ethz.uucp  | ...!cernvax!ethz!wyle
+#! rnews 1896
+Path: alberta!mnetor!uunet!mcvax!ukc!its63b!simon
+From: simon@its63b.ed.ac.uk (ECSC68 S Brown CS)
+Newsgroups: comp.unix.wizards
+Subject: Re: Setting process groups
+Message-ID: <815@its63b.ed.ac.uk>
+Date: 7 Dec 87 10:30:32 GMT
+References: <1765@unc.cs.unc.edu> <910@mcgill-vision.UUCP> <1261@saturn.ucsc.edu> <3134@psuvax1.psu.edu> <2990@hcr.UUCP>
+Reply-To: simon@lfcs.ed.ac.uk (Simon Brown)
+Organization: LFCS, University of Edinburgh
+Lines: 29
+
+In article <2990@hcr.UUCP>  writes:
+>Actually SVID setpgrp() has an "extra feature" that Berkeley setpgrp(getpid())
+>does not have - it detaches the process from its controlling terminal.  This
+>does tend to make it "difficult" to create a pipeline attached to your terminal
+>but with its own process group.
+
+Well, you can do that by making each such pipeline belong to it's own SXT
+device, and have all these SXT's multiplexed onto your *real* terminal.
+Instant job-control!
+
+BTW, SVR2 (and 3?) setpgrp() doesn't fully detach a process from its 
+controlling tty if this process has already done a setpgrp() previously
+(as is the case for a login-shell -- this comes from init and getty).
+What it does in this case is to "partially" detach -- so that if you try 
+to set up a new controlling terminal, it's not actually a controlling terminal 
+at all -- things like terminal-generated signals don't get sent to the process.
+Presumably this is just a cretinous bug, and not something more sophisticated.
+
+
+-- 
+--------------------------------------------------
+| Simon Brown                                    |
+| Laboratory for Foundations of Computer Science |
+| Department of Computer Science                 |
+| University of Edinburgh, Scotland, UK.         |
+--------------------------------------------------
+ UUCP:  uunet!mcvax!ukc!lfcs!simon
+ ARPA:  simon%lfcs.ed@nss.cs.ucl.ac.uk      "Life's like that, you know"
+ JANET: simon@uk.ac.ed.lfcs
+#! rnews 1126
+Path: alberta!mnetor!uunet!mcvax!ukc!its63b!hwcs!adrian
+From: adrian@cs.hw.ac.uk (Adrian Hurt)
+Newsgroups: rec.arts.sf-lovers
+Subject: Re: NCC, USS, Klingons, etc...
+Summary: She was a Klingon
+Message-ID: <1568@brahma.cs.hw.ac.uk>
+Date: 7 Dec 87 10:33:54 GMT
+References: <8712011928.AA04370@topaz.rutgers.edu> <1632@bsu-cs.UUCP> <19321@teknowledge-vaxc.ARPA>
+Organization: Computer Science, Heriot-Watt U., Scotland
+Lines: 15
+
+In article <19321@teknowledge-vaxc.ARPA>, hshiffma@teknowledge-vaxc.ARPA (Hank Shiffman) writes:
+> 
+> Why do you think she was a Klingon?  As I recall, she looked human.
+> You weren't assuming that she was a Klingon just because she had
+> something going with the Christoper Lloyd character, were you?  For
+> shame!
+
+In the book of the film, Valkris was definitely a Klingon, out to do something
+valiant to redeem her family's honour. She became very friendly with another
+alien on board that ship because of that alien's warrior traditions.
+-- 
+ "Keyboard? Tis quaint!" - M. Scott
+
+ Adrian Hurt			     |	JANET:  adrian@uk.ac.hw.cs
+ UUCP: ..!ukc!cs.hw.ac.uk!adrian     |  ARPA:   adrian@cs.hw.ac.uk
+#! rnews 1332
+Path: alberta!mnetor!uunet!mcvax!ukc!its63b!hwcs!adrian
+From: adrian@cs.hw.ac.uk (Adrian Hurt)
+Newsgroups: rec.games.frp
+Subject: Re: Star Wars:  the RPG
+Summary: Pictures
+Message-ID: <1569@brahma.cs.hw.ac.uk>
+Date: 7 Dec 87 10:42:12 GMT
+References: <1570@cup.portal.com> <13450021@acf4.UUCP> <1676@cup.portal.com> <1799@cup.portal.com>
+Organization: Computer Science, Heriot-Watt U., Scotland
+Lines: 21
+
+In article <1799@cup.portal.com>, Nightstalker@cup.portal.com writes:
+> 
+> Hi!  Does anyone know if the force skills can be learned by any PC like
+> a smuggler or outlaw for example, or can they only be taught to the
+> jedi classes and NPCs?  Thank you.
+>    Jason Wallace
+> 
+
+Any character may learn the Force skills from a master, and the rulebook even
+encourages players using the Jedi characters to do some teaching, provided that
+the pupil hasn't got any Dark Side points. Remember, Luke Skywalker was a
+"Brash Pilot" type until Obi-Wan (OB1? :-) got to him.
+
+Now for my question. There are some really nice pictures in the rulebook. Can I
+get separate copies of these? They would be great posters, especially the
+Imperial Navy recruiting poster and the R2 advert.
+-- 
+ "Keyboard? Tis quaint!" - M. Scott
+
+ Adrian Hurt			     |	JANET:  adrian@uk.ac.hw.cs
+ UUCP: ..!ukc!cs.hw.ac.uk!adrian     |  ARPA:   adrian@cs.hw.ac.uk
+#! rnews 1047
+Path: alberta!mnetor!uunet!mcvax!ukc!its63b!bob
+From: bob@its63b.ed.ac.uk (ERCF08 Bob Gray)
+Newsgroups: rec.arts.sf-lovers
+Subject: Re: Klingon females
+Message-ID: <816@its63b.ed.ac.uk>
+Date: 7 Dec 87 12:36:36 GMT
+References: <8712042225.AA03829@topaz.rutgers.edu> <3490@hoptoad.uucp>
+Reply-To: bob@its63b.ed.ac.uk (ERCF08 Bob Gray)
+Organization: I.T. School, Univ. of Edinburgh, U.K.
+Lines: 13
+
+In article <3490@hoptoad.uucp> tim@hoptoad.UUCP (Tim Maroney) writes:
+>I like the fact that the Klingons are portrayed as sexist scumbags, but it
+>disturbs me that all major sentient races except humans and Romulans put
+>women in a subservient role (Klingons, Vulcans, Ferrengi).  It almost seems
+>as if we are being told that female subservience is part of the natural
+>order of sentience.  There are no major female-dominated sentient races, two
+>semi-egalitarian races, and three male-dominated races, a clear imbalance in
+>favor of male dominance.
+
+Then who was T'pau supposed to be?
+
+She was vulcan, and very obviously in charge of things.
+	Bob.
+#! rnews 1313
+Path: alberta!mnetor!uunet!mcvax!ukc!its63b!bob
+From: bob@its63b.ed.ac.uk (ERCF08 Bob Gray)
+Newsgroups: rec.arts.sf-lovers
+Subject: Re: Max Headroom
+Message-ID: <817@its63b.ed.ac.uk>
+Date: 7 Dec 87 13:10:09 GMT
+References: <82*quale@si.uninett> <3333@ihlpl.ATT.COM>
+Reply-To: bob@its63b.ed.ac.uk (ERCF08 Bob Gray)
+Distribution: rec.arts.sf-lovers
+Organization: I.T. School, Univ. of Edinburgh, U.K.
+Lines: 18
+
+In article <3333@ihlpl.ATT.COM> barth@ihlpl.UUCP (BARTH RICHARDS) writes:
+>The problem is that the first few episodes were *re*made by an American
+>production company for broadcast on ABC (not the Australian ABC).  As I
+>understand it, the first ABC run of six shows (winter/spring of 1987) were
+>all reworkings of episodes already done by the British.  The second run
+>(fall 1987) were stories newly developed by the American producers.
+
+Sorry, there was only ever one original Max Headroom
+programme. That was a one-off TV film made by the BBC.
+Any episodes beyond the original story did not originate
+with the BBC, although Maxs' creators may have been involved.
+
+Max then re-appeared on Channel 4 as host of a chat show for two
+short seasons. (interviewing guest stars about their views
+on Golf, music, life and, most importantly, Golf :->)
+
+He then crossed the atlantic to be re-made by ABC.
+	Bob.
+#! rnews 1152
+Path: alberta!mnetor!uunet!mcvax!ukc!warwick!jeff
+From: jeff@warwick.UUCP (Jeff Smith)
+Newsgroups: comp.lang.c++
+Subject: cfront runs too fast (and fix)
+Keywords: cfront fix
+Message-ID: <586@ubu.warwick.UUCP>
+Date: 7 Dec 87 14:49:10 GMT
+Organization: Computer Science, Warwick University, UK
+Lines: 27
+
+If you can persuade cfront to finish in less than a second with the
++S option on, then the calculation of the number of lines processed
+per second generates a divide-by-zero! On a SUN-3 with 1.2.1,
+typing
+        cfront +S </dev/null
+will demonstrate the problem.
+
+Fix main.c thus:
+
+		fprintf(stderr,"real time delay %ld: %d lines per second\n",
+#ifdef	CFRONTTOOFASTFIX
+			stop_time-start_time,
+			stop_time-start_time > 0 ?
+				Nline/(stop_time-start_time) : Nline);
+#else	!CFRONTTOOFASTFIX
+			stop_time-start_time, Nline/(stop_time-start_time) );
+#endif	CFRONTTOOFASTFIX
+		fflush(stderr);
+
+
+Jeff
+warwick!jeff
+
+PS. Does anyone have a fix to simpl.c for the null dereference
+on Pfct f = Pfct(Pptr(q->tp)->typ) caused by the pointer to member function
+problem? The problem's been noted a couple of times in comp.lang.c++, by
+Paul Calder and others..
+#! rnews 1114
+Path: alberta!mnetor!uunet!mcvax!ukc!warwick!strgh
+From: strgh@daisy.warwick.ac.uk (J E H Shaw)
+Newsgroups: rec.music.misc
+Subject: Re: More than Yes (really Egg)
+Message-ID: <357@daisy.warwick.ac.uk>
+Date: 7 Dec 87 17:57:56 GMT
+References: <22034@ucbvax.BERKELEY.EDU> <19826@yale-celray.yale.UUCP>
+Reply-To: strgh@daisy.warwick.ac.uk (J E H Shaw)
+Organization: Computing Services, Warwick University, UK
+Lines: 14
+
+----------
+Egg released at least one other album before `Civil Surface', I think it
+was called `the Polite Force'.  They were very good.
+
+Their drummer (Clive Brooks?) joined the Groundhogs.
+Their bassist (Mont Campbell?) played sometimes with some of the other
+  Canterbury scene people: National Health, U.K. or similar (mid 70's).
+Their organist, Dave Stewart, became a pop star (`
