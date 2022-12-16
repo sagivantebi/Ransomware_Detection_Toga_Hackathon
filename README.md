@@ -1,5 +1,5 @@
 
-Cymer-scan
+Cymer-Scan
 
 Our mission:
  - Detect the exact snapshot of an encrypted file and return a list of the encrypted files.
